@@ -1,0 +1,7 @@
+<map id="ECS::World::tick" name="ECS::World::tick">
+<area shape="rect" id="Node000001" title="Tick the world." alt="" coords="5,47,123,77"/>
+<area shape="rect" id="Node000002" href="$classEngine_1_1EngineClass.html#a763022987a2b8bf5dea4cb30c0b8bbce" title="Get the Engine object." alt="" coords="177,5,320,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,49,162,42,163,47,124,54"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1BaseSystem.html#ae60465d4eba925f7ae728aa3decb900e" title="Update method for the system to process its entities." alt="" coords="171,78,326,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,69,157,74,156,80,123,74"/>
+</map>

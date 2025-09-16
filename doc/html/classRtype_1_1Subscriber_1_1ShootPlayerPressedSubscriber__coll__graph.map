@@ -1,0 +1,7 @@
+<map id="Rtype::Subscriber::ShootPlayerPressedSubscriber" name="Rtype::Subscriber::ShootPlayerPressedSubscriber">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,180,217,228"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1EventSubscriber.html" title=" " alt="" coords="35,83,187,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,146,114,179,108,179,108,146"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1BaseEventSubscriber.html" title="Abstract base class for event subscribers in an ECS framework." alt="" coords="20,5,202,35"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="114,50,114,82,108,82,108,50"/>
+</map>

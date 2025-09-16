@@ -1,0 +1,52 @@
+\doxysection{ECS\+::Base\+Component Class Reference}
+\hypertarget{classECS_1_1BaseComponent}{}\label{classECS_1_1BaseComponent}\index{ECS::BaseComponent@{ECS::BaseComponent}}
+
+
+Abstract base class for components in the ECS (Entity-\/\+Component-\/\+System).  
+
+
+
+
+{\ttfamily \#include $<$Components.\+hpp$>$}
+
+
+
+Inheritance diagram for ECS\+::Base\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classECS_1_1BaseComponent__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classECS_1_1BaseComponent_a28bc1589fc6643946c041aa92a5e4390}\label{classECS_1_1BaseComponent_a28bc1589fc6643946c041aa92a5e4390} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+\Hypertarget{classECS_1_1BaseComponent_a93f0d919c8fdad72474d5da1db1982b7}\label{classECS_1_1BaseComponent_a93f0d919c8fdad72474d5da1db1982b7} 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+\Hypertarget{classECS_1_1BaseComponent_a509be41887355e7e806bb1d4fdbb3825}\label{classECS_1_1BaseComponent_a509be41887355e7e806bb1d4fdbb3825} 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+\Hypertarget{classECS_1_1BaseComponent_a81546d8f2894ac633dd0cba2dd035f1a}\label{classECS_1_1BaseComponent_a81546d8f2894ac633dd0cba2dd035f1a} 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+\Hypertarget{classECS_1_1BaseComponent_acca12d67a998491f928369ed65468bd4}\label{classECS_1_1BaseComponent_acca12d67a998491f928369ed65468bd4} 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+\Hypertarget{classECS_1_1BaseComponent_a6e7fd6ece736d510c5803104da9c3284}\label{classECS_1_1BaseComponent_a6e7fd6ece736d510c5803104da9c3284} 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for components in the ECS (Entity-\/\+Component-\/\+System). 
+
+You must provide a move constructor if one cannot be created implicitely 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+ECS/Components.\+hpp\end{DoxyCompactItemize}

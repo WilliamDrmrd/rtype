@@ -1,0 +1,93 @@
+\doxysection{Drawable\+Component Class Reference}
+\hypertarget{classDrawableComponent}{}\label{classDrawableComponent}\index{DrawableComponent@{DrawableComponent}}
+
+
+Inheritance diagram for Drawable\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classDrawableComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Drawable\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classDrawableComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDrawableComponent_a3bb8cdc060437f210495c54765518332}\label{classDrawableComponent_a3bb8cdc060437f210495c54765518332} 
+{\bfseries Drawable\+Component} (sf\+::\+Drawable \texorpdfstring{$\ast$}{*}drawable)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{classDrawableComponent_a74f136dd9cc9b6b5943257a0bb225df9}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDrawableComponent_a88e106491a2b52c153f498cc6a2174bd}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) override
+\item 
+Component\+Type \mbox{\hyperlink{classDrawableComponent_a9019ec892891d8961e6a2a24a2c30218}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classDrawableComponent_a2bac7581781ccb44d4c2348c08d19c15}\label{classDrawableComponent_a2bac7581781ccb44d4c2348c08d19c15} 
+sf\+::\+Drawable \texorpdfstring{$\ast$}{*} {\bfseries drawable}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDrawableComponent_a88e106491a2b52c153f498cc6a2174bd}\label{classDrawableComponent_a88e106491a2b52c153f498cc6a2174bd} 
+\index{DrawableComponent@{DrawableComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!DrawableComponent@{DrawableComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Drawable\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{classDrawableComponent_a9019ec892891d8961e6a2a24a2c30218}\label{classDrawableComponent_a9019ec892891d8961e6a2a24a2c30218} 
+\index{DrawableComponent@{DrawableComponent}!getType@{getType}}
+\index{getType@{getType}!DrawableComponent@{DrawableComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Drawable\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{classDrawableComponent_a74f136dd9cc9b6b5943257a0bb225df9}\label{classDrawableComponent_a74f136dd9cc9b6b5943257a0bb225df9} 
+\index{DrawableComponent@{DrawableComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!DrawableComponent@{DrawableComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Drawable\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Components/Drawable.\+component.\+hpp\end{DoxyCompactItemize}

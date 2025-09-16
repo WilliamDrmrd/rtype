@@ -1,0 +1,4 @@
+<map id="ECS::World::addEntity" name="ECS::World::addEntity">
+<area shape="rect" id="Node000001" title="Create an empty entity." alt="" coords="5,29,160,59"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="55,30,51,20,55,11,65,5,83,3,101,5,111,12,108,17,99,10,82,8,67,10,59,15,56,20,60,28"/>
+</map>

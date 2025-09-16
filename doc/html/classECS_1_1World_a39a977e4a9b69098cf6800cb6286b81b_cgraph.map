@@ -1,0 +1,5 @@
+<map id="ECS::World::broadcastEvent" name="ECS::World::broadcastEvent">
+<area shape="rect" id="Node000001" title="Broadcast an event to all subscribers of a specific event type." alt="" coords="5,15,197,45"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1EventSubscriber.html#a8dfb2feb269e6137537c3bfd3bee7846" title="Receive and process an event." alt="" coords="245,5,397,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,27,230,27,230,32,197,32"/>
+</map>

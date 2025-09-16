@@ -1,0 +1,7 @@
+<map id="Rtype::Systems::HealthSystem::tick" name="Rtype::Systems::HealthSystem::tick">
+<area shape="rect" id="Node000001" title="Update method for the system to process its entities." alt="" coords="5,23,216,71"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1Entity.html#a443006243e747ad64f38aeccaf48886a" title="Get a component." alt="" coords="264,5,452,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,33,248,29,249,35,217,38"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1Entity.html#ac59ca658abb333047122236593fdf863" title="Check if the Entity has a component of a specific type." alt="" coords="300,59,416,88"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,56,285,63,285,68,216,61"/>
+</map>

@@ -1,0 +1,53 @@
+\doxysection{Physics.\+system.\+hpp}
+\hypertarget{Physics_8system_8hpp_source}{}\label{Physics_8system_8hpp_source}\index{include/Engine/Systems/Physics.system.hpp@{include/Engine/Systems/Physics.system.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ RenderEngine.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ECS/System.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}ECS/World.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Collision.component.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Moving.component.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}SFML/Graphics/Rect.hpp"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ SHOW\_HITBOX}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ NOT\_SHOW\_HITBOX}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }Engine::System}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEngine_1_1System_1_1Physics}{Physics}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS::BaseSystem}}}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1Physics}{Physics}}(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ \&world)\ :\ \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS::BaseSystem}}(world)\{\};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1Physics}{Physics}}(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ \&world,\ ECS::id\_t\ ids...)\ :\ \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS::BaseSystem}}(world,\ ids)\ \{\}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1Physics}{\string~Physics}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_1_1System_1_1Physics_a892213d23646be6ecb40f80081a7f465}{configure}}(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ \&world)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_1_1System_1_1Physics_a558cacaa716bf3e8ab39a1fcb92b987d}{unconfigure}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_1_1System_1_1Physics_ad241dda216761a6cabe9ce1587ae88ca}{tick}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ move\ functions}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ moveTime(\mbox{\hyperlink{classECS_1_1Entity}{ECS::Entity}}\ *entity,\ \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS::ComponentHandle<Components::MovingComponent>}}\ handle);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ collision\ function}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ collide(\mbox{\hyperlink{classECS_1_1Entity}{ECS::Entity}}\ *entity,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ sf::FloatRect\ get\_hitbox\_with\_rotation(\mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS::ComponentHandle<Engine::Components::CollisionComponent>}}\ \&hitbox,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rotation,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00046\ \ \ \ \ \};}
+\DoxyCodeLine{00047\ \}\ \textcolor{comment}{//\ namespace\ Engine::System}}
+
+\end{DoxyCode}

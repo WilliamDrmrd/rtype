@@ -1,0 +1,57 @@
+\doxysection{System.\+hpp}
+\hypertarget{System_8hpp_source}{}\label{System_8hpp_source}\index{include/ECS/System.hpp@{include/ECS/System.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ System.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Clock.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Utilities.hpp"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }ECS}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }World;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classECS_1_1BaseSystem}{BaseSystem}}}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classECS_1_1BaseSystem_abca06a7d8622c2404ce44f5fe2dfb8ba}{BaseSystem}}(\mbox{\hyperlink{classECS_1_1World}{World}}\ \&world)\ :\ \_world(world),\ \_entities\_id(),\ \_clock()\{\};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classECS_1_1BaseSystem_ad996c1bb749405c509b43ff0725c71cb}{BaseSystem}}(\mbox{\hyperlink{classECS_1_1World}{World}}\ \&world,\ id\_t\ ids...)\ :\ \_world(world),\ \_entities\_id()}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_entities\_id.emplace\_back(ids);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classECS_1_1BaseSystem_ac15d3b30cd2f191a5ffe2fa897dbb089}{\string~BaseSystem}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classECS_1_1BaseSystem_afd15a4965d7e0a76db754ff6ac0af1fb}{configure}}(\mbox{\hyperlink{classECS_1_1World}{World}}\ \&world)\ =\ 0;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classECS_1_1BaseSystem_abac94ba96a919642b866c906462316bc}{unconfigure}}()\ =\ 0;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classECS_1_1BaseSystem_ae60465d4eba925f7ae728aa3decb900e}{tick}}()\ =\ 0;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classECS_1_1World}{World}}\ \&\mbox{\hyperlink{classECS_1_1BaseSystem_a22cddc444a0241c98ef969f1aa13113d}{getWorld}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00083\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_world;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \mbox{\hyperlink{classECS_1_1World}{World}}\ \&\_world;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<id\_t>\ \ \ \ \ \ \ \_entities\_id;\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \mbox{\hyperlink{classECS_1_1Clock}{Clock}}\ \ \_clock\{\};\ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classECS_1_1HigherOrderBaseSystem}{HigherOrderBaseSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classECS_1_1BaseSystem}{BaseSystem}}}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \};}
+\DoxyCodeLine{00096\ \}\ \textcolor{comment}{//\ namespace\ ECS}}
+
+\end{DoxyCode}

@@ -1,0 +1,93 @@
+\doxysection{Engine\+::Components\+::Enemy\+Queue\+Component Struct Reference}
+\hypertarget{structEngine_1_1Components_1_1EnemyQueueComponent}{}\label{structEngine_1_1Components_1_1EnemyQueueComponent}\index{Engine::Components::EnemyQueueComponent@{Engine::Components::EnemyQueueComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Enemy\+Queue\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{structEngine_1_1Components_1_1EnemyQueueComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Enemy\+Queue\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{structEngine_1_1Components_1_1EnemyQueueComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1EnemyQueueComponent_adfaa78a1475f4459600c7851dafb2d02}\label{structEngine_1_1Components_1_1EnemyQueueComponent_adfaa78a1475f4459600c7851dafb2d02} 
+{\bfseries Enemy\+Queue\+Component} (std\+::vector$<$ std\+::pair$<$ bool, std\+::pair$<$ std\+::tuple$<$ size\+\_\+t, float, bool, std\+::vector$<$ std\+::pair$<$ size\+\_\+t, sf\+::\+Vector2f $>$ $>$ $>$, size\+\_\+t $>$ $>$ $>$ new\+Enemy\+Queue\+Factories)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1EnemyQueueComponent_ac8c18c42ef9d5381d9e2d93f0afe00b7}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1EnemyQueueComponent_a079779d621f971e14759772e4687972e}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) override
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1EnemyQueueComponent_aa7c9784196e9aab866881c4a80fba629}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1EnemyQueueComponent_a45ad32e9d0d4cec69dfa2651cdea9e50}\label{structEngine_1_1Components_1_1EnemyQueueComponent_a45ad32e9d0d4cec69dfa2651cdea9e50} 
+std\+::vector$<$ std\+::pair$<$ bool, std\+::pair$<$ std\+::tuple$<$ size\+\_\+t, float, bool, std\+::vector$<$ std\+::pair$<$ size\+\_\+t, sf\+::\+Vector2f $>$ $>$ $>$, size\+\_\+t $>$ $>$ $>$ {\bfseries new\+Enemy\+Queue\+Factories} = \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structEngine_1_1Components_1_1EnemyQueueComponent_a079779d621f971e14759772e4687972e}\label{structEngine_1_1Components_1_1EnemyQueueComponent_a079779d621f971e14759772e4687972e} 
+\index{Engine::Components::EnemyQueueComponent@{Engine::Components::EnemyQueueComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::EnemyQueueComponent@{Engine::Components::EnemyQueueComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Enemy\+Queue\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1EnemyQueueComponent_aa7c9784196e9aab866881c4a80fba629}\label{structEngine_1_1Components_1_1EnemyQueueComponent_aa7c9784196e9aab866881c4a80fba629} 
+\index{Engine::Components::EnemyQueueComponent@{Engine::Components::EnemyQueueComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::EnemyQueueComponent@{Engine::Components::EnemyQueueComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Enemy\+Queue\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1EnemyQueueComponent_ac8c18c42ef9d5381d9e2d93f0afe00b7}\label{structEngine_1_1Components_1_1EnemyQueueComponent_ac8c18c42ef9d5381d9e2d93f0afe00b7} 
+\index{Engine::Components::EnemyQueueComponent@{Engine::Components::EnemyQueueComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::EnemyQueueComponent@{Engine::Components::EnemyQueueComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Enemy\+Queue\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+R-\/\+Type/\+Components/Enemy\+Queue.\+component.\+hpp\end{DoxyCompactItemize}

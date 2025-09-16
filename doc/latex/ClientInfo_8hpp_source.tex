@@ -1,0 +1,40 @@
+\doxysection{Client\+Info.\+hpp}
+\hypertarget{ClientInfo_8hpp_source}{}\label{ClientInfo_8hpp_source}\index{include/Engine/Server/ClientInfo.hpp@{include/Engine/Server/ClientInfo.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ ClientInfo.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <SFML/Network.hpp>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{enum\ class}\ ClientState\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ InLobby,}
+\DoxyCodeLine{00014\ \ \ \ \ InGame,}
+\DoxyCodeLine{00015\ \ \ \ \ Disconnected}
+\DoxyCodeLine{00016\ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structClientInfo}{ClientInfo}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ sf::IpAddress\ \ address;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ ClientState\ \ \ \ state;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ hasSwitchedWorld\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ isInitialized\ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ isServer\ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ nbPlayer\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ isAlive\ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structClientInfo}{ClientInfo}}()\ :\ port(0),\ state(ClientState::Disconnected)\ \{\}\ \textcolor{comment}{//\ Constructeur\ par\ défaut}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structClientInfo}{ClientInfo}}(\textcolor{keyword}{const}\ sf::IpAddress\ \&addr,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ prt,\ ClientState\ st,\ \textcolor{keywordtype}{bool}\ isServer)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ :\ address(addr),\ port(prt),\ state(st),\ isServer(isServer)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \};}
+
+\end{DoxyCode}

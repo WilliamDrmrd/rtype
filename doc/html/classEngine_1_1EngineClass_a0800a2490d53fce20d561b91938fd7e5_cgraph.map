@@ -1,0 +1,15 @@
+<map id="Engine::EngineClass::run" name="Engine::EngineClass::run">
+<area shape="rect" id="Node000001" title="Run the engine." alt="" coords="5,120,179,150"/>
+<area shape="rect" id="Node000002" href="$classEngine_1_1EngineClass.html#aea05d26008d42f942fc8ce2961126649" title="Creates an empty world with the given name." alt="" coords="227,5,371,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,117,235,59,238,64,124,122"/>
+<area shape="rect" id="Node000003" href="$classEngine_1_1EngineClass.html#a115f93d15b0d5e25393b68cc8ba3cde2" title="Switches the current world to the one with the given name." alt="" coords="227,79,371,127"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,119,212,114,213,119,180,124"/>
+<area shape="rect" id="Node000004" href="$classECS_1_1World.html#a60df42ade925b3f84b9654bc0233d749" title="Tick the world." alt="" coords="240,151,358,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="180,145,226,152,226,158,179,151"/>
+<area shape="rect" id="Node000007" href="$classEngine_1_1EngineClass.html#a0b9aae25109727eb9a14c8b89229943b" title="Get the current world." alt="" coords="227,204,371,253"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="128,148,231,195,229,200,126,153"/>
+<area shape="rect" id="Node000005" href="$classEngine_1_1EngineClass.html#a763022987a2b8bf5dea4cb30c0b8bbce" title="Get the Engine object." alt="" coords="425,109,568,158"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="357,154,410,145,411,150,358,159"/>
+<area shape="rect" id="Node000006" href="$classECS_1_1BaseSystem.html#ae60465d4eba925f7ae728aa3decb900e" title="Update method for the system to process its entities." alt="" coords="419,182,574,211"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="358,172,404,179,404,185,357,177"/>
+</map>

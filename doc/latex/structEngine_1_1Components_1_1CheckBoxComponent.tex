@@ -1,0 +1,108 @@
+\doxysection{Engine\+::Components\+::Check\+Box\+Component Struct Reference}
+\hypertarget{structEngine_1_1Components_1_1CheckBoxComponent}{}\label{structEngine_1_1Components_1_1CheckBoxComponent}\index{Engine::Components::CheckBoxComponent@{Engine::Components::CheckBoxComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Check\+Box\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{structEngine_1_1Components_1_1CheckBoxComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Check\+Box\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{structEngine_1_1Components_1_1CheckBoxComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1CheckBoxComponent_abb0109438bf713350aafb83a1daa7aaf}\label{structEngine_1_1Components_1_1CheckBoxComponent_abb0109438bf713350aafb83a1daa7aaf} 
+{\bfseries Check\+Box\+Component} (std\+::string text, std\+::function$<$ void()$>$ click\+On, std\+::function$<$ void()$>$ click\+Off, bool is\+Activated=true)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1CheckBoxComponent_a94ca519db9a534cb2b168022fdf47f7a}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1CheckBoxComponent_a0327bbb20a6308f00e41450bd95992ce}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) override
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1CheckBoxComponent_a846c9dbcbdacf6e3f29800b8f4d98aef}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1CheckBoxComponent_a4621e201b8724f4fcb70c1bd48822ac4}\label{structEngine_1_1Components_1_1CheckBoxComponent_a4621e201b8724f4fcb70c1bd48822ac4} 
+std\+::string {\bfseries text}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1CheckBoxComponent_a82777e0ba55efb3377ea181dff6549a1}\label{structEngine_1_1Components_1_1CheckBoxComponent_a82777e0ba55efb3377ea181dff6549a1} 
+std\+::function$<$ void()$>$ {\bfseries click\+On}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1CheckBoxComponent_a11c4d0a5327e23886089ec2696c1ec5e}\label{structEngine_1_1Components_1_1CheckBoxComponent_a11c4d0a5327e23886089ec2696c1ec5e} 
+std\+::function$<$ void()$>$ {\bfseries click\+Off}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1CheckBoxComponent_a686bd4d77b06b1350d611aa725b4bfa7}\label{structEngine_1_1Components_1_1CheckBoxComponent_a686bd4d77b06b1350d611aa725b4bfa7} 
+bool {\bfseries is\+Activated} \{\}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1CheckBoxComponent_a3a4e1230d1402ed3fdd4d9c25a1ee3cb}\label{structEngine_1_1Components_1_1CheckBoxComponent_a3a4e1230d1402ed3fdd4d9c25a1ee3cb} 
+bool {\bfseries status} = false
+\item 
+\Hypertarget{structEngine_1_1Components_1_1CheckBoxComponent_a63b5aec858d68afc838b1ec930c59536}\label{structEngine_1_1Components_1_1CheckBoxComponent_a63b5aec858d68afc838b1ec930c59536} 
+bool {\bfseries is\+Clicked} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structEngine_1_1Components_1_1CheckBoxComponent_a0327bbb20a6308f00e41450bd95992ce}\label{structEngine_1_1Components_1_1CheckBoxComponent_a0327bbb20a6308f00e41450bd95992ce} 
+\index{Engine::Components::CheckBoxComponent@{Engine::Components::CheckBoxComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::CheckBoxComponent@{Engine::Components::CheckBoxComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Check\+Box\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1CheckBoxComponent_a846c9dbcbdacf6e3f29800b8f4d98aef}\label{structEngine_1_1Components_1_1CheckBoxComponent_a846c9dbcbdacf6e3f29800b8f4d98aef} 
+\index{Engine::Components::CheckBoxComponent@{Engine::Components::CheckBoxComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::CheckBoxComponent@{Engine::Components::CheckBoxComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Check\+Box\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1CheckBoxComponent_a94ca519db9a534cb2b168022fdf47f7a}\label{structEngine_1_1Components_1_1CheckBoxComponent_a94ca519db9a534cb2b168022fdf47f7a} 
+\index{Engine::Components::CheckBoxComponent@{Engine::Components::CheckBoxComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::CheckBoxComponent@{Engine::Components::CheckBoxComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Check\+Box\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Components/Check\+Box.\+component.\+hpp\end{DoxyCompactItemize}

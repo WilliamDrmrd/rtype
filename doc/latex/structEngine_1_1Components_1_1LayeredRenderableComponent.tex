@@ -1,0 +1,108 @@
+\doxysection{Engine\+::Components\+::Layered\+Renderable\+Component Struct Reference}
+\hypertarget{structEngine_1_1Components_1_1LayeredRenderableComponent}{}\label{structEngine_1_1Components_1_1LayeredRenderableComponent}\index{Engine::Components::LayeredRenderableComponent@{Engine::Components::LayeredRenderableComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Layered\+Renderable\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{structEngine_1_1Components_1_1LayeredRenderableComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Layered\+Renderable\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{structEngine_1_1Components_1_1LayeredRenderableComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1LayeredRenderableComponent_a93350dfce208ac66372aa3ccbca06643}\label{structEngine_1_1Components_1_1LayeredRenderableComponent_a93350dfce208ac66372aa3ccbca06643} 
+{\bfseries Layered\+Renderable\+Component} (int priority, \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{Renderable\+Component}} \texorpdfstring{$\ast$}{*}first)
+\item 
+\Hypertarget{structEngine_1_1Components_1_1LayeredRenderableComponent_ae464544cc942d88265d16db765befb75}\label{structEngine_1_1Components_1_1LayeredRenderableComponent_ae464544cc942d88265d16db765befb75} 
+{\footnotesize template$<$typename... Renderables$>$ }\\{\bfseries Layered\+Renderable\+Component} (int priority, \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{Renderable\+Component}} \texorpdfstring{$\ast$}{*}first, Renderables... rest)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1LayeredRenderableComponent_a4be5700604f58e11dbed75c8ac624e5f}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1LayeredRenderableComponent_aeed7fab8eace6cbab05927cd61aba940}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) override
+\item 
+\Hypertarget{structEngine_1_1Components_1_1LayeredRenderableComponent_abaf9e06fbff084a119ff95e3ab0d2797}\label{structEngine_1_1Components_1_1LayeredRenderableComponent_abaf9e06fbff084a119ff95e3ab0d2797} 
+\mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{Renderable\+Component}} $>$ {\bfseries at} (int index)
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1LayeredRenderableComponent_a37f6616d776b482c2f385969b7ac3426}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1LayeredRenderableComponent_aad28dfe18a72eee8e312b3a6d055de97}\label{structEngine_1_1Components_1_1LayeredRenderableComponent_aad28dfe18a72eee8e312b3a6d055de97} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{Renderable\+Component}} $>$ $>$ {\bfseries renderable}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1LayeredRenderableComponent_aac9ba88b90e7deff004e5e1a2dd6a8bd}\label{structEngine_1_1Components_1_1LayeredRenderableComponent_aac9ba88b90e7deff004e5e1a2dd6a8bd} 
+int {\bfseries layers} \{\}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1LayeredRenderableComponent_a34884ebe8464d2bf091ca15927618434}\label{structEngine_1_1Components_1_1LayeredRenderableComponent_a34884ebe8464d2bf091ca15927618434} 
+int {\bfseries priority} \{\}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1LayeredRenderableComponent_a8da43b53ef1dbf7367c361e10d21396d}\label{structEngine_1_1Components_1_1LayeredRenderableComponent_a8da43b53ef1dbf7367c361e10d21396d} 
+bool {\bfseries is\+Displayed} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structEngine_1_1Components_1_1LayeredRenderableComponent_aeed7fab8eace6cbab05927cd61aba940}\label{structEngine_1_1Components_1_1LayeredRenderableComponent_aeed7fab8eace6cbab05927cd61aba940} 
+\index{Engine::Components::LayeredRenderableComponent@{Engine::Components::LayeredRenderableComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::LayeredRenderableComponent@{Engine::Components::LayeredRenderableComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Layered\+Renderable\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1LayeredRenderableComponent_a37f6616d776b482c2f385969b7ac3426}\label{structEngine_1_1Components_1_1LayeredRenderableComponent_a37f6616d776b482c2f385969b7ac3426} 
+\index{Engine::Components::LayeredRenderableComponent@{Engine::Components::LayeredRenderableComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::LayeredRenderableComponent@{Engine::Components::LayeredRenderableComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Layered\+Renderable\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1LayeredRenderableComponent_a4be5700604f58e11dbed75c8ac624e5f}\label{structEngine_1_1Components_1_1LayeredRenderableComponent_a4be5700604f58e11dbed75c8ac624e5f} 
+\index{Engine::Components::LayeredRenderableComponent@{Engine::Components::LayeredRenderableComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::LayeredRenderableComponent@{Engine::Components::LayeredRenderableComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Layered\+Renderable\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Components/Layered\+Renderable.\+component.\+hpp\end{DoxyCompactItemize}

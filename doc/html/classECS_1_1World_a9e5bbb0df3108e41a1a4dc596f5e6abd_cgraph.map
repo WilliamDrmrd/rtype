@@ -1,0 +1,8 @@
+<map id="ECS::World::createEntity" name="ECS::World::createEntity">
+<area shape="rect" id="Node000001" title="Create an entity with a set of components." alt="" coords="5,56,176,86"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1World.html#a5dd301ae60931e200b48b947fab84a98" title="Create an empty entity." alt="" coords="235,29,390,59"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,58,220,53,221,58,176,63"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1World.html#abd76c31bd5837f7c6c5023d42810bac4" title="Get a mutable reference to an entity." alt="" coords="224,83,401,112"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="176,78,209,82,208,88,176,84"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="274,30,268,20,273,11,288,5,312,3,339,5,353,13,351,17,338,11,312,8,289,10,277,15,273,20,278,28"/>
+</map>

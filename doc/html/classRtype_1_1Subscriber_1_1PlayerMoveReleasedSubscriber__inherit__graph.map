@@ -1,0 +1,7 @@
+<map id="Rtype::Subscriber::PlayerMoveReleasedSubscriber" name="Rtype::Subscriber::PlayerMoveReleasedSubscriber">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,180,223,228"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1EventSubscriber.html" title=" " alt="" coords="36,83,192,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,146,117,179,111,179,111,146"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1BaseEventSubscriber.html" title="Abstract base class for event subscribers in an ECS framework." alt="" coords="23,5,205,35"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,50,117,82,111,82,111,50"/>
+</map>

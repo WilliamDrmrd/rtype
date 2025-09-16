@@ -1,0 +1,99 @@
+\doxysection{Rtype\+::Components\+::Booster\+Active\+Component Struct Reference}
+\hypertarget{structRtype_1_1Components_1_1BoosterActiveComponent}{}\label{structRtype_1_1Components_1_1BoosterActiveComponent}\index{Rtype::Components::BoosterActiveComponent@{Rtype::Components::BoosterActiveComponent}}
+
+
+Inheritance diagram for Rtype\+::Components\+::Booster\+Active\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{structRtype_1_1Components_1_1BoosterActiveComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rtype\+::Components\+::Booster\+Active\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{structRtype_1_1Components_1_1BoosterActiveComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structRtype_1_1Components_1_1BoosterActiveComponent_afedcf9ab1ea2b832c7218aad1fb7905e}\label{structRtype_1_1Components_1_1BoosterActiveComponent_afedcf9ab1ea2b832c7218aad1fb7905e} 
+{\bfseries Booster\+Active\+Component} (int duration)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structRtype_1_1Components_1_1BoosterActiveComponent_aaea256ce54bf95ccbe77b1a0f3803e08}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structRtype_1_1Components_1_1BoosterActiveComponent_af01fd24c026f5db25885f342da2646fe}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) final
+\item 
+Component\+Type \mbox{\hyperlink{structRtype_1_1Components_1_1BoosterActiveComponent_afdd90bdade4001588977feb3d9a68eea}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structRtype_1_1Components_1_1BoosterActiveComponent_a290044e8aa91f622295a32596217cc1f}\label{structRtype_1_1Components_1_1BoosterActiveComponent_a290044e8aa91f622295a32596217cc1f} 
+int {\bfseries duration}
+\item 
+\Hypertarget{structRtype_1_1Components_1_1BoosterActiveComponent_abd8cea53e8abd7e0066f271ce343da64}\label{structRtype_1_1Components_1_1BoosterActiveComponent_abd8cea53e8abd7e0066f271ce343da64} 
+int {\bfseries hitpoints} = 3
+\item 
+\Hypertarget{structRtype_1_1Components_1_1BoosterActiveComponent_a078d4f58b4f53164db0de9efd7d5cba1}\label{structRtype_1_1Components_1_1BoosterActiveComponent_a078d4f58b4f53164db0de9efd7d5cba1} 
+sf\+::\+Clock {\bfseries clock}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structRtype_1_1Components_1_1BoosterActiveComponent_af01fd24c026f5db25885f342da2646fe}\label{structRtype_1_1Components_1_1BoosterActiveComponent_af01fd24c026f5db25885f342da2646fe} 
+\index{Rtype::Components::BoosterActiveComponent@{Rtype::Components::BoosterActiveComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Rtype::Components::BoosterActiveComponent@{Rtype::Components::BoosterActiveComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Rtype\+::\+Components\+::\+Booster\+Active\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structRtype_1_1Components_1_1BoosterActiveComponent_afdd90bdade4001588977feb3d9a68eea}\label{structRtype_1_1Components_1_1BoosterActiveComponent_afdd90bdade4001588977feb3d9a68eea} 
+\index{Rtype::Components::BoosterActiveComponent@{Rtype::Components::BoosterActiveComponent}!getType@{getType}}
+\index{getType@{getType}!Rtype::Components::BoosterActiveComponent@{Rtype::Components::BoosterActiveComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Rtype\+::\+Components\+::\+Booster\+Active\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structRtype_1_1Components_1_1BoosterActiveComponent_aaea256ce54bf95ccbe77b1a0f3803e08}\label{structRtype_1_1Components_1_1BoosterActiveComponent_aaea256ce54bf95ccbe77b1a0f3803e08} 
+\index{Rtype::Components::BoosterActiveComponent@{Rtype::Components::BoosterActiveComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Rtype::Components::BoosterActiveComponent@{Rtype::Components::BoosterActiveComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Rtype\+::\+Components\+::\+Booster\+Active\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+R-\/\+Type/\+Components/Booster\+Active.\+component.\+hpp\end{DoxyCompactItemize}

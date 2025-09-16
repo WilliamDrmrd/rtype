@@ -1,0 +1,102 @@
+\doxysection{Engine\+::Components\+::Text\+Input\+Component Struct Reference}
+\hypertarget{structEngine_1_1Components_1_1TextInputComponent}{}\label{structEngine_1_1Components_1_1TextInputComponent}\index{Engine::Components::TextInputComponent@{Engine::Components::TextInputComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Text\+Input\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{structEngine_1_1Components_1_1TextInputComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Text\+Input\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{structEngine_1_1Components_1_1TextInputComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextInputComponent_a8b7616bc28c39714e6e9c8f92bbb24c6}\label{structEngine_1_1Components_1_1TextInputComponent_a8b7616bc28c39714e6e9c8f92bbb24c6} 
+{\bfseries Text\+Input\+Component} (std\+::string default\+Value, std\+::function$<$ void()$>$ on\+Change)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1TextInputComponent_a1531b052fa819e9d1ff4a2fd0495e815}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1TextInputComponent_a34ca8c27f091700c830c0e393c952e7d}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) override
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1TextInputComponent_aaf750f49a6df44c9a51871a5898253bb}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextInputComponent_ad9ec82d2b8726669ed370dc95b08383d}\label{structEngine_1_1Components_1_1TextInputComponent_ad9ec82d2b8726669ed370dc95b08383d} 
+std\+::string {\bfseries text}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextInputComponent_a23a124f860c5288b74a36af1179f898b}\label{structEngine_1_1Components_1_1TextInputComponent_a23a124f860c5288b74a36af1179f898b} 
+std\+::function$<$ void()$>$ {\bfseries on\+Change}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextInputComponent_a9f0f0504052c82a2ad7dbcea65536fac}\label{structEngine_1_1Components_1_1TextInputComponent_a9f0f0504052c82a2ad7dbcea65536fac} 
+bool {\bfseries is\+Focused} = false
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextInputComponent_a563139e870a2104318cc7e46c59efd99}\label{structEngine_1_1Components_1_1TextInputComponent_a563139e870a2104318cc7e46c59efd99} 
+bool {\bfseries is\+Clicked} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structEngine_1_1Components_1_1TextInputComponent_a34ca8c27f091700c830c0e393c952e7d}\label{structEngine_1_1Components_1_1TextInputComponent_a34ca8c27f091700c830c0e393c952e7d} 
+\index{Engine::Components::TextInputComponent@{Engine::Components::TextInputComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::TextInputComponent@{Engine::Components::TextInputComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Text\+Input\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1TextInputComponent_aaf750f49a6df44c9a51871a5898253bb}\label{structEngine_1_1Components_1_1TextInputComponent_aaf750f49a6df44c9a51871a5898253bb} 
+\index{Engine::Components::TextInputComponent@{Engine::Components::TextInputComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::TextInputComponent@{Engine::Components::TextInputComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Text\+Input\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1TextInputComponent_a1531b052fa819e9d1ff4a2fd0495e815}\label{structEngine_1_1Components_1_1TextInputComponent_a1531b052fa819e9d1ff4a2fd0495e815} 
+\index{Engine::Components::TextInputComponent@{Engine::Components::TextInputComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::TextInputComponent@{Engine::Components::TextInputComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Text\+Input\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Components/Text\+Input.\+component.\+hpp\end{DoxyCompactItemize}

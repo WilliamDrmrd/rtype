@@ -1,0 +1,111 @@
+\doxysection{Rtype\+::Components\+::Weapon\+Type\+Component Struct Reference}
+\hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent}{}\label{structRtype_1_1Components_1_1WeaponTypeComponent}\index{Rtype::Components::WeaponTypeComponent@{Rtype::Components::WeaponTypeComponent}}
+
+
+Inheritance diagram for Rtype\+::Components\+::Weapon\+Type\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{structRtype_1_1Components_1_1WeaponTypeComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rtype\+::Components\+::Weapon\+Type\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{structRtype_1_1Components_1_1WeaponTypeComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent_aba8d7972c7990df71cb12170ef794661}\label{structRtype_1_1Components_1_1WeaponTypeComponent_aba8d7972c7990df71cb12170ef794661} 
+{\bfseries Weapon\+Type\+Component} (Weapon\+Type type)
+\item 
+\Hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent_aac12f3bc4bb8275fd75b75a5bb8793ae}\label{structRtype_1_1Components_1_1WeaponTypeComponent_aac12f3bc4bb8275fd75b75a5bb8793ae} 
+void {\bfseries reset} (Weapon\+Type type)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structRtype_1_1Components_1_1WeaponTypeComponent_a73a9767e7ff641b9500b6cfc819c05d6}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structRtype_1_1Components_1_1WeaponTypeComponent_aa014aa1e58cbbd0b9131b5bc2c739039}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) final
+\item 
+Component\+Type \mbox{\hyperlink{structRtype_1_1Components_1_1WeaponTypeComponent_a82af223b1a72e90d96fae8a020baed76}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent_adbc40ac0228d1006c750dbeedce9ab90}\label{structRtype_1_1Components_1_1WeaponTypeComponent_adbc40ac0228d1006c750dbeedce9ab90} 
+Weapon\+Type {\bfseries type}
+\item 
+\Hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent_ada1cda423216ae8356de2e2527d8c7dd}\label{structRtype_1_1Components_1_1WeaponTypeComponent_ada1cda423216ae8356de2e2527d8c7dd} 
+bool {\bfseries is\+Chargeable} = false
+\item 
+\Hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent_a88a61b3f920c3ac8fbff96978b5ab2c1}\label{structRtype_1_1Components_1_1WeaponTypeComponent_a88a61b3f920c3ac8fbff96978b5ab2c1} 
+int {\bfseries charge\+Time} = 0
+\item 
+\Hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent_ab4a33639ac5d87c54c93d0952e6bd47f}\label{structRtype_1_1Components_1_1WeaponTypeComponent_ab4a33639ac5d87c54c93d0952e6bd47f} 
+int {\bfseries damage} = 0
+\item 
+\Hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent_abca2c78894c482f26cc4cb774485cec3}\label{structRtype_1_1Components_1_1WeaponTypeComponent_abca2c78894c482f26cc4cb774485cec3} 
+int {\bfseries duration} = 0
+\item 
+\Hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent_a21194099691bf6143bd837b2efbf19cc}\label{structRtype_1_1Components_1_1WeaponTypeComponent_a21194099691bf6143bd837b2efbf19cc} 
+int {\bfseries rate\+Of\+Fire} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent_aa014aa1e58cbbd0b9131b5bc2c739039}\label{structRtype_1_1Components_1_1WeaponTypeComponent_aa014aa1e58cbbd0b9131b5bc2c739039} 
+\index{Rtype::Components::WeaponTypeComponent@{Rtype::Components::WeaponTypeComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Rtype::Components::WeaponTypeComponent@{Rtype::Components::WeaponTypeComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Rtype\+::\+Components\+::\+Weapon\+Type\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent_a82af223b1a72e90d96fae8a020baed76}\label{structRtype_1_1Components_1_1WeaponTypeComponent_a82af223b1a72e90d96fae8a020baed76} 
+\index{Rtype::Components::WeaponTypeComponent@{Rtype::Components::WeaponTypeComponent}!getType@{getType}}
+\index{getType@{getType}!Rtype::Components::WeaponTypeComponent@{Rtype::Components::WeaponTypeComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Rtype\+::\+Components\+::\+Weapon\+Type\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structRtype_1_1Components_1_1WeaponTypeComponent_a73a9767e7ff641b9500b6cfc819c05d6}\label{structRtype_1_1Components_1_1WeaponTypeComponent_a73a9767e7ff641b9500b6cfc819c05d6} 
+\index{Rtype::Components::WeaponTypeComponent@{Rtype::Components::WeaponTypeComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Rtype::Components::WeaponTypeComponent@{Rtype::Components::WeaponTypeComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Rtype\+::\+Components\+::\+Weapon\+Type\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+R-\/\+Type/\+Components/Weapon\+Type.\+component.\+hpp\end{DoxyCompactItemize}

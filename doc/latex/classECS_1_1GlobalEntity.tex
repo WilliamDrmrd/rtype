@@ -1,0 +1,64 @@
+\doxysection{ECS\+::Global\+Entity Class Reference}
+\hypertarget{classECS_1_1GlobalEntity}{}\label{classECS_1_1GlobalEntity}\index{ECS::GlobalEntity@{ECS::GlobalEntity}}
+
+
+Inheritance diagram for ECS\+::Global\+Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classECS_1_1GlobalEntity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ECS\+::Global\+Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classECS_1_1GlobalEntity__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classECS_1_1GlobalEntity_a32455f1e583c18f7111a4523986a363e}\label{classECS_1_1GlobalEntity_a32455f1e583c18f7111a4523986a363e} 
+{\bfseries Global\+Entity} (\mbox{\hyperlink{classECS_1_1World}{World}} \texorpdfstring{$\ast$}{*}world)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1Entity}{ECS\+::\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classECS_1_1Entity_a20f7b0c1d5c972ffa5e5c5ad09a9acde}{Entity}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1Entity}{Entity} object. \end{DoxyCompactList}\item 
+{\bfseries Entity} (ECS\+::id\+\_\+t id)
+\item 
+\mbox{\hyperlink{classECS_1_1Entity_a4af0f00fc01ae3fb100e251d51b2297d}{\texorpdfstring{$\sim$}{\string~}\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classECS_1_1Entity}{Entity} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_1_1Entity_aec60b9153ad3bfe6982d73ecaf498c3b}{set\+Id}} (ECS\+::id\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em set the id of the entity \end{DoxyCompactList}\item 
+ECS\+::id\+\_\+t \mbox{\hyperlink{classECS_1_1Entity_a15665fcf6daab2a8d6947252613f5495}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em get the id of the entity \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classECS_1_1Entity_ad76a1c085f81c85280b6769c2f455be5}{add\+Component}} (T \texorpdfstring{$\ast$}{*}component)
+\begin{DoxyCompactList}\small\item\em Add a component to the \doxylink{classECS_1_1Entity}{Entity}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classECS_1_1Entity_a07358a75193c7c4dbc253df3a4750146}{remove\+Component}} (bool need\+To\+Delete=false)
+\begin{DoxyCompactList}\small\item\em Remove a component and destroy it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_1_1Entity_a3a11eefcca38c1b2730a99275f282260}{remove\+All\+Components}} ()
+\begin{DoxyCompactList}\small\item\em Remove all components. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$ \mbox{\hyperlink{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}{get\+Component}} (bool modified\+Component=false)
+\begin{DoxyCompactList}\small\item\em Get a component. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ id\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1BaseComponent}{Base\+Component}} $>$ $>$ \& \mbox{\hyperlink{classECS_1_1Entity_a7de515e80ca5bb1eadd986b66d424262}{get\+Components}} (bool modified\+Component=false)
+\begin{DoxyCompactList}\small\item\em Get a list of components. \end{DoxyCompactList}\item 
+std\+::vector$<$ Component\+Type $>$ \& \mbox{\hyperlink{classECS_1_1Entity_a1d93fa04706bbe05d11cada3f8c89876}{get\+Components\+To\+Delete}} ()
+\begin{DoxyCompactList}\small\item\em Get components to delete. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}} () const
+\begin{DoxyCompactList}\small\item\em Check if the \doxylink{classECS_1_1Entity}{Entity} has a component of a specific type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename V , typename... Types$>$ }\\bool \mbox{\hyperlink{classECS_1_1Entity_ac2b919b03ebdf0c6873ee09f578e6a35}{has}} () const
+\begin{DoxyCompactList}\small\item\em Check if the \doxylink{classECS_1_1Entity}{Entity} has a list of components. \end{DoxyCompactList}\item 
+std\+::clock\+\_\+t \mbox{\hyperlink{classECS_1_1Entity_a1da80de72aa4d20f2683bd6348b80fef}{get\+Elapsed\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Get the time elapsed since the last call to this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+ECS/Entity.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="ECS::World::removeEntity" name="ECS::World::removeEntity">
+<area shape="rect" id="Node000001" title="Remove an entity from the world." alt="" coords="5,5,185,35"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1Entity.html#a15665fcf6daab2a8d6947252613f5495" title="get the id of the entity" alt="" coords="233,5,361,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,18,218,18,218,23,185,23"/>
+</map>

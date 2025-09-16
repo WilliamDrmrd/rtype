@@ -1,0 +1,55 @@
+\doxysection{Subscribers.\+hpp}
+\hypertarget{Subscribers_8hpp_source}{}\label{Subscribers_8hpp_source}\index{include/R-\/Type/GameWorld/Subscribers.hpp@{include/R-\/Type/GameWorld/Subscribers.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Subscribers.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ECS/World.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Engine/Events/KeyPressed.event.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Engine/Events/KeyReleased.event.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Events/EnnemyDeath.event.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Subscribers/Collision.subscriber.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Subscribers/EnnemyDeath.subscriber.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Subscribers/Keyboard.subscriber.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Subscribers/PlayerMove.subscriber.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Subscribers/ShootPlayer.subscriber.hpp"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }Subscribers}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ subscribeToEvents(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ *subMovePressed\ \ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMovePressedSubscriber}{Rtype::Subscriber::PlayerMovePressedSubscriber}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ *subMoveReleased\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMoveReleasedSubscriber}{Rtype::Subscriber::PlayerMoveReleasedSubscriber}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ *subCollision\ \ \ \ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1CollisionEventSubscriber}{Rtype::Subscriber::CollisionEventSubscriber}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ *subShootPlayer\ \ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1ShootPlayerReleasedSubscriber}{Rtype::Subscriber::ShootPlayerReleasedSubscriber}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ *subShootPlayer2\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1ShootPlayerPressedSubscriber}{Rtype::Subscriber::ShootPlayerPressedSubscriber}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ *subEnnemyDeath\ \ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber}{Rtype::Subscriber::EnnemyDeathSubscriber}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ *subChangeWeapon\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1ChangeWeapon}{Rtype::Subscriber::ChangeWeapon}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795}{subscribe}}<\mbox{\hyperlink{structKeyPressedEvent}{KeyPressedEvent}}>(subMovePressed);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795}{subscribe}}<\mbox{\hyperlink{structKeyReleasedEvent}{KeyReleasedEvent}}>(subMoveReleased);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795}{subscribe}}<\mbox{\hyperlink{structCollisionEvent}{CollisionEvent}}>(subCollision);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795}{subscribe}}<\mbox{\hyperlink{structKeyReleasedEvent}{KeyReleasedEvent}}>(subShootPlayer);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795}{subscribe}}<\mbox{\hyperlink{structKeyPressedEvent}{KeyPressedEvent}}>(subShootPlayer2);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795}{subscribe}}<\mbox{\hyperlink{structKeyPressedEvent}{KeyPressedEvent}}>(subChangeWeapon);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795}{subscribe}}<\mbox{\hyperlink{structRtype_1_1Events_1_1EnnemyDeath}{Rtype::Events::EnnemyDeath}}>(subEnnemyDeath);}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ subscribeToEventsInputs(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ *keyboardPressed\ \ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1KeyboardPressedSubscriber}{Rtype::Subscriber::KeyboardPressedSubscriber}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ *keyboardReleased\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1KeyboardReleasedSubscriber}{Rtype::Subscriber::KeyboardReleasedSubscriber}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795}{subscribe}}<\mbox{\hyperlink{structKeyPressedEvent}{KeyPressedEvent}}>(keyboardPressed);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795}{subscribe}}<\mbox{\hyperlink{structKeyReleasedEvent}{KeyReleasedEvent}}>(keyboardReleased);}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \}\ \textcolor{comment}{//\ namespace\ Subscribers}}
+
+\end{DoxyCode}

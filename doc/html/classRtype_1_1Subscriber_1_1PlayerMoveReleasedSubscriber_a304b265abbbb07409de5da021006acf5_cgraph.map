@@ -1,0 +1,9 @@
+<map id="Rtype::Subscriber::PlayerMoveReleasedSubscriber::receiveEvent" name="Rtype::Subscriber::PlayerMoveReleasedSubscriber::receiveEvent">
+<area shape="rect" id="Node000001" title="Receive and process an event." alt="" coords="5,59,223,126"/>
+<area shape="rect" id="Node000002" href="$classEngine_1_1EngineClass.html#a763022987a2b8bf5dea4cb30c0b8bbce" title="Get the Engine object." alt="" coords="283,5,427,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,61,268,49,270,55,224,67"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1World.html#a427a520f1cda1ce8bb174ca505af5ea7" title="Get the systems of the world." alt="" coords="271,78,439,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="223,90,256,90,256,95,223,95"/>
+<area shape="rect" id="Node000004" href="$classEngine_1_1EngineClass.html#a0b9aae25109727eb9a14c8b89229943b" title="Get the current world." alt="" coords="283,131,427,179"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="224,118,270,130,268,135,223,123"/>
+</map>

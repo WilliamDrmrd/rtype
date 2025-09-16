@@ -1,0 +1,5 @@
+<map id="Rtype::Subscriber::ShootPlayerReleasedSubscriber::receiveEvent" name="Rtype::Subscriber::ShootPlayerReleasedSubscriber::receiveEvent">
+<area shape="rect" id="Node000001" title="Receive and process an event." alt="" coords="5,5,224,73"/>
+<area shape="rect" id="Node000002" href="$classEngine_1_1EngineClass.html#a763022987a2b8bf5dea4cb30c0b8bbce" title="Get the Engine object." alt="" coords="272,15,415,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,37,256,37,256,42,224,42"/>
+</map>

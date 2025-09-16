@@ -1,0 +1,93 @@
+\doxysection{Engine\+::Components\+::Score\+Component Struct Reference}
+\hypertarget{structEngine_1_1Components_1_1ScoreComponent}{}\label{structEngine_1_1Components_1_1ScoreComponent}\index{Engine::Components::ScoreComponent@{Engine::Components::ScoreComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Score\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1ScoreComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Score\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1ScoreComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ScoreComponent_a00c7f4bb6e80aa586c99147ebbfb7595}\label{structEngine_1_1Components_1_1ScoreComponent_a00c7f4bb6e80aa586c99147ebbfb7595} 
+{\bfseries Score\+Component} (int score)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1ScoreComponent_a6f2244aded6a736c1e485e58910af7a0}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1ScoreComponent_a1fcee75975e192f13ebd7fb26d2cd70c}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) final
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1ScoreComponent_a5a046d2e19d741086c9bde9dccb71544}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ScoreComponent_a96d86d0395bd54eae324edf3eab37315}\label{structEngine_1_1Components_1_1ScoreComponent_a96d86d0395bd54eae324edf3eab37315} 
+int {\bfseries score} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structEngine_1_1Components_1_1ScoreComponent_a1fcee75975e192f13ebd7fb26d2cd70c}\label{structEngine_1_1Components_1_1ScoreComponent_a1fcee75975e192f13ebd7fb26d2cd70c} 
+\index{Engine::Components::ScoreComponent@{Engine::Components::ScoreComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::ScoreComponent@{Engine::Components::ScoreComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Score\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1ScoreComponent_a5a046d2e19d741086c9bde9dccb71544}\label{structEngine_1_1Components_1_1ScoreComponent_a5a046d2e19d741086c9bde9dccb71544} 
+\index{Engine::Components::ScoreComponent@{Engine::Components::ScoreComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::ScoreComponent@{Engine::Components::ScoreComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Score\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1ScoreComponent_a6f2244aded6a736c1e485e58910af7a0}\label{structEngine_1_1Components_1_1ScoreComponent_a6f2244aded6a736c1e485e58910af7a0} 
+\index{Engine::Components::ScoreComponent@{Engine::Components::ScoreComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::ScoreComponent@{Engine::Components::ScoreComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Score\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Components/Score.\+component.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\doxysection{ECS\+::Event\+Subscriber\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classECS_1_1EventSubscriber}{}\label{classECS_1_1EventSubscriber}\index{ECS::EventSubscriber$<$ T $>$@{ECS::EventSubscriber$<$ T $>$}}
+
+
+Template class for event subscribers specialized to certain event types.  
+
+
+
+
+{\ttfamily \#include $<$Event\+Subscriber.\+hpp$>$}
+
+
+
+Inheritance diagram for ECS\+::Event\+Subscriber\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classECS_1_1EventSubscriber__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ECS\+::Event\+Subscriber\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classECS_1_1EventSubscriber__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classECS_1_1EventSubscriber_a446866f910c461b043f89093a0afd509}\label{classECS_1_1EventSubscriber_a446866f910c461b043f89093a0afd509} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Event\+Subscriber} () override=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1EventSubscriber}{Event\+Subscriber}, defined as pure virtual (0). \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1EventSubscriber_a8dfb2feb269e6137537c3bfd3bee7846}{receive\+Event}} (const std\+::string \&name, const T \&data)=0
+\begin{DoxyCompactList}\small\item\em Receive and process an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseEventSubscriber}{ECS\+::\+Base\+Event\+Subscriber}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Event\+Subscriber} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseEventSubscriber}{Base\+Event\+Subscriber}, defined as pure virtual (0). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class ECS\+::\+Event\+Subscriber$<$ T $>$}
+Template class for event subscribers specialized to certain event types. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the event data that this subscriber is interested in. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classECS_1_1EventSubscriber_a8dfb2feb269e6137537c3bfd3bee7846}\label{classECS_1_1EventSubscriber_a8dfb2feb269e6137537c3bfd3bee7846} 
+\index{ECS::EventSubscriber$<$ T $>$@{ECS::EventSubscriber$<$ T $>$}!receiveEvent@{receiveEvent}}
+\index{receiveEvent@{receiveEvent}!ECS::EventSubscriber$<$ T $>$@{ECS::EventSubscriber$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{receiveEvent()}{receiveEvent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{classECS_1_1EventSubscriber}{ECS\+::\+Event\+Subscriber}}$<$ T $>$\+::receive\+Event (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const T \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Receive and process an event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the event. \\
+\hline
+{\em data} & A ref to the event data, expected to be of type T.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This method can cause infinite recursion if its broadcasting an event of type T or it broadcast an event of type T and another subscriber is also subscribed to that event. 
+\end{DoxyWarning}
+
+
+Implemented in \mbox{\hyperlink{classRtype_1_1Subscriber_1_1CollisionEventSubscriber_a24e02324222aa0b3f1060c721ecc5ce3}{Rtype\+::\+Subscriber\+::\+Collision\+Event\+Subscriber}}, \mbox{\hyperlink{classRtype_1_1Subscriber_1_1KeyboardPressedSubscriber_ac42d199a1781b89d1a12904ba4f1c518}{Rtype\+::\+Subscriber\+::\+Keyboard\+Pressed\+Subscriber}}, \mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMovePressedSubscriber_ac1b908aad5d0ebbc5855dfa102c62b62}{Rtype\+::\+Subscriber\+::\+Player\+Move\+Pressed\+Subscriber}}, \mbox{\hyperlink{classRtype_1_1Subscriber_1_1ChangeWeapon_aafc292a099893dd12ed863472e0e6403}{Rtype\+::\+Subscriber\+::\+Change\+Weapon}}, \mbox{\hyperlink{classRtype_1_1Subscriber_1_1ShootPlayerPressedSubscriber_a00d74c848976ce1103e6522904f50477}{Rtype\+::\+Subscriber\+::\+Shoot\+Player\+Pressed\+Subscriber}}, \mbox{\hyperlink{classRtype_1_1Subscriber_1_1KeyboardReleasedSubscriber_a952d6ca6a9ba53c090d684daa060ec95}{Rtype\+::\+Subscriber\+::\+Keyboard\+Released\+Subscriber}}, \mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMoveReleasedSubscriber_a304b265abbbb07409de5da021006acf5}{Rtype\+::\+Subscriber\+::\+Player\+Move\+Released\+Subscriber}}, \mbox{\hyperlink{classRtype_1_1Subscriber_1_1ShootPlayerReleasedSubscriber_a23d5edcca29469bf3ce201680f27b0ae}{Rtype\+::\+Subscriber\+::\+Shoot\+Player\+Released\+Subscriber}}, and \mbox{\hyperlink{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber_a84572067c0b662022a6b8aee47841c88}{Rtype\+::\+Subscriber\+::\+Ennemy\+Death\+Subscriber}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+ECS/Event\+Subscriber.\+hpp\end{DoxyCompactItemize}

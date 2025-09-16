@@ -1,0 +1,31 @@
+<map id="ECS::BaseEventSubscriber" name="ECS::BaseEventSubscriber">
+<area shape="rect" id="Node000001" title="Abstract base class for event subscribers in an ECS framework." alt="" coords="5,382,188,411"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1EventSubscriber.html" title=" " alt="" coords="272,152,424,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,370,317,199,320,203,128,374"/>
+<area shape="rect" id="Node000007" href="$classECS_1_1EventSubscriber.html" title=" " alt="" coords="272,299,424,347"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="163,374,271,343,272,348,164,379"/>
+<area shape="rect" id="Node000009" href="$classECS_1_1EventSubscriber.html" title=" " alt="" coords="236,372,460,421"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="203,394,235,394,235,399,203,399"/>
+<area shape="rect" id="Node000011" href="$classECS_1_1EventSubscriber.html" title=" " alt="" coords="270,445,426,494"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="165,413,270,444,269,449,163,418"/>
+<area shape="rect" id="Node000015" href="$classECS_1_1EventSubscriber.html" title="Template class for event subscribers specialized to certain event types." alt="" coords="257,518,439,547"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="125,420,174,463,205,485,237,503,266,514,264,519,235,508,202,489,171,467,121,424"/>
+<area shape="rect" id="Node000003" href="$classRtype_1_1Subscriber_1_1ChangeWeapon.html" title=" " alt="" coords="548,5,687,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="390,140,444,102,507,65,546,48,548,53,509,69,447,106,393,145"/>
+<area shape="rect" id="Node000004" href="$classRtype_1_1Subscriber_1_1KeyboardPressedSubscriber.html" title=" " alt="" coords="520,79,714,127"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="438,149,524,125,526,131,439,154"/>
+<area shape="rect" id="Node000005" href="$classRtype_1_1Subscriber_1_1PlayerMovePressedSubscriber.html" title=" " alt="" coords="512,152,722,201"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="439,174,512,174,512,179,439,179"/>
+<area shape="rect" id="Node000006" href="$classRtype_1_1Subscriber_1_1ShootPlayerPressedSubscriber.html" title=" " alt="" coords="512,225,723,274"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="439,198,526,222,524,227,438,203"/>
+<area shape="rect" id="Node000008" href="$classRtype_1_1Subscriber_1_1CollisionEventSubscriber.html" title=" " alt="" coords="531,299,703,347"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="439,320,530,320,530,326,439,326"/>
+<area shape="rect" id="Node000010" href="$classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber.html" title=" " alt="" coords="530,372,705,421"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="475,394,529,394,529,399,475,399"/>
+<area shape="rect" id="Node000012" href="$classRtype_1_1Subscriber_1_1KeyboardReleasedSubscriber.html" title=" " alt="" coords="517,445,718,494"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="441,467,516,467,516,472,441,472"/>
+<area shape="rect" id="Node000013" href="$classRtype_1_1Subscriber_1_1PlayerMoveReleasedSubscriber.html" title=" " alt="" coords="509,519,726,567"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="441,492,526,515,524,521,440,497"/>
+<area shape="rect" id="Node000014" href="$classRtype_1_1Subscriber_1_1ShootPlayerReleasedSubscriber.html" title=" " alt="" coords="508,592,726,641"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="441,491,462,504,478,522,487,541,494,559,510,577,529,589,526,594,506,581,490,562,482,543,474,525,458,508,438,495"/>
+</map>

@@ -1,0 +1,105 @@
+\doxysection{Engine\+::Components\+::Button\+Component Struct Reference}
+\hypertarget{structEngine_1_1Components_1_1ButtonComponent}{}\label{structEngine_1_1Components_1_1ButtonComponent}\index{Engine::Components::ButtonComponent@{Engine::Components::ButtonComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Button\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1ButtonComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Button\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1ButtonComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ButtonComponent_adb8590d69791f5ef44cd7952834c174a}\label{structEngine_1_1Components_1_1ButtonComponent_adb8590d69791f5ef44cd7952834c174a} 
+{\bfseries Button\+Component} (const std\+::string \&text, std\+::function$<$ void()$>$ on\+Click, bool is\+Activated=true)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent_aede0f82c62f5b4447b3e0ab66d67602e}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent_af38212b3cff6f3517140f53aba6e404b}{deserialize}} (const std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) final
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent_ab5d44c4c27b128e171ea3ad861a17740}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ButtonComponent_ad16ee0dc74bc9bec5da9df70b3b0fdef}\label{structEngine_1_1Components_1_1ButtonComponent_ad16ee0dc74bc9bec5da9df70b3b0fdef} 
+std\+::string {\bfseries text}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ButtonComponent_a704c25af35af50391b45b692ae9e0ee9}\label{structEngine_1_1Components_1_1ButtonComponent_a704c25af35af50391b45b692ae9e0ee9} 
+std\+::function$<$ void()$>$ {\bfseries on\+Click}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ButtonComponent_ab69ec653332cae6f3d5f815a269aa2c0}\label{structEngine_1_1Components_1_1ButtonComponent_ab69ec653332cae6f3d5f815a269aa2c0} 
+bool {\bfseries is\+Activated}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ButtonComponent_a6308e0709418d64df8b88b65a1ae57f9}\label{structEngine_1_1Components_1_1ButtonComponent_a6308e0709418d64df8b88b65a1ae57f9} 
+bool {\bfseries is\+Hovered} = false
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ButtonComponent_a88df8ae23b32bff22cfd3615b046748f}\label{structEngine_1_1Components_1_1ButtonComponent_a88df8ae23b32bff22cfd3615b046748f} 
+bool {\bfseries is\+Clicked} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structEngine_1_1Components_1_1ButtonComponent_af38212b3cff6f3517140f53aba6e404b}\label{structEngine_1_1Components_1_1ButtonComponent_af38212b3cff6f3517140f53aba6e404b} 
+\index{Engine::Components::ButtonComponent@{Engine::Components::ButtonComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::ButtonComponent@{Engine::Components::ButtonComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Button\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1ButtonComponent_ab5d44c4c27b128e171ea3ad861a17740}\label{structEngine_1_1Components_1_1ButtonComponent_ab5d44c4c27b128e171ea3ad861a17740} 
+\index{Engine::Components::ButtonComponent@{Engine::Components::ButtonComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::ButtonComponent@{Engine::Components::ButtonComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Button\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1ButtonComponent_aede0f82c62f5b4447b3e0ab66d67602e}\label{structEngine_1_1Components_1_1ButtonComponent_aede0f82c62f5b4447b3e0ab66d67602e} 
+\index{Engine::Components::ButtonComponent@{Engine::Components::ButtonComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::ButtonComponent@{Engine::Components::ButtonComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Button\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Components/Button.\+component.\+hpp\end{DoxyCompactItemize}

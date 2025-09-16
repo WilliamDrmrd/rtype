@@ -1,0 +1,5 @@
+<map id="Rtype::Systems::HealthSystem" name="Rtype::Systems::HealthSystem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,83,216,113"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1BaseSystem.html" title="Abstract base class for systems in an ECS framework." alt="" coords="47,5,174,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,50,113,82,108,82,108,50"/>
+</map>

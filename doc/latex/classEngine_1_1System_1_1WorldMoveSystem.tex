@@ -1,0 +1,127 @@
+\doxysection{Engine\+::System\+::World\+Move\+System Class Reference}
+\hypertarget{classEngine_1_1System_1_1WorldMoveSystem}{}\label{classEngine_1_1System_1_1WorldMoveSystem}\index{Engine::System::WorldMoveSystem@{Engine::System::WorldMoveSystem}}
+
+
+Inheritance diagram for Engine\+::System\+::World\+Move\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classEngine_1_1System_1_1WorldMoveSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::System\+::World\+Move\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classEngine_1_1System_1_1WorldMoveSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEngine_1_1System_1_1WorldMoveSystem_a568f3f2b2e35349c20a0adee9f505dd9}\label{classEngine_1_1System_1_1WorldMoveSystem_a568f3f2b2e35349c20a0adee9f505dd9} 
+{\bfseries World\+Move\+System} (\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&world)
+\item 
+\Hypertarget{classEngine_1_1System_1_1WorldMoveSystem_af7d2ff7341669d5502ba57e264508fbb}\label{classEngine_1_1System_1_1WorldMoveSystem_af7d2ff7341669d5502ba57e264508fbb} 
+{\bfseries World\+Move\+System} (\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&world, ECS\+::id\+\_\+t ids...)
+\item 
+void \mbox{\hyperlink{classEngine_1_1System_1_1WorldMoveSystem_a3b4e40c4f508b3e231831a10412797aa}{configure}} (\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&world) override
+\begin{DoxyCompactList}\small\item\em Configure the system with the world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_1_1System_1_1WorldMoveSystem_af5be7769ac9cdae4422c807db5552c08}{unconfigure}} () override
+\begin{DoxyCompactList}\small\item\em Unconfigure the system, releasing any resources or state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_1_1System_1_1WorldMoveSystem_a53f8731d15887b828e5832c6d749ab47}{tick}} () override
+\begin{DoxyCompactList}\small\item\em Update method for the system to process its entities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS\+::\+Base\+System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classECS_1_1BaseSystem_abca06a7d8622c2404ce44f5fe2dfb8ba}{Base\+System}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1BaseSystem_ad996c1bb749405c509b43ff0725c71cb}{Base\+System}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world, id\+\_\+t ids...)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object and initialize it with a list of entity IDs. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+System} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classECS_1_1BaseSystem}{Base\+System}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_afd15a4965d7e0a76db754ff6ac0af1fb}{configure}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world)=0
+\begin{DoxyCompactList}\small\item\em Configure the system with the world. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_abac94ba96a919642b866c906462316bc}{unconfigure}} ()=0
+\begin{DoxyCompactList}\small\item\em Unconfigure the system, releasing any resources or state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_ae60465d4eba925f7ae728aa3decb900e}{tick}} ()=0
+\begin{DoxyCompactList}\small\item\em Update method for the system to process its entities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1World}{World}} \& \mbox{\hyperlink{classECS_1_1BaseSystem_a22cddc444a0241c98ef969f1aa13113d}{get\+World}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classECS_1_1World}{World} object that this system is part of. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEngine_1_1System_1_1WorldMoveSystem_a3b4e40c4f508b3e231831a10412797aa}\label{classEngine_1_1System_1_1WorldMoveSystem_a3b4e40c4f508b3e231831a10412797aa} 
+\index{Engine::System::WorldMoveSystem@{Engine::System::WorldMoveSystem}!configure@{configure}}
+\index{configure@{configure}!Engine::System::WorldMoveSystem@{Engine::System::WorldMoveSystem}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily void World\+Move\+System\+::configure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&}]{world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Configure the system with the world. 
+
+\begin{DoxyNote}{Note}
+This method is intended to be implemented by derived classes to set up any necessary state or resources related to the world.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Reference to the World object. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseSystem_afd15a4965d7e0a76db754ff6ac0af1fb}{ECS\+::\+Base\+System}}.
+
+\Hypertarget{classEngine_1_1System_1_1WorldMoveSystem_a53f8731d15887b828e5832c6d749ab47}\label{classEngine_1_1System_1_1WorldMoveSystem_a53f8731d15887b828e5832c6d749ab47} 
+\index{Engine::System::WorldMoveSystem@{Engine::System::WorldMoveSystem}!tick@{tick}}
+\index{tick@{tick}!Engine::System::WorldMoveSystem@{Engine::System::WorldMoveSystem}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void World\+Move\+System\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update method for the system to process its entities. 
+
+\begin{DoxyNote}{Note}
+This method should be implemented by derived classes to define the system\textquotesingle{}s behavior each tick. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseSystem_ae60465d4eba925f7ae728aa3decb900e}{ECS\+::\+Base\+System}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEngine_1_1System_1_1WorldMoveSystem_a53f8731d15887b828e5832c6d749ab47_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEngine_1_1System_1_1WorldMoveSystem_af5be7769ac9cdae4422c807db5552c08}\label{classEngine_1_1System_1_1WorldMoveSystem_af5be7769ac9cdae4422c807db5552c08} 
+\index{Engine::System::WorldMoveSystem@{Engine::System::WorldMoveSystem}!unconfigure@{unconfigure}}
+\index{unconfigure@{unconfigure}!Engine::System::WorldMoveSystem@{Engine::System::WorldMoveSystem}}
+\doxysubsubsection{\texorpdfstring{unconfigure()}{unconfigure()}}
+{\footnotesize\ttfamily void World\+Move\+System\+::unconfigure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Unconfigure the system, releasing any resources or state. 
+
+\begin{DoxyNote}{Note}
+This method is intended to be implemented by derived classes to clean up when the system is no longer needed. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseSystem_abac94ba96a919642b866c906462316bc}{ECS\+::\+Base\+System}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Systems/World\+Move.\+system.\+hpp\item 
+src/\+Engine/\+Systems/World\+Move.\+system.\+cpp\end{DoxyCompactItemize}

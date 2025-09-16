@@ -1,0 +1,34 @@
+\doxysection{Renderer.\+system.\+hpp}
+\hypertarget{Renderer_8system_8hpp_source}{}\label{Renderer_8system_8hpp_source}\index{include/Engine/Systems/Renderer.system.hpp@{include/Engine/Systems/Renderer.system.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ RenderEngine.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ECS/System.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ECS/World.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }Engine::System}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEngine_1_1System_1_1Renderer}{Renderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS::BaseSystem}}}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1Renderer}{Renderer}}(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ \&world)\ :\ \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS::BaseSystem}}(world)\{\};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1Renderer}{Renderer}}(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ \&world,\ ECS::id\_t\ ids...)\ :\ \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS::BaseSystem}}(world,\ ids)\ \{\}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1Renderer}{\string~Renderer}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_1_1System_1_1Renderer_ad642dcb037f402a56874acfdd5a8ba49}{configure}}(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ \&world)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_1_1System_1_1Renderer_afc204b618cb3443752d6b54d01a57ab3}{unconfigure}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_1_1System_1_1Renderer_a48d8d44cfbcd60450ad8aa0a6025289c}{tick}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ \}\ \textcolor{comment}{//\ namespace\ Engine::System}}
+
+\end{DoxyCode}

@@ -1,0 +1,96 @@
+\doxysection{Engine\+::Components\+::Music\+Component Struct Reference}
+\hypertarget{structEngine_1_1Components_1_1MusicComponent}{}\label{structEngine_1_1Components_1_1MusicComponent}\index{Engine::Components::MusicComponent@{Engine::Components::MusicComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Music\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1MusicComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Music\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1MusicComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1MusicComponent_a5ef1d83305b36d9000081e0829fda5a4}\label{structEngine_1_1Components_1_1MusicComponent_a5ef1d83305b36d9000081e0829fda5a4} 
+{\bfseries Music\+Component} (std\+::string path, float \+\_\+volume=50)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1MusicComponent_ab7d2a748e06cb2c21e6b0e065e5bb114}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1MusicComponent_aae480049d2809ab0e8c83dd3851aeb49}{deserialize}} (const std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) final
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1MusicComponent_acb29f7c21079bd9baf558320ed3be41b}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1MusicComponent_aa70c9bafd642526bc05d85ce39767c76}\label{structEngine_1_1Components_1_1MusicComponent_aa70c9bafd642526bc05d85ce39767c76} 
+float {\bfseries \+\_\+volume}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1MusicComponent_a0cb9fbc38be503e458e20e7f85a40810}\label{structEngine_1_1Components_1_1MusicComponent_a0cb9fbc38be503e458e20e7f85a40810} 
+sf\+::\+Music {\bfseries music}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structEngine_1_1Components_1_1MusicComponent_aae480049d2809ab0e8c83dd3851aeb49}\label{structEngine_1_1Components_1_1MusicComponent_aae480049d2809ab0e8c83dd3851aeb49} 
+\index{Engine::Components::MusicComponent@{Engine::Components::MusicComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::MusicComponent@{Engine::Components::MusicComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Music\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1MusicComponent_acb29f7c21079bd9baf558320ed3be41b}\label{structEngine_1_1Components_1_1MusicComponent_acb29f7c21079bd9baf558320ed3be41b} 
+\index{Engine::Components::MusicComponent@{Engine::Components::MusicComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::MusicComponent@{Engine::Components::MusicComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Music\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1MusicComponent_ab7d2a748e06cb2c21e6b0e065e5bb114}\label{structEngine_1_1Components_1_1MusicComponent_ab7d2a748e06cb2c21e6b0e065e5bb114} 
+\index{Engine::Components::MusicComponent@{Engine::Components::MusicComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::MusicComponent@{Engine::Components::MusicComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Music\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Components/Music.\+component.\+hpp\end{DoxyCompactItemize}

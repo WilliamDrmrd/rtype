@@ -1,0 +1,7 @@
+<map id="Rtype::Subscriber::EnnemyDeathSubscriber::receiveEvent" name="Rtype::Subscriber::EnnemyDeathSubscriber::receiveEvent">
+<area shape="rect" id="Node000001" title="Receive and process an event." alt="" coords="5,13,181,81"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1Entity.html#a443006243e747ad64f38aeccaf48886a" title="Get a component." alt="" coords="229,5,417,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,34,213,30,214,35,181,39"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1Entity.html#ac59ca658abb333047122236593fdf863" title="Check if the Entity has a component of a specific type." alt="" coords="265,59,381,88"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,54,251,63,250,68,181,60"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Engine::EngineClass::getGlobalEntitiesWithComponents" name="Engine::EngineClass::getGlobalEntitiesWithComponents">
+<area shape="rect" id="Node000001" title="get all entities that have a set of given components." alt="" coords="5,5,247,54"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1Entity.html#ac59ca658abb333047122236593fdf863" title="Check if the Entity has a component of a specific type." alt="" coords="295,15,410,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,27,280,27,280,32,247,32"/>
+</map>

@@ -1,0 +1,653 @@
+\doxysection{ECS\+::World Class Reference}
+\hypertarget{classECS_1_1World}{}\label{classECS_1_1World}\index{ECS::World@{ECS::World}}
+
+
+Represents the world in an Entity-\/\+Component-\/\+System (ECS) architecture, managing entities and global entities.  
+
+
+
+
+{\ttfamily \#include $<$World.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classECS_1_1World_aaae79198df63953dda3775de7658d53a}\label{classECS_1_1World_aaae79198df63953dda3775de7658d53a} 
+{\bfseries World} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1World}{World} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1World_a88c1a8eb01efe2ec276db14bae65a602}{\texorpdfstring{$\sim$}{\string~}\+World}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classECS_1_1World}{World} object. \end{DoxyCompactList}\item 
+\Hypertarget{classECS_1_1World_a4382e1f2b2add211242c6e130021a219}\label{classECS_1_1World_a4382e1f2b2add211242c6e130021a219} 
+bool {\bfseries entity\+Exists} (id\+\_\+t entity\+Id)
+\item 
+id\+\_\+t \mbox{\hyperlink{classECS_1_1World_aa2dd960b7cd21e80d396de09fa9dab90}{add\+Entity}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1Entity}{Entity}} $>$ entity)
+\begin{DoxyCompactList}\small\item\em Add an entity to the world. \end{DoxyCompactList}\item 
+id\+\_\+t \mbox{\hyperlink{classECS_1_1World_acc17694be3981f960be644004a96953d}{add\+Entity}} (id\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Create an empty entity with an id. \end{DoxyCompactList}\item 
+id\+\_\+t \mbox{\hyperlink{classECS_1_1World_a5dd301ae60931e200b48b947fab84a98}{add\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Create an empty entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Components$>$ }\\id\+\_\+t \mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{create\+Entity}} (Components \&\&...components)
+\begin{DoxyCompactList}\small\item\em Create an entity with a set of components. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_1_1World_a8e75d887182927b7454d3a81667116de}{remove\+Entity}} (id\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Remove an entity from the world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_1_1World_a7de37eaba5240f1a0e7e6fefd9f65d37}{remove\+Entity}} (\mbox{\hyperlink{classECS_1_1Entity}{ECS\+::\+Entity}} \texorpdfstring{$\ast$}{*}entity)
+\begin{DoxyCompactList}\small\item\em Remove an entity from the world. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classECS_1_1Entity}{Entity}} \& \mbox{\hyperlink{classECS_1_1World_a412a888c8f09006442f0d0273b49000e}{get\+Entity}} (id\+\_\+t id) const
+\begin{DoxyCompactList}\small\item\em Get an immutable reference to an entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1Entity}{Entity}} \& \mbox{\hyperlink{classECS_1_1World_abd76c31bd5837f7c6c5023d42810bac4}{get\+Mut\+Entity}} (id\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Get a mutable reference to an entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$ $>$ \mbox{\hyperlink{classECS_1_1World_a2f8f75dc1734fa1005510d939e6ccd27}{get}} ()
+\begin{DoxyCompactList}\small\item\em get all entities that have a specific component type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classECS_1_1World_ab3475e7d638a4c0305dd9778ebadf280}{each}} (std\+::function$<$ void(\mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$)$>$ func)
+\begin{DoxyCompactList}\small\item\em Iterates over all entities that have a specific component type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\void \mbox{\hyperlink{classECS_1_1World_a7e05b724e884668e11ddb3d6d59226ad}{each}} (std\+::function$<$ void(\mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ U $>$)$>$ func)
+\begin{DoxyCompactList}\small\item\em Iterates over all entities that have a specific set of component types. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename U , typename V $>$ }\\void \mbox{\hyperlink{classECS_1_1World_af5fb74698213c4c1e300a57eaa48904f}{each}} (std\+::function$<$ void(\mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ U $>$, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ V $>$)$>$ func)
+\begin{DoxyCompactList}\small\item\em Iterates over all entities that have a specific set of component types. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Types$>$ }\\std\+::vector$<$ \mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classECS_1_1World_a88a62f9a990a5b7afefc36e2fae43056}{get\+Entities\+With\+Components}} ()
+\begin{DoxyCompactList}\small\item\em get all entities that have a set of given components. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Types$>$ }\\\mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classECS_1_1World_a5e4ee91f427d1eb7169d098cc8faba4f}{get\+Entity\+With\+Components}} ()
+\begin{DoxyCompactList}\small\item\em get the first entity that have a set of given components. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\id\+\_\+t \mbox{\hyperlink{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795}{subscribe}} (const \mbox{\hyperlink{classECS_1_1EventSubscriber}{Event\+Subscriber}}$<$ T $>$ \texorpdfstring{$\ast$}{*}subscriber)
+\begin{DoxyCompactList}\small\item\em Subscribe an event subscriber to a specific event type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classECS_1_1World_a4d9ac13c6fb3876aacdcfa172a5ad89f}{unsubscribe}} (id\+\_\+t uuid)
+\begin{DoxyCompactList}\small\item\em Unsubscribe an event subscriber from a specific event type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classECS_1_1World_a39a977e4a9b69098cf6800cb6286b81b}{broadcast\+Event}} (T data, const std\+::string name=\"{}\"{})
+\begin{DoxyCompactList}\small\item\em Broadcast an event to all subscribers of a specific event type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename System , typename... types$>$ }\\void \mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{add\+System}} (std\+::string name, types \&\&...args)
+\begin{DoxyCompactList}\small\item\em Add a system to the world. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename System $>$ }\\void \mbox{\hyperlink{classECS_1_1World_af640844be8aaff2c4706b94589a8ee63}{add\+System}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Add a system to the world. \end{DoxyCompactList}\item 
+std\+::clock\+\_\+t \mbox{\hyperlink{classECS_1_1World_a7db6ba13db51b07fb31087d22e44b487}{get\+World\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Give the elapsed time between two calls of this function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_1_1World_a60df42ade925b3f84b9654bc0233d749}{tick}} ()
+\begin{DoxyCompactList}\small\item\em Tick the world. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1BaseSystem}{Base\+System}} $>$ $>$ \& \mbox{\hyperlink{classECS_1_1World_a427a520f1cda1ce8bb174ca505af5ea7}{get\+Systems}} ()
+\begin{DoxyCompactList}\small\item\em Get the systems of the world. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ id\+\_\+t, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1Entity}{Entity}} $>$ $>$ \& \mbox{\hyperlink{classECS_1_1World_a641604f34e583735707d7d963b46c8cc}{get\+Entities}} ()
+\begin{DoxyCompactList}\small\item\em Get the entities of the world. \end{DoxyCompactList}\item 
+std\+::vector$<$ ECS\+::id\+\_\+t $>$ \& \mbox{\hyperlink{classECS_1_1World_a9ba01bf9c19b5be5317f4ec66e197026}{get\+Entites\+To\+Delete}} ()
+\begin{DoxyCompactList}\small\item\em Get the entities to delete of the world. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ type\+\_\+t, std\+::unordered\+\_\+map$<$ id\+\_\+t, \mbox{\hyperlink{classECS_1_1BaseEventSubscriber}{Base\+Event\+Subscriber}} \texorpdfstring{$\ast$}{*} $>$ $>$ \& \mbox{\hyperlink{classECS_1_1World_a3ef0a5b0a08225d60fac740832b6e44d}{get\+Subscribers}} ()
+\begin{DoxyCompactList}\small\item\em Get the subscribers of the world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the world in an Entity-\/\+Component-\/\+System (ECS) architecture, managing entities and global entities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classECS_1_1World_a88c1a8eb01efe2ec276db14bae65a602}\label{classECS_1_1World_a88c1a8eb01efe2ec276db14bae65a602} 
+\index{ECS::World@{ECS::World}!````~World@{\texorpdfstring{$\sim$}{\string~}World}}
+\index{````~World@{\texorpdfstring{$\sim$}{\string~}World}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}World()}{\string~World()}}
+{\footnotesize\ttfamily ECS\+::\+World\+::\texorpdfstring{$\sim$}{\string~}\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \doxylink{classECS_1_1World}{World} object. 
+
+\begin{DoxyNote}{Note}
+This will also destroy all entities and global entities within the world. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classECS_1_1World_a5dd301ae60931e200b48b947fab84a98}\label{classECS_1_1World_a5dd301ae60931e200b48b947fab84a98} 
+\index{ECS::World@{ECS::World}!addEntity@{addEntity}}
+\index{addEntity@{addEntity}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{addEntity()}{addEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily id\+\_\+t ECS\+::\+World\+::add\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an empty entity. 
+
+\begin{DoxyReturn}{Returns}
+id\+\_\+t The unique identifier for the created entity. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classECS_1_1World_a5dd301ae60931e200b48b947fab84a98_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classECS_1_1World_acc17694be3981f960be644004a96953d}\label{classECS_1_1World_acc17694be3981f960be644004a96953d} 
+\index{ECS::World@{ECS::World}!addEntity@{addEntity}}
+\index{addEntity@{addEntity}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{addEntity()}{addEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily id\+\_\+t ECS\+::\+World\+::add\+Entity (\begin{DoxyParamCaption}\item[{id\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an empty entity with an id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier for the created entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id\+\_\+t The unique identifier for the created entity. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+if the id is already an entity id, it will return the id 
+\end{DoxyNote}
+\Hypertarget{classECS_1_1World_aa2dd960b7cd21e80d396de09fa9dab90}\label{classECS_1_1World_aa2dd960b7cd21e80d396de09fa9dab90} 
+\index{ECS::World@{ECS::World}!addEntity@{addEntity}}
+\index{addEntity@{addEntity}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{addEntity()}{addEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily id\+\_\+t ECS\+::\+World\+::add\+Entity (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1Entity}{Entity}} $>$}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an entity to the world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & A unique pointer to the \doxylink{classECS_1_1Entity}{Entity} to be added. Ownership of the entity is transferred to the \doxylink{classECS_1_1World}{World}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id\+\_\+t The unique identifier for the added entity. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The \doxylink{classECS_1_1World}{World} class takes ownership of the \doxylink{classECS_1_1Entity}{Entity}, ensuring proper management and cleanup. 
+\end{DoxyNote}
+\Hypertarget{classECS_1_1World_af640844be8aaff2c4706b94589a8ee63}\label{classECS_1_1World_af640844be8aaff2c4706b94589a8ee63} 
+\index{ECS::World@{ECS::World}!addSystem@{addSystem}}
+\index{addSystem@{addSystem}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{addSystem()}{addSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename System $>$ \\
+void ECS\+::\+World\+::add\+System (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a system to the world. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em System} & The system type to be added. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the system. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}\label{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53} 
+\index{ECS::World@{ECS::World}!addSystem@{addSystem}}
+\index{addSystem@{addSystem}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{addSystem()}{addSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename System , typename... types$>$ \\
+void ECS\+::\+World\+::add\+System (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{types \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a system to the world. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em System} & The system type to be added. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the system. \\
+\hline
+{\em args} & The arguments to be forwarded to the system constructor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This method allows for the dynamic addition of systems to the world. 
+\end{DoxyNote}
+\Hypertarget{classECS_1_1World_a39a977e4a9b69098cf6800cb6286b81b}\label{classECS_1_1World_a39a977e4a9b69098cf6800cb6286b81b} 
+\index{ECS::World@{ECS::World}!broadcastEvent@{broadcastEvent}}
+\index{broadcastEvent@{broadcastEvent}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{broadcastEvent()}{broadcastEvent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void ECS\+::\+World\+::broadcast\+Event (\begin{DoxyParamCaption}\item[{T}]{data,  }\item[{const std\+::string}]{name = {\ttfamily \"{}\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Broadcast an event to all subscribers of a specific event type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the event data to be broadcast. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The event data to be broadcast. \\
+\hline
+{\em name} & The name of the event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This method allows for the dynamic broadcasting of events to all subscribers of a specific event type. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+This method can cause infinite recursion if its broadcasting an event of type T or it broadcast 
+\end{DoxyWarning}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classECS_1_1World_a39a977e4a9b69098cf6800cb6286b81b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}\label{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd} 
+\index{ECS::World@{ECS::World}!createEntity@{createEntity}}
+\index{createEntity@{createEntity}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{createEntity()}{createEntity()}}
+{\footnotesize\ttfamily template$<$typename... Components$>$ \\
+id\+\_\+t ECS\+::\+World\+::create\+Entity (\begin{DoxyParamCaption}\item[{Components \&\&...}]{components }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an entity with a set of components. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Components} & The component types to add to the entity. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em components} & The components to add to the entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id\+\_\+t The unique identifier for the created entity. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function utilizes perfect forwarding to ensure that the components are properly moved into the entity. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+the components should be pointers and created with \textquotesingle{}new\textquotesingle{} 
+\end{DoxyWarning}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classECS_1_1World_ab3475e7d638a4c0305dd9778ebadf280}\label{classECS_1_1World_ab3475e7d638a4c0305dd9778ebadf280} 
+\index{ECS::World@{ECS::World}!each@{each}}
+\index{each@{each}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{each()}{each()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void ECS\+::\+World\+::each (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$)$>$}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterates over all entities that have a specific component type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type to filter entities. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The callable function that will be applied to each entity and its component. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classECS_1_1World_a7e05b724e884668e11ddb3d6d59226ad}\label{classECS_1_1World_a7e05b724e884668e11ddb3d6d59226ad} 
+\index{ECS::World@{ECS::World}!each@{each}}
+\index{each@{each}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{each()}{each()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+void ECS\+::\+World\+::each (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ U $>$)$>$}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterates over all entities that have a specific set of component types. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type to filter entities. \\
+\hline
+{\em U} & The component type to filter entities. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The callable function that will be applied to each entity and its component. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classECS_1_1World_af5fb74698213c4c1e300a57eaa48904f}\label{classECS_1_1World_af5fb74698213c4c1e300a57eaa48904f} 
+\index{ECS::World@{ECS::World}!each@{each}}
+\index{each@{each}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{each()}{each()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , typename U , typename V $>$ \\
+void ECS\+::\+World\+::each (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ U $>$, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ V $>$)$>$}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterates over all entities that have a specific set of component types. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type to filter entities. \\
+\hline
+{\em U} & The component type to filter entities. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The callable function that will be applied to each entity and its component. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classECS_1_1World_a2f8f75dc1734fa1005510d939e6ccd27}\label{classECS_1_1World_a2f8f75dc1734fa1005510d939e6ccd27} 
+\index{ECS::World@{ECS::World}!get@{get}}
+\index{get@{get}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$ $>$ ECS\+::\+World\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get all entities that have a specific component type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type to filter entities.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Entity \texorpdfstring{$\ast$}{*}$>$ A vector of pointers to the entities. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classECS_1_1World_a2f8f75dc1734fa1005510d939e6ccd27_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classECS_1_1World_a9ba01bf9c19b5be5317f4ec66e197026}\label{classECS_1_1World_a9ba01bf9c19b5be5317f4ec66e197026} 
+\index{ECS::World@{ECS::World}!getEntitesToDelete@{getEntitesToDelete}}
+\index{getEntitesToDelete@{getEntitesToDelete}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{getEntitesToDelete()}{getEntitesToDelete()}}
+{\footnotesize\ttfamily std\+::vector$<$ ECS\+::id\+\_\+t $>$ \& ECS\+::\+World\+::get\+Entites\+To\+Delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the entities to delete of the world. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+ECS\+::id\+\_\+t$>$ \& 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1World_a641604f34e583735707d7d963b46c8cc}\label{classECS_1_1World_a641604f34e583735707d7d963b46c8cc} 
+\index{ECS::World@{ECS::World}!getEntities@{getEntities}}
+\index{getEntities@{getEntities}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{getEntities()}{getEntities()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ id\+\_\+t, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1Entity}{Entity}} $>$ $>$ \& ECS\+::\+World\+::get\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the entities of the world. 
+
+\begin{DoxyReturn}{Returns}
+std\+::unordered\+\_\+map$<$std\+::string, std\+::unique\+\_\+ptr$<$\+Base\+System$>$$>$ A reference to Entities unordered\+\_\+map. 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1World_a88a62f9a990a5b7afefc36e2fae43056}\label{classECS_1_1World_a88a62f9a990a5b7afefc36e2fae43056} 
+\index{ECS::World@{ECS::World}!getEntitiesWithComponents@{getEntitiesWithComponents}}
+\index{getEntitiesWithComponents@{getEntitiesWithComponents}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{getEntitiesWithComponents()}{getEntitiesWithComponents()}}
+{\footnotesize\ttfamily template$<$typename... Types$>$ \\
+std\+::vector$<$ \mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*} $>$ ECS\+::\+World\+::get\+Entities\+With\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get all entities that have a set of given components. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Types} & The component types to filter entities. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Entity \texorpdfstring{$\ast$}{*}$>$ A vector of pointers to the entities. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classECS_1_1World_a88a62f9a990a5b7afefc36e2fae43056_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classECS_1_1World_a412a888c8f09006442f0d0273b49000e}\label{classECS_1_1World_a412a888c8f09006442f0d0273b49000e} 
+\index{ECS::World@{ECS::World}!getEntity@{getEntity}}
+\index{getEntity@{getEntity}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{getEntity()}{getEntity()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classECS_1_1Entity}{Entity}} \& ECS\+::\+World\+::get\+Entity (\begin{DoxyParamCaption}\item[{id\+\_\+t}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an immutable reference to an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the entity to get. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \doxylink{classECS_1_1Entity}{Entity}\& An immutable reference to the entity. 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1World_a5e4ee91f427d1eb7169d098cc8faba4f}\label{classECS_1_1World_a5e4ee91f427d1eb7169d098cc8faba4f} 
+\index{ECS::World@{ECS::World}!getEntityWithComponents@{getEntityWithComponents}}
+\index{getEntityWithComponents@{getEntityWithComponents}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{getEntityWithComponents()}{getEntityWithComponents()}}
+{\footnotesize\ttfamily template$<$typename... Types$>$ \\
+\mbox{\hyperlink{classECS_1_1Entity}{Entity}} \texorpdfstring{$\ast$}{*} ECS\+::\+World\+::get\+Entity\+With\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the first entity that have a set of given components. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Types} & The component types to filter entities. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classECS_1_1Entity}{Entity} \texorpdfstring{$\ast$}{*} A pointer to the entity. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classECS_1_1World_a5e4ee91f427d1eb7169d098cc8faba4f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classECS_1_1World_abd76c31bd5837f7c6c5023d42810bac4}\label{classECS_1_1World_abd76c31bd5837f7c6c5023d42810bac4} 
+\index{ECS::World@{ECS::World}!getMutEntity@{getMutEntity}}
+\index{getMutEntity@{getMutEntity}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{getMutEntity()}{getMutEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1Entity}{Entity}} \& ECS\+::\+World\+::get\+Mut\+Entity (\begin{DoxyParamCaption}\item[{id\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a mutable reference to an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the entity to get. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classECS_1_1Entity}{Entity}\& A mutable reference to the entity. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This function is meant to be used by the systems only. 
+\end{DoxyWarning}
+\Hypertarget{classECS_1_1World_a3ef0a5b0a08225d60fac740832b6e44d}\label{classECS_1_1World_a3ef0a5b0a08225d60fac740832b6e44d} 
+\index{ECS::World@{ECS::World}!getSubscribers@{getSubscribers}}
+\index{getSubscribers@{getSubscribers}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{getSubscribers()}{getSubscribers()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ type\+\_\+t, std\+::unordered\+\_\+map$<$ id\+\_\+t, \mbox{\hyperlink{classECS_1_1BaseEventSubscriber}{Base\+Event\+Subscriber}} \texorpdfstring{$\ast$}{*} $>$ $>$ \& ECS\+::\+World\+::get\+Subscribers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the subscribers of the world. 
+
+\begin{DoxyReturn}{Returns}
+std\+::unordered\+\_\+map$<$type\+\_\+t, std\+::unordered\+\_\+map$<$id\+\_\+t, Base\+Event\+Subscriber \texorpdfstring{$\ast$}{*}$>$$>$ \& 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1World_a427a520f1cda1ce8bb174ca505af5ea7}\label{classECS_1_1World_a427a520f1cda1ce8bb174ca505af5ea7} 
+\index{ECS::World@{ECS::World}!getSystems@{getSystems}}
+\index{getSystems@{getSystems}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{getSystems()}{getSystems()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1BaseSystem}{Base\+System}} $>$ $>$ \& ECS\+::\+World\+::get\+Systems (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the systems of the world. 
+
+\begin{DoxyReturn}{Returns}
+std\+::unordered\+\_\+map$<$std\+::string, std\+::unique\+\_\+ptr$<$\+Base\+System$>$$>$ A reference to Systems unordered\+\_\+map. 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1World_a7db6ba13db51b07fb31087d22e44b487}\label{classECS_1_1World_a7db6ba13db51b07fb31087d22e44b487} 
+\index{ECS::World@{ECS::World}!getWorldTime@{getWorldTime}}
+\index{getWorldTime@{getWorldTime}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{getWorldTime()}{getWorldTime()}}
+{\footnotesize\ttfamily std\+::clock\+\_\+t ECS\+::\+World\+::get\+World\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Give the elapsed time between two calls of this function. 
+
+\begin{DoxyReturn}{Returns}
+the elapsed time between two calls of this function 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+on first call will give the time elapsed since the start of the programm 
+\end{DoxyNote}
+\Hypertarget{classECS_1_1World_a7de37eaba5240f1a0e7e6fefd9f65d37}\label{classECS_1_1World_a7de37eaba5240f1a0e7e6fefd9f65d37} 
+\index{ECS::World@{ECS::World}!removeEntity@{removeEntity}}
+\index{removeEntity@{removeEntity}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{removeEntity()}{removeEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void ECS\+::\+World\+::remove\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1Entity}{ECS\+::\+Entity}} \texorpdfstring{$\ast$}{*}}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove an entity from the world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The entity will be properly destroyed when removed. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classECS_1_1World_a7de37eaba5240f1a0e7e6fefd9f65d37_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classECS_1_1World_a8e75d887182927b7454d3a81667116de}\label{classECS_1_1World_a8e75d887182927b7454d3a81667116de} 
+\index{ECS::World@{ECS::World}!removeEntity@{removeEntity}}
+\index{removeEntity@{removeEntity}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{removeEntity()}{removeEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void ECS\+::\+World\+::remove\+Entity (\begin{DoxyParamCaption}\item[{id\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove an entity from the world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the entity to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The entity will be properly destroyed when removed. 
+\end{DoxyNote}
+\Hypertarget{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795}\label{classECS_1_1World_a3148e358d92f0cc1c66119c7f866e795} 
+\index{ECS::World@{ECS::World}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{subscribe()}{subscribe()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+id\+\_\+t ECS\+::\+World\+::subscribe (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classECS_1_1EventSubscriber}{Event\+Subscriber}}$<$ T $>$ \texorpdfstring{$\ast$}{*}}]{subscriber }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subscribe an event subscriber to a specific event type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subscriber} & A pointer to the \doxylink{classECS_1_1EventSubscriber}{Event\+Subscriber} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id\+\_\+t The unique identifier for the subscription. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This method allows for the dynamic subscription of event handlers to specific event types. 
+\end{DoxyNote}
+\Hypertarget{classECS_1_1World_a60df42ade925b3f84b9654bc0233d749}\label{classECS_1_1World_a60df42ade925b3f84b9654bc0233d749} 
+\index{ECS::World@{ECS::World}!tick@{tick}}
+\index{tick@{tick}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void ECS\+::\+World\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tick the world. 
+
+\begin{DoxyNote}{Note}
+This function will call the tick function of all the systems in the world. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+This function should only be called by the Engine. 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classEngine_1_1EngineClass}{Engine\+::\+Engine\+Class} 
+
+\doxylink{classECS_1_1BaseSystem}{ECS\+::\+Base\+System} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classECS_1_1World_a60df42ade925b3f84b9654bc0233d749_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classECS_1_1World_a4d9ac13c6fb3876aacdcfa172a5ad89f}\label{classECS_1_1World_a4d9ac13c6fb3876aacdcfa172a5ad89f} 
+\index{ECS::World@{ECS::World}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!ECS::World@{ECS::World}}
+\doxysubsubsection{\texorpdfstring{unsubscribe()}{unsubscribe()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void ECS\+::\+World\+::unsubscribe (\begin{DoxyParamCaption}\item[{id\+\_\+t}]{uuid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Unsubscribe an event subscriber from a specific event type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uuid} & The unique identifier for the subscription to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This method allows for the removal of previously subscribed event handlers. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+ECS/World.\+hpp\end{DoxyCompactItemize}

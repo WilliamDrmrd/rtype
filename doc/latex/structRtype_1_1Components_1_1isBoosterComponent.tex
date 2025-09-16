@@ -1,0 +1,84 @@
+\doxysection{Rtype\+::Components\+::is\+Booster\+Component Struct Reference}
+\hypertarget{structRtype_1_1Components_1_1isBoosterComponent}{}\label{structRtype_1_1Components_1_1isBoosterComponent}\index{Rtype::Components::isBoosterComponent@{Rtype::Components::isBoosterComponent}}
+
+
+Inheritance diagram for Rtype\+::Components\+::is\+Booster\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structRtype_1_1Components_1_1isBoosterComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rtype\+::Components\+::is\+Booster\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structRtype_1_1Components_1_1isBoosterComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structRtype_1_1Components_1_1isBoosterComponent_ab441b1ae2f1410420d3fc514a58939b0}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structRtype_1_1Components_1_1isBoosterComponent_a4e1552a10f03fdb7eb3fa4fd5c885d61}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) final
+\item 
+Component\+Type \mbox{\hyperlink{structRtype_1_1Components_1_1isBoosterComponent_ab390dbbf8a54945abb392948c7743d3e}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structRtype_1_1Components_1_1isBoosterComponent_a4e1552a10f03fdb7eb3fa4fd5c885d61}\label{structRtype_1_1Components_1_1isBoosterComponent_a4e1552a10f03fdb7eb3fa4fd5c885d61} 
+\index{Rtype::Components::isBoosterComponent@{Rtype::Components::isBoosterComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Rtype::Components::isBoosterComponent@{Rtype::Components::isBoosterComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Rtype\+::\+Components\+::is\+Booster\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structRtype_1_1Components_1_1isBoosterComponent_ab390dbbf8a54945abb392948c7743d3e}\label{structRtype_1_1Components_1_1isBoosterComponent_ab390dbbf8a54945abb392948c7743d3e} 
+\index{Rtype::Components::isBoosterComponent@{Rtype::Components::isBoosterComponent}!getType@{getType}}
+\index{getType@{getType}!Rtype::Components::isBoosterComponent@{Rtype::Components::isBoosterComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Rtype\+::\+Components\+::is\+Booster\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structRtype_1_1Components_1_1isBoosterComponent_ab441b1ae2f1410420d3fc514a58939b0}\label{structRtype_1_1Components_1_1isBoosterComponent_ab441b1ae2f1410420d3fc514a58939b0} 
+\index{Rtype::Components::isBoosterComponent@{Rtype::Components::isBoosterComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Rtype::Components::isBoosterComponent@{Rtype::Components::isBoosterComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Rtype\+::\+Components\+::is\+Booster\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+R-\/\+Type/\+Components/Booster.\+component.\+hpp\end{DoxyCompactItemize}

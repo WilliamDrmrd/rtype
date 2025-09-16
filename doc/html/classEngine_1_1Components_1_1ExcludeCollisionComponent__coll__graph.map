@@ -1,0 +1,5 @@
+<map id="Engine::Components::ExcludeCollisionComponent" name="Engine::Components::ExcludeCollisionComponent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,83,205,132"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1BaseComponent.html" title="Abstract base class for components in the ECS (Entity&#45;Component&#45;System)." alt="" coords="28,5,182,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,50,108,82,102,82,102,50"/>
+</map>

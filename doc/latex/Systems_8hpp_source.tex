@@ -1,0 +1,102 @@
+\doxysection{Systems.\+hpp}
+\hypertarget{Systems_8hpp_source}{}\label{Systems_8hpp_source}\index{include/R-\/Type/GameWorld/Systems.hpp@{include/R-\/Type/GameWorld/Systems.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Systems.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ECS/World.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/Animation.system.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/Parallax.system.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/Physics.system.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/Renderer.system.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/Score.system.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/UI.system.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/WorldMove.system.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Systems/Booster.system.hpp"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Systems/Bullets.system.hpp"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Systems/DeathAnimation.system.hpp"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Systems/Enemy.system.hpp"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Systems/Health.system.hpp"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Systems/MovePlayer.system.hpp"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{namespace\ }Systems}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addRenderer(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1Renderer}{Engine::System::Renderer}}>(\textcolor{stringliteral}{"{}Renderer"{}});}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addPhysics(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1Physics}{Engine::System::Physics}}>(\textcolor{stringliteral}{"{}Physics"{}});}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addPlayerMovement(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1MovePlayer}{Engine::System::MovePlayer}}>(\textcolor{stringliteral}{"{}MovePlayer"{}});}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addEnemySystem(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1EnemySystem}{Engine::System::EnemySystem}}>(\textcolor{stringliteral}{"{}EnemySystem"{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addParallaxSystem(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1ParallaxSystem}{Engine::System::ParallaxSystem}}>(\textcolor{stringliteral}{"{}ParallaxSystem"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addUISystem(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}>(\textcolor{stringliteral}{"{}UISystem"{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addScoreSystem(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1ScoreSystem}{Engine::System::ScoreSystem}}>(\textcolor{stringliteral}{"{}ScoreSystem"{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addInputsSystem(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1InputsSystem}{Engine::System::InputsSystem}}>(\textcolor{stringliteral}{"{}InputsSystem"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addBulletSystem(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1Bullets}{Engine::System::Bullets}}>(\textcolor{stringliteral}{"{}BulletsSystem"{}});}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addWorldMoveSystem(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1WorldMoveSystem}{Engine::System::WorldMoveSystem}}>(\textcolor{stringliteral}{"{}WorldMoveSystem"{}});}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addAnimationSystem(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1AnimationSystem}{Engine::System::AnimationSystem}}>(\textcolor{stringliteral}{"{}AnimationSystem"{}});}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addDeathAnimationSystem(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classEngine_1_1System_1_1DeathAnimationSystem}{Engine::System::DeathAnimationSystem}}>(\textcolor{stringliteral}{"{}DeathAnimationSystem"{}});}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addHealthSystem(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classRtype_1_1Systems_1_1HealthSystem}{Rtype::Systems::HealthSystem}}>(\textcolor{stringliteral}{"{}HealthSystem"{}});}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ addBoosterSystem(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a91143a2c588eed7e98dbf515be33fc53}{addSystem}}<\mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem}{Rtype::System::BoosterSystem}}>(\textcolor{stringliteral}{"{}BoosterSystem"{}});}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \}\ \textcolor{comment}{//\ namespace\ Systems}}
+
+\end{DoxyCode}

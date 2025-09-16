@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classECS_1_1Entity.html" title="Represents an entity in an Entity&#45;Component&#45;System (ECS) architecture." alt="" coords="5,5,92,35"/>
+<area shape="rect" id="Node000001" href="$classECS_1_1GlobalEntity.html" title=" " alt="" coords="140,5,265,35"/>
+<area shape="poly" id="edge68_Node000000_Node000001" title=" " alt="" coords="107,18,139,18,139,23,107,23"/>
+</map>

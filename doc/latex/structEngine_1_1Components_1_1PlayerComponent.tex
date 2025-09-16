@@ -1,0 +1,93 @@
+\doxysection{Engine\+::Components\+::Player\+Component Struct Reference}
+\hypertarget{structEngine_1_1Components_1_1PlayerComponent}{}\label{structEngine_1_1Components_1_1PlayerComponent}\index{Engine::Components::PlayerComponent@{Engine::Components::PlayerComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Player\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1PlayerComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Player\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1PlayerComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1PlayerComponent_a05fa8f9ac461980eb1e5539bca934e44}\label{structEngine_1_1Components_1_1PlayerComponent_a05fa8f9ac461980eb1e5539bca934e44} 
+{\bfseries Player\+Component} (int player\+Nb)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1PlayerComponent_adb9fd24f8df16a4438f08d6275b2451d}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1PlayerComponent_af07422f08aa5b1d727c94f425227b6fd}{deserialize}} (const std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) final
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1PlayerComponent_accef972ffd8d884c8d2957da2d02e3fe}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1PlayerComponent_af8c8f77592fc62d4211556c12532649f}\label{structEngine_1_1Components_1_1PlayerComponent_af8c8f77592fc62d4211556c12532649f} 
+int {\bfseries player\+Nb}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structEngine_1_1Components_1_1PlayerComponent_af07422f08aa5b1d727c94f425227b6fd}\label{structEngine_1_1Components_1_1PlayerComponent_af07422f08aa5b1d727c94f425227b6fd} 
+\index{Engine::Components::PlayerComponent@{Engine::Components::PlayerComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::PlayerComponent@{Engine::Components::PlayerComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Player\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1PlayerComponent_accef972ffd8d884c8d2957da2d02e3fe}\label{structEngine_1_1Components_1_1PlayerComponent_accef972ffd8d884c8d2957da2d02e3fe} 
+\index{Engine::Components::PlayerComponent@{Engine::Components::PlayerComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::PlayerComponent@{Engine::Components::PlayerComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Player\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1PlayerComponent_adb9fd24f8df16a4438f08d6275b2451d}\label{structEngine_1_1Components_1_1PlayerComponent_adb9fd24f8df16a4438f08d6275b2451d} 
+\index{Engine::Components::PlayerComponent@{Engine::Components::PlayerComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::PlayerComponent@{Engine::Components::PlayerComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Player\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+R-\/\+Type/\+Components/Player.\+component.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,58 @@
+\doxysection{Player\+Move.\+subscriber.\+hpp}
+\hypertarget{PlayerMove_8subscriber_8hpp_source}{}\label{PlayerMove_8subscriber_8hpp_source}\index{include/R-\/Type/Subscribers/PlayerMove.subscriber.hpp@{include/R-\/Type/Subscribers/PlayerMove.subscriber.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ PlayerMove.subscriber.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <SFML/Window/Event.hpp>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ECS/EventSubscriber.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Engine/Events/KeyPressed.event.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Engine/Events/KeyReleased.event.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Systems/MovePlayer.system.hpp"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }Rtype::Subscriber}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMovePressedSubscriber}{PlayerMovePressedSubscriber}}\ :\ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classECS_1_1EventSubscriber}{ECS::EventSubscriber}}<KeyPressedEvent>}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMovePressedSubscriber}{PlayerMovePressedSubscriber}}()\ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMovePressedSubscriber}{\string~PlayerMovePressedSubscriber}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMovePressedSubscriber_ac1b908aad5d0ebbc5855dfa102c62b62}{receiveEvent}}([[maybe\_unused]]\ \textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structKeyPressedEvent}{KeyPressedEvent}}\ \&data)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(data.keyEvent.code\ ==\ sf::Keyboard::Z\ ||\ data.keyEvent.code\ ==\ sf::Keyboard::Q\ ||}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.keyEvent.code\ ==\ sf::Keyboard::S\ ||\ data.keyEvent.code\ ==\ sf::Keyboard::D))}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1MovePlayer}{Engine::System::MovePlayer}}\ *movePlayerSystem\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classEngine_1_1System_1_1MovePlayer}{Engine::System::MovePlayer}}\ *\textcolor{keyword}{>}(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}{Engine::EngineClass::getEngine}}().\mbox{\hyperlink{classEngine_1_1EngineClass_a0b9aae25109727eb9a14c8b89229943b}{world}}().\mbox{\hyperlink{classECS_1_1World_a427a520f1cda1ce8bb174ca505af5ea7}{getSystems}}()[\textcolor{stringliteral}{"{}MovePlayer"{}}].get());}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!movePlayerSystem)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ movePlayerSystem-\/>addMovePlayer(data.keyEvent);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMoveReleasedSubscriber}{PlayerMoveReleasedSubscriber}}\ :\ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classECS_1_1EventSubscriber}{ECS::EventSubscriber}}<KeyReleasedEvent>}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMoveReleasedSubscriber}{PlayerMoveReleasedSubscriber}}()\ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMoveReleasedSubscriber}{\string~PlayerMoveReleasedSubscriber}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1PlayerMoveReleasedSubscriber_a304b265abbbb07409de5da021006acf5}{receiveEvent}}([[maybe\_unused]]\ \textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structKeyReleasedEvent}{KeyReleasedEvent}}\ \&data)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00042\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(data.keyEvent.code\ ==\ sf::Keyboard::Z\ ||\ data.keyEvent.code\ ==\ sf::Keyboard::Q\ ||}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.keyEvent.code\ ==\ sf::Keyboard::S\ ||\ data.keyEvent.code\ ==\ sf::Keyboard::D))}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1MovePlayer}{Engine::System::MovePlayer}}\ *movePlayerSystem\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classEngine_1_1System_1_1MovePlayer}{Engine::System::MovePlayer}}\ *\textcolor{keyword}{>}(}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}{Engine::EngineClass::getEngine}}().\mbox{\hyperlink{classEngine_1_1EngineClass_a0b9aae25109727eb9a14c8b89229943b}{world}}().\mbox{\hyperlink{classECS_1_1World_a427a520f1cda1ce8bb174ca505af5ea7}{getSystems}}()[\textcolor{stringliteral}{"{}MovePlayer"{}}].get());}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!movePlayerSystem)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ movePlayerSystem-\/>stopMovePlayer(data.keyEvent);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \};}
+\DoxyCodeLine{00052\ \}\ \textcolor{comment}{//\ namespace\ Rtype::Subscriber}}
+
+\end{DoxyCode}

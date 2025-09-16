@@ -1,0 +1,95 @@
+\doxysection{Collision.\+subscriber.\+hpp}
+\hypertarget{Collision_8subscriber_8hpp_source}{}\label{Collision_8subscriber_8hpp_source}\index{include/R-\/Type/Subscribers/Collision.subscriber.hpp@{include/R-\/Type/Subscribers/Collision.subscriber.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Collision.subscriber.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ECS/Components.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ECS/EventSubscriber.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Engine/Events/Collision.event.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/Score.system.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/UI.system.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/BaseBullet.component.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/Booster.component.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/BoosterActive.component.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/Enemy.component.hpp"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/Health.component.hpp"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/Player.component.hpp"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Systems/Booster.system.hpp"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{namespace\ }Rtype::Subscriber}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRtype_1_1Subscriber_1_1CollisionEventSubscriber}{CollisionEventSubscriber}}\ :\ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classECS_1_1EventSubscriber}{ECS::EventSubscriber}}<CollisionEvent>}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1CollisionEventSubscriber}{CollisionEventSubscriber}}()\ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1CollisionEventSubscriber}{\string~CollisionEventSubscriber}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1CollisionEventSubscriber_a24e02324222aa0b3f1060c721ecc5ce3}{receiveEvent}}([[maybe\_unused]]\ \textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structCollisionEvent}{CollisionEvent}}\ \&data)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Rtype::Components;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ \ \ \ \ \ \ \ \ \&world\ =\ WORLD;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}\ *ui\ \ \ \ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}\ *\textcolor{keyword}{>}(WORLD.getSystems()[\textcolor{stringliteral}{"{}UISystem"{}}].get());}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1ScoreSystem}{Engine::System::ScoreSystem}}\ *score\ =}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classEngine_1_1System_1_1ScoreSystem}{Engine::System::ScoreSystem}}\ *\textcolor{keyword}{>}(WORLD.getSystems()[\textcolor{stringliteral}{"{}ScoreSystem"{}}].get());}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.movingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}}<\mbox{\hyperlink{structEngine_1_1Components_1_1PlayerComponent}{PlayerComponent}}>()\ \&\&\ data.collidingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}}<\mbox{\hyperlink{structEngine_1_1Components_1_1EnemyComponent}{EnemyComponent}}>())\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WORLD.removeEntity(data.movingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a15665fcf6daab2a8d6947252613f5495}{getId}}());}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>handleGameOver(data.movingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}{getComponent}}<\mbox{\hyperlink{structEngine_1_1Components_1_1PlayerComponent}{PlayerComponent}}>()-\/>playerNb);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (data.movingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}}<\mbox{\hyperlink{structEngine_1_1Components_1_1BaseBulletComponent}{BaseBulletComponent}}>())\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.collidingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}}<\mbox{\hyperlink{structEngine_1_1Components_1_1PlayerComponent}{PlayerComponent}},\ \mbox{\hyperlink{structRtype_1_1Components_1_1BoosterActiveComponent}{BoosterActiveComponent}}>())\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ boosterActive\ =\ data.collidingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}{getComponent}}<\mbox{\hyperlink{structRtype_1_1Components_1_1BoosterActiveComponent}{BoosterActiveComponent}}>();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boosterActive-\/>hitpoints\ -\/=\ 1;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ world.\mbox{\hyperlink{classECS_1_1World_a8e75d887182927b7454d3a81667116de}{removeEntity}}(data.movingEntity);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (data.movingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}{getComponent}}<\mbox{\hyperlink{structEngine_1_1Components_1_1BaseBulletComponent}{BaseBulletComponent}}>()-\/>fromEnemy\ \&\&}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.collidingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}}<\mbox{\hyperlink{structEngine_1_1Components_1_1PlayerComponent}{PlayerComponent}}>())\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WORLD.removeEntity(data.movingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a15665fcf6daab2a8d6947252613f5495}{getId}}());}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WORLD.removeEntity(data.collidingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a15665fcf6daab2a8d6947252613f5495}{getId}}());}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>handleGameOver(data.collidingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}{getComponent}}<\mbox{\hyperlink{structEngine_1_1Components_1_1PlayerComponent}{PlayerComponent}}>()-\/>playerNb);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!data.movingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}{getComponent}}<\mbox{\hyperlink{structEngine_1_1Components_1_1BaseBulletComponent}{BaseBulletComponent}}>()-\/>fromEnemy\ \&\&}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.collidingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}}<\mbox{\hyperlink{structEngine_1_1Components_1_1EnemyComponent}{EnemyComponent}}>())\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ score-\/>incrementScore();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemyCollision(data);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (data.movingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}}<\mbox{\hyperlink{structEngine_1_1Components_1_1PlayerComponent}{PlayerComponent}}>()\ \&\&}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.collidingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}}<\mbox{\hyperlink{structRtype_1_1Components_1_1BoosterComponent}{Components::BoosterComponent}}>())\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_aef3c224a4ea2f49ce331c74a314760d7}{System::BoosterSystem::takeBooster}}(data.movingEntity,\ data.collidingEntity);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ enemyCollision(\textcolor{keyword}{const}\ \mbox{\hyperlink{structCollisionEvent}{CollisionEvent}}\ \&data)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Rtype::Components;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ collidingEntity\ =\ data.collidingEntity;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS::ComponentHandle<HealthComponent>}}\ health;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (collidingEntity-\/>has<\mbox{\hyperlink{structRtype_1_1Components_1_1HealthComponent}{HealthComponent}}>())\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ health\ \ \ \ \ \ =\ collidingEntity-\/>getComponent<\mbox{\hyperlink{structRtype_1_1Components_1_1HealthComponent}{HealthComponent}}>();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ damage\ =\ data.movingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}{getComponent}}<\mbox{\hyperlink{structEngine_1_1Components_1_1BaseBulletComponent}{BaseBulletComponent}}>()-\/>damage;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ health-\/>health\ -\/=\ damage;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WORLD.removeEntity(data.collidingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a15665fcf6daab2a8d6947252613f5495}{getId}}());}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.movingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}{getComponent}}<\mbox{\hyperlink{structEngine_1_1Components_1_1BaseBulletComponent}{BaseBulletComponent}}>()-\/>toDelete)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WORLD.removeEntity(data.movingEntity-\/>\mbox{\hyperlink{classECS_1_1Entity_a15665fcf6daab2a8d6947252613f5495}{getId}}());}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \};}
+\DoxyCodeLine{00089\ \}\ \textcolor{comment}{//\ namespace\ Rtype::Subscriber}}
+
+\end{DoxyCode}

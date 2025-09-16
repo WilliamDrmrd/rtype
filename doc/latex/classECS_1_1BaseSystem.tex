@@ -1,0 +1,159 @@
+\doxysection{ECS\+::Base\+System Class Reference}
+\hypertarget{classECS_1_1BaseSystem}{}\label{classECS_1_1BaseSystem}\index{ECS::BaseSystem@{ECS::BaseSystem}}
+
+
+Abstract base class for systems in an ECS framework.  
+
+
+
+
+{\ttfamily \#include $<$System.\+hpp$>$}
+
+
+
+Inheritance diagram for ECS\+::Base\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classECS_1_1BaseSystem__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classECS_1_1BaseSystem_abca06a7d8622c2404ce44f5fe2dfb8ba}{Base\+System}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1BaseSystem_ad996c1bb749405c509b43ff0725c71cb}{Base\+System}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world, id\+\_\+t ids...)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object and initialize it with a list of entity IDs. \end{DoxyCompactList}\item 
+\Hypertarget{classECS_1_1BaseSystem_ac15d3b30cd2f191a5ffe2fa897dbb089}\label{classECS_1_1BaseSystem_ac15d3b30cd2f191a5ffe2fa897dbb089} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+System} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classECS_1_1BaseSystem}{Base\+System}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_afd15a4965d7e0a76db754ff6ac0af1fb}{configure}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world)=0
+\begin{DoxyCompactList}\small\item\em Configure the system with the world. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_abac94ba96a919642b866c906462316bc}{unconfigure}} ()=0
+\begin{DoxyCompactList}\small\item\em Unconfigure the system, releasing any resources or state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_ae60465d4eba925f7ae728aa3decb900e}{tick}} ()=0
+\begin{DoxyCompactList}\small\item\em Update method for the system to process its entities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1World}{World}} \& \mbox{\hyperlink{classECS_1_1BaseSystem_a22cddc444a0241c98ef969f1aa13113d}{get\+World}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classECS_1_1World}{World} object that this system is part of. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for systems in an ECS framework. 
+
+\begin{DoxyNote}{Note}
+This class provides the interface and common functionality for systems, which are responsible for processing entities that have a specific set of components. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classECS_1_1BaseSystem_abca06a7d8622c2404ce44f5fe2dfb8ba}\label{classECS_1_1BaseSystem_abca06a7d8622c2404ce44f5fe2dfb8ba} 
+\index{ECS::BaseSystem@{ECS::BaseSystem}!BaseSystem@{BaseSystem}}
+\index{BaseSystem@{BaseSystem}!ECS::BaseSystem@{ECS::BaseSystem}}
+\doxysubsubsection{\texorpdfstring{BaseSystem()}{BaseSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ECS\+::\+Base\+System\+::\+Base\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1World}{World}} \&}]{world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Reference to the \doxylink{classECS_1_1World}{World} object that this system is part of. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classECS_1_1BaseSystem_ad996c1bb749405c509b43ff0725c71cb}\label{classECS_1_1BaseSystem_ad996c1bb749405c509b43ff0725c71cb} 
+\index{ECS::BaseSystem@{ECS::BaseSystem}!BaseSystem@{BaseSystem}}
+\index{BaseSystem@{BaseSystem}!ECS::BaseSystem@{ECS::BaseSystem}}
+\doxysubsubsection{\texorpdfstring{BaseSystem()}{BaseSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ECS\+::\+Base\+System\+::\+Base\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1World}{World}} \&}]{world,  }\item[{id\+\_\+t}]{ids... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object and initialize it with a list of entity IDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Reference to the \doxylink{classECS_1_1World}{World} object that this system is part of. \\
+\hline
+{\em ids} & A variable number of entity IDs to be processed by this system. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classECS_1_1BaseSystem_afd15a4965d7e0a76db754ff6ac0af1fb}\label{classECS_1_1BaseSystem_afd15a4965d7e0a76db754ff6ac0af1fb} 
+\index{ECS::BaseSystem@{ECS::BaseSystem}!configure@{configure}}
+\index{configure@{configure}!ECS::BaseSystem@{ECS::BaseSystem}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily virtual void ECS\+::\+Base\+System\+::configure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1World}{World}} \&}]{world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Configure the system with the world. 
+
+\begin{DoxyNote}{Note}
+This method is intended to be implemented by derived classes to set up any necessary state or resources related to the world.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Reference to the \doxylink{classECS_1_1World}{World} object. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classEngine_1_1System_1_1AnimationSystem_a5e1457633f6023b0a40580b0990d5072}{Engine\+::\+System\+::\+Animation\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1InputsSystem_a96a9a7b31a551625dcb5e5613aaacfdc}{Engine\+::\+System\+::\+Inputs\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1OptionsSystem_a15f3c2d7cec2d975ffddf00c98625fea}{Engine\+::\+System\+::\+Options\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1ParallaxSystem_a59ac30e1e5db2430d46db8f7423e0554}{Engine\+::\+System\+::\+Parallax\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1Physics_a892213d23646be6ecb40f80081a7f465}{Engine\+::\+System\+::\+Physics}}, \mbox{\hyperlink{classEngine_1_1System_1_1Renderer_ad642dcb037f402a56874acfdd5a8ba49}{Engine\+::\+System\+::\+Renderer}}, \mbox{\hyperlink{classEngine_1_1System_1_1ScoreSystem_a8bfd5ad0e610eb43d82021d6be115734}{Engine\+::\+System\+::\+Score\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1Sound_a33b831c86b6d8677d24f3396b8247cf8}{Engine\+::\+System\+::\+Sound}}, \mbox{\hyperlink{classEngine_1_1System_1_1UI_a62cbce28d926368a238bc1f5c83cf792}{Engine\+::\+System\+::\+UI}}, \mbox{\hyperlink{classEngine_1_1System_1_1WorldMoveSystem_a3b4e40c4f508b3e231831a10412797aa}{Engine\+::\+System\+::\+World\+Move\+System}}, \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_a1f7d05e3ef65036de6f6dcd19de69a34}{Rtype\+::\+System\+::\+Booster\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1Bullets_a23279ebfb32e6fb54a3c7a78de3c7fbc}{Engine\+::\+System\+::\+Bullets}}, \mbox{\hyperlink{classEngine_1_1System_1_1DeathAnimationSystem_a296c169f8a00890e52de6ab46964b7bd}{Engine\+::\+System\+::\+Death\+Animation\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1EnemySystem_a782c8a522dff56c69fa6dafccdff476c}{Engine\+::\+System\+::\+Enemy\+System}}, \mbox{\hyperlink{classRtype_1_1Systems_1_1HealthSystem_a432bcd52c65caeafb097a6aca2ef7658}{Rtype\+::\+Systems\+::\+Health\+System}}, and \mbox{\hyperlink{classEngine_1_1System_1_1MovePlayer_a4d6d33c2f5355f3f66b44b4d29a9bddc}{Engine\+::\+System\+::\+Move\+Player}}.
+
+\Hypertarget{classECS_1_1BaseSystem_a22cddc444a0241c98ef969f1aa13113d}\label{classECS_1_1BaseSystem_a22cddc444a0241c98ef969f1aa13113d} 
+\index{ECS::BaseSystem@{ECS::BaseSystem}!getWorld@{getWorld}}
+\index{getWorld@{getWorld}!ECS::BaseSystem@{ECS::BaseSystem}}
+\doxysubsubsection{\texorpdfstring{getWorld()}{getWorld()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1World}{World}} \& ECS\+::\+Base\+System\+::get\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the \doxylink{classECS_1_1World}{World} object that this system is part of. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classECS_1_1World}{World} object. 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1BaseSystem_ae60465d4eba925f7ae728aa3decb900e}\label{classECS_1_1BaseSystem_ae60465d4eba925f7ae728aa3decb900e} 
+\index{ECS::BaseSystem@{ECS::BaseSystem}!tick@{tick}}
+\index{tick@{tick}!ECS::BaseSystem@{ECS::BaseSystem}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily virtual void ECS\+::\+Base\+System\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update method for the system to process its entities. 
+
+\begin{DoxyNote}{Note}
+This method should be implemented by derived classes to define the system\textquotesingle{}s behavior each tick. 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classEngine_1_1System_1_1AnimationSystem_a57f6a3e7514ddd22f04fc2d7c6da955c}{Engine\+::\+System\+::\+Animation\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1InputsSystem_a631bda1d97f74af3e9ae40b1e5ea0a58}{Engine\+::\+System\+::\+Inputs\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1OptionsSystem_a3757ae0961e0fefec2cc7bac0d9c4142}{Engine\+::\+System\+::\+Options\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1ParallaxSystem_a908e52f2a69a26c425671fa7e3ff03e9}{Engine\+::\+System\+::\+Parallax\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1Physics_ad241dda216761a6cabe9ce1587ae88ca}{Engine\+::\+System\+::\+Physics}}, \mbox{\hyperlink{classEngine_1_1System_1_1Renderer_a48d8d44cfbcd60450ad8aa0a6025289c}{Engine\+::\+System\+::\+Renderer}}, \mbox{\hyperlink{classEngine_1_1System_1_1ScoreSystem_a621f7d910ceddd420b8164cd27a6e24b}{Engine\+::\+System\+::\+Score\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1Sound_abceca70ecc581c1a60b271bcb01b627f}{Engine\+::\+System\+::\+Sound}}, \mbox{\hyperlink{classEngine_1_1System_1_1UI_af1bffb1c9674d03e6dbbadabede1b0c5}{Engine\+::\+System\+::\+UI}}, \mbox{\hyperlink{classEngine_1_1System_1_1WorldMoveSystem_a53f8731d15887b828e5832c6d749ab47}{Engine\+::\+System\+::\+World\+Move\+System}}, \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_a527f3c6de82b509456fa9f43999d55c9}{Rtype\+::\+System\+::\+Booster\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1Bullets_a67f719cab760abe0cfafa9e7907324ef}{Engine\+::\+System\+::\+Bullets}}, \mbox{\hyperlink{classEngine_1_1System_1_1DeathAnimationSystem_a79ffa4d130ad44768668bed454ed5efc}{Engine\+::\+System\+::\+Death\+Animation\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1EnemySystem_a29f7603b45eb5a82ea2156a6a57f8ffb}{Engine\+::\+System\+::\+Enemy\+System}}, \mbox{\hyperlink{classRtype_1_1Systems_1_1HealthSystem_a8aa05222b76a2b90b92ca78c04ef9846}{Rtype\+::\+Systems\+::\+Health\+System}}, and \mbox{\hyperlink{classEngine_1_1System_1_1MovePlayer_ae5e8ddece225ab49504c4a6cb9002ff0}{Engine\+::\+System\+::\+Move\+Player}}.
+
+\Hypertarget{classECS_1_1BaseSystem_abac94ba96a919642b866c906462316bc}\label{classECS_1_1BaseSystem_abac94ba96a919642b866c906462316bc} 
+\index{ECS::BaseSystem@{ECS::BaseSystem}!unconfigure@{unconfigure}}
+\index{unconfigure@{unconfigure}!ECS::BaseSystem@{ECS::BaseSystem}}
+\doxysubsubsection{\texorpdfstring{unconfigure()}{unconfigure()}}
+{\footnotesize\ttfamily virtual void ECS\+::\+Base\+System\+::unconfigure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Unconfigure the system, releasing any resources or state. 
+
+\begin{DoxyNote}{Note}
+This method is intended to be implemented by derived classes to clean up when the system is no longer needed. 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classEngine_1_1System_1_1AnimationSystem_a4be714779835ffecd5e41a3b0a9019d9}{Engine\+::\+System\+::\+Animation\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1InputsSystem_aac2010f4466236ef7c525b4610b9c948}{Engine\+::\+System\+::\+Inputs\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1OptionsSystem_ab83faa2e10d98769e296133bde42b355}{Engine\+::\+System\+::\+Options\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1ParallaxSystem_a2e934bc0e31de036faf53756554f4edc}{Engine\+::\+System\+::\+Parallax\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1Physics_a558cacaa716bf3e8ab39a1fcb92b987d}{Engine\+::\+System\+::\+Physics}}, \mbox{\hyperlink{classEngine_1_1System_1_1Renderer_afc204b618cb3443752d6b54d01a57ab3}{Engine\+::\+System\+::\+Renderer}}, \mbox{\hyperlink{classEngine_1_1System_1_1ScoreSystem_af7407e1f676da9e89295ad5fd134cde6}{Engine\+::\+System\+::\+Score\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1Sound_a72d081d28b99169478e4421d9642a96c}{Engine\+::\+System\+::\+Sound}}, \mbox{\hyperlink{classEngine_1_1System_1_1UI_a75796042169215576b18369e76458ff1}{Engine\+::\+System\+::\+UI}}, \mbox{\hyperlink{classEngine_1_1System_1_1WorldMoveSystem_af5be7769ac9cdae4422c807db5552c08}{Engine\+::\+System\+::\+World\+Move\+System}}, \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_a40a4edcdffe02c27e3f323618a36ae02}{Rtype\+::\+System\+::\+Booster\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1Bullets_a1fdd7c41f64b02499aa6b25537b06b76}{Engine\+::\+System\+::\+Bullets}}, \mbox{\hyperlink{classEngine_1_1System_1_1DeathAnimationSystem_a11fce52702e8408cba93a1c894d2cdd0}{Engine\+::\+System\+::\+Death\+Animation\+System}}, \mbox{\hyperlink{classEngine_1_1System_1_1EnemySystem_ac4634f3b1f1fba5945054279f5c5cd19}{Engine\+::\+System\+::\+Enemy\+System}}, \mbox{\hyperlink{classRtype_1_1Systems_1_1HealthSystem_af0a989fade8efba462eb5c6ba6c4bc16}{Rtype\+::\+Systems\+::\+Health\+System}}, and \mbox{\hyperlink{classEngine_1_1System_1_1MovePlayer_a962ec2ab8a4e5397cb11a75ffb78e31b}{Engine\+::\+System\+::\+Move\+Player}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+ECS/System.\+hpp\end{DoxyCompactItemize}

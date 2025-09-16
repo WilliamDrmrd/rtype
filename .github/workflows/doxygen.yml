@@ -1,0 +1,29 @@
+name: Generate Doxygen Documentation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Update package lists
+        run: sudo apt-get update -y
+
+      - name: Install Doxygen and Graphviz
+        run: sudo apt-get install doxygen graphviz -y
+
+      - name: Generate Documentation
+        run: doxygen Doxyfile
+
+      - name: Upload Documentation
+        uses: actions/upload-artifact@v2
+        with:
+          name: doxygen-output
+          path: doc/

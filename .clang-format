@@ -1,0 +1,45 @@
+BasedOnStyle: LLVM
+
+IndentWidth: 4
+ColumnLimit: 120
+UseTab: Never
+
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveDeclarations: Consecutive
+
+BreakBeforeBinaryOperators: None
+BreakBeforeBraces: Linux
+
+BinPackArguments: true
+
+EmptyLineBeforeAccessModifier: Always
+IndentAccessModifiers: true
+NamespaceIndentation: All
+AccessModifierOffset: 0
+
+PointerAlignment: Right
+
+AllowShortIfStatementsOnASingleLine: true
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: "^<.*>"
+    Priority: 1
+  - Regex: '^<.*\.h>'
+    Priority: 2
+  - Regex: '^<.*\.hpp>'
+    Priority: 3
+  - Regex: '^".*\.h"'
+    Priority: 4
+  - Regex: '^".*\.hpp"'
+    Priority: 5
+
+IndentCaseLabels: true
+
+SortIncludes: true
+
+SpaceAfterCStyleCast: false
+SpacesBeforeTrailingComments: 1

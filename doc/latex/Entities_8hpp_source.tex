@@ -1,0 +1,820 @@
+\doxysection{Entities.\+hpp}
+\hypertarget{Entities_8hpp_source}{}\label{Entities_8hpp_source}\index{include/R-\/Type/GameWorld/Entities.hpp@{include/R-\/Type/GameWorld/Entities.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Entities.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ECS/World.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Animation.component.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Button.component.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Collision.component.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Cursor.component.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/LayeredAnimation.component.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/LayeredRenderable.component.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Menu.component.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Music.component.hpp"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Options.component.hpp"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Parallax.component.hpp"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Position.component.hpp"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Renderable.component.hpp"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Score.component.hpp"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Speed.component.hpp"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Text.component.hpp"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/TextInput.component.hpp"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/View.component.hpp"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/WorldMoveProgress.component.hpp"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/Inputs.system.hpp"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/Options.system.hpp"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/Sound.system.hpp"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}Engine/Systems/UI.system.hpp"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/EnemyQueue.component.hpp"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/Player.component.hpp"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/WeaponType.component.hpp"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}Waves.hpp"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }Entities}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createViewEntity(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ ECS::id\_t\ ship\_id\ =\ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ViewComponent}{Engine::Components::ViewComponent}}());}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&entity\ =\ world-\/>\mbox{\hyperlink{classECS_1_1World_abd76c31bd5837f7c6c5023d42810bac4}{getMutEntity}}(ship\_id);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&it\ :\ entity.getComponents())}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ it.second-\/>setHasChanged(false);}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createPlayerEntities(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world,\ \textcolor{keywordtype}{int}\ playerNb)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::vector<std::pair<int,\ int>>\ playerPos\ =\ \{\{100,\ 300\},\ \{100,\ 360\},\ \{100,\ 420\},\ \{100,\ 480\}\};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PlayerComponent}{PlayerComponent}}(playerNb),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(playerPos[playerNb].first,\ playerPos[playerNb].second),}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/MainShip/MainShip-\/Base-\/Fullhealth.png"{}},\ 0,\ 0,\ 2,\ 90),}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1LayeredRenderableComponent}{LayeredRenderableComponent}}(}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/MainShip/MainShip-\/Engines-\/BaseEngine-\/Powering.png"{}},\ 0,\ 0,\ 1,\ 90),}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/MainShip/MainShip-\/Weapons-\/BigSpaceGun-\/Croped.png"{}},\ 0,\ 0,\ 1,\ 90,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{1,\ 1\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}),}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/MainShip/MainShip-\/Weapons-\/Rockets-\/Croped.png"{}},\ 0,\ 0,\ 1,\ 90),}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/MainShip/MainShip-\/Engines-\/BaseEngine.png"{}},\ 0,\ 0,\ 1,\ 90)),}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classEngine_1_1Components_1_1LayeredAnimationComponent}{LayeredAnimationComponent}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1AnimationComponent}{AnimationComponent}}(0,\ 0,\ 48,\ 48,\ 48,\ 48,\ 100,\ 4)),}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1CollisionComponent}{CollisionComponent}}(9,\ 11,\ 30,\ 26),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1SpeedComponent}{SpeedComponent}}(150),}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structRtype_1_1Components_1_1WeaponTypeComponent}{Rtype::Components::WeaponTypeComponent}}(Rtype::Components::WeaponType::BASIC));}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createInputsEntitiesForJoin(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!font.loadFromFile(\textcolor{stringliteral}{"{}./assets/fonts/font.ttf"{}}))\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 200),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}IP"{}},\ font,\ 30,\ \{310,\ 180\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextInputComponent}{TextInputComponent}}(\textcolor{stringliteral}{"{}IP"{}},\ []()\ \{\}),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_long/long\_focus.png"{}},\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 300),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}PORT"{}},\ font,\ 30,\ \{310,\ 280\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextInputComponent}{TextInputComponent}}(\textcolor{stringliteral}{"{}PORT"{}},\ []()\ \{\}),}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_long/long\_focus.png"{}},\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 410),}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Send"{}},\ font,\ 40,\ \{400,\ 385\},\ \textcolor{keyword}{true},\ \textcolor{keyword}{true}),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}send"{}},}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1InputsSystem}{Engine::System::InputsSystem}}\ inputsSystem\ =}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1InputsSystem}{Engine::System::InputsSystem}}(*world);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}\ uiSystem\ =\ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}(*world);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid\ =\ inputsSystem.handleSend(\{\textcolor{stringliteral}{"{}PORT"{}},\ \textcolor{stringliteral}{"{}IP"{}}\});}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isValid)\ uiSystem.handleGoWaitingClient();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_long/long\_on.png"{}},\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(40,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Pause\ Game"{}},}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}\ uiSystem\ =\ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}(*world);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uiSystem.handleGoMenu();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NETWORK.resetServer();}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_tabs/button\_main\_disabled.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(30,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/icons/close\_icon.png"{}},\ 0,\ 0,\ 2,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createWaitingHostEntities(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!font.loadFromFile(\textcolor{stringliteral}{"{}./assets/fonts/font.ttf"{}}))\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1EngineClass}{Engine::EngineClass}}\ \&engine\ =\ \mbox{\hyperlink{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}{Engine::EngineClass::getEngine}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ std::string\ str\ =\ \textcolor{stringliteral}{"{}Nombre\ de\ joueurs\ :\ "{}}\ +\ std::to\_string(NETWORK.getWaitingRoom().getPlayers().size())\ +\ \textcolor{stringliteral}{"{}/4"{}};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(str,\ font,\ 30,\ \{310,\ 180\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}nbPlayers"{}}));}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ std::string\ strServer\ =\ \textcolor{stringliteral}{"{}Server\ IP\ :\ "{}}\ +\ NETWORK.getIP().toString();}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(strServer,\ font,\ 30,\ \{310,\ 280\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ std::string\ strPort\ =\ \textcolor{stringliteral}{"{}Port\ :\ "{}}\ +\ std::to\_string(NETWORK.getPort());}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(strPort,\ font,\ 30,\ \{310,\ 380\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(40,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Pause\ Game"{}},}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}\ uiSystem\ =\ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}(*world);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uiSystem.handleGoCreate();}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_tabs/button\_main\_disabled.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(30,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/icons/close\_icon.png"{}},\ 0,\ 0,\ 2,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 520),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Start\ Game"{}},\ font,\ 40,\ \{400,\ 500\},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Start\ Game"{}},\ []()\ \{\ NETWORK.setIsReadyToStart(\textcolor{keyword}{true});\ \}),}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_long/long\_off.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createWaitingClientEntities(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!font.loadFromFile(\textcolor{stringliteral}{"{}./assets/fonts/font.ttf"{}}))\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1EngineClass}{Engine::EngineClass}}\ \&engine\ \ \ \ =\ \mbox{\hyperlink{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}{Engine::EngineClass::getEngine}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ \ strServer\ =\ \textcolor{stringliteral}{"{}Server\ IP\ :\ "{}}\ +\ engine.network().getIP().toString();}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(strServer,\ font,\ 30,\ \{310,\ 280\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ std::string\ strPort\ =\ \textcolor{stringliteral}{"{}Port\ :\ "{}}\ +\ std::to\_string(engine.network().getPort());}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(strPort,\ font,\ 30,\ \{310,\ 380\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(40,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Pause\ Game"{}},}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}\ uiSystem\ =\ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}(*world);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uiSystem.handleGoJoin();}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_tabs/button\_main\_disabled.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(30,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/icons/close\_icon.png"{}},\ 0,\ 0,\ 2,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Waiting\ for\ the\ host\ ..."{}},\ font,\ 40,\ \{400,\ 500\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createInputsEntitiesForCreate(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00163\ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!font.loadFromFile(\textcolor{stringliteral}{"{}./assets/fonts/font.ttf"{}}))\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 200),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}PORT"{}},\ font,\ 30,\ \{310,\ 180\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextInputComponent}{TextInputComponent}}(\textcolor{stringliteral}{"{}PORT"{}},\ []()\ \{\}),}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_long/long\_focus.png"{}},\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 410),}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Send"{}},\ font,\ 40,\ \{400,\ 385\},\ \textcolor{keyword}{true},\ \textcolor{keyword}{true}),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}send"{}},}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1InputsSystem}{Engine::System::InputsSystem}}\ inputsSystem\ =}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1InputsSystem}{Engine::System::InputsSystem}}(*world);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}\ uiSystem\ =\ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}(*world);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid\ =\ inputsSystem.handleSend(\{\textcolor{stringliteral}{"{}PORT"{}}\});}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isValid)\ uiSystem.handleGoWaitingHost();}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_long/long\_on.png"{}},\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(40,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Pause\ Game"{}},}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}\ uiSystem\ =\ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}(*world);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uiSystem.handleGoMenu();}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NETWORK.resetServer();}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_tabs/button\_main\_disabled.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(30,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/icons/close\_icon.png"{}},\ 0,\ 0,\ 2,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createGameOverEntities(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00197\ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!font.loadFromFile(\textcolor{stringliteral}{"{}./assets/fonts/font\_big.ttf"{}}))\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ ECS::id\_t\ newEntity\ =}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Game\ over"{}},\ font,\ 80,\ \{400,\ 50\},\ sf::Color::White,\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&i\ :\ world-\/>getMutEntity(newEntity).getComponents())}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ i.second-\/>setHasChanged(false);}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ newEntity\ =\ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 325),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Restart"{}},\ font,\ 40,\ \{400,\ 300\},\ \textcolor{keyword}{true},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Restart"{}},}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NETWORK.resetServer();}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NETWORK.startServer(5555,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sleep\ 200\ ms}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::milliseconds(200));}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NETWORK.setIsReadyToStart(\textcolor{keyword}{true});}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_long/long\_on.png"{}},\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&i\ :\ world-\/>getMutEntity(newEntity).getComponents())}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ i.second-\/>setHasChanged(false);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ newEntity\ =\ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 410),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Menu"{}},\ font,\ 40,\ \{400,\ 385\},\ \textcolor{keyword}{true},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Menu"{}},}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}\ uiSystem\ =\ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}(*world);}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uiSystem.handleGoMenu();}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NETWORK.resetServer();}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_long/long\_on.png"{}},\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&i\ :\ world-\/>getMutEntity(newEntity).getComponents())}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ i.second-\/>setHasChanged(false);}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createScoreEntities(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00234\ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!font.loadFromFile(\textcolor{stringliteral}{"{}./assets/fonts/font.ttf"{}}))\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Score\ :\ 0"{}},\ font,\ 30,\ \{650,\ 10\},\ sf::Color::White),}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ScoreComponent}{ScoreComponent}}(0));}
+\DoxyCodeLine{00242\ \ \ \ \ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createOptionsEntities(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00245\ \ \ \ \ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!font.loadFromFile(\textcolor{stringliteral}{"{}./assets/fonts/font\_big.ttf"{}}))\ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Options"{}},\ font,\ 80,\ \{550,\ 50\},\ sf::Color::White,\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}),}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}());}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/panel/options.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false}),}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(450,\ 300),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}());}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(360,\ 300),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}vsync"{}},\ font,\ 40,\ \{250,\ 300\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}),}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1CheckBoxComponent}{CheckBoxComponent}}(}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}vsync"{}},\ []()\ \{\ \mbox{\hyperlink{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}{Engine::EngineClass::getEngine}}().window.setVerticalSyncEnabled(\textcolor{keyword}{true});\ \},}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ []()\ \{\ \mbox{\hyperlink{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}{Engine::EngineClass::getEngine}}().window.setVerticalSyncEnabled(\textcolor{keyword}{false});\ \},\ \textcolor{keyword}{false}),}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_check/check\_off.png"{}},\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(650,\ 300),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}FullScreen"{}},\ font,\ 40,\ \{520,\ 300\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}),}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1CheckBoxComponent}{CheckBoxComponent}}(}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}vsync"{}},\ []()\ \{\ \mbox{\hyperlink{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}{Engine::EngineClass::getEngine}}().\mbox{\hyperlink{classEngine_1_1EngineClass_a12c1e99deba8cdca94b5ebe057fb8cfc}{toggleFullscreen}}();\ \},}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ []()\ \{\ \mbox{\hyperlink{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}{Engine::EngineClass::getEngine}}().\mbox{\hyperlink{classEngine_1_1EngineClass_a12c1e99deba8cdca94b5ebe057fb8cfc}{toggleFullscreen}}();\ \},\ \textcolor{keyword}{false}),}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_check/check\_off.png"{}},\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(250,\ 450),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}musique"{}},\ font,\ 40,\ \{250,\ 400\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}),}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/range/barre\_pleine.png"{}},\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}),}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}());}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(370,\ 465),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1CursorComponent}{CursorComponent}}([world]()\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1Sound}{Engine::System::Sound}}\ SoundSystem\ =\ \mbox{\hyperlink{classEngine_1_1System_1_1Sound}{Engine::System::Sound}}(*world);}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SoundSystem.SetVolumeMusic();}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/range/grabber\_on.png"{}},\ 0,\ 0,\ 4,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(520,\ 450),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}SFX"{}},\ font,\ 40,\ \{520,\ 400\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}),}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/range/barre\_pleine.png"{}},\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(40,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Pause\ Game"{}},}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1OptionsSystem}{Engine::System::OptionsSystem}}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}\ =}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1OptionsSystem}{Engine::System::OptionsSystem}}(*world);}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}.closeOptions();}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_tabs/button\_main\_disabled.png"{}},\ 0,\ 0,\ 1,\ 0,}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{2,\ 2\},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(30,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/icons/close\_icon.png"{}},\ 0,\ 0,\ 2,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MusicComponent}{MusicComponent}}(\textcolor{stringliteral}{"{}./assets/Music/MusicMenu.ogg"{}}));}
+\DoxyCodeLine{00297\ \ \ \ \ \}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createButtonEntities(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00300\ \ \ \ \ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!font.loadFromFile(\textcolor{stringliteral}{"{}./assets/fonts/font\_big.ttf"{}}))\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}R-\/Type"{}},\ font,\ 110,\ \{400,\ 50\},\ \textcolor{keyword}{true}),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}());}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 220),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Start"{}},\ font,\ 40,\ \{400,\ 200\},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Start\ Game"{}},}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NETWORK.startServer(5555,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sleep\ 200\ ms}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::milliseconds(200));}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NETWORK.setIsReadyToStart(\textcolor{keyword}{true});}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_long/long\_off.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Start\ Room"{}},}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ []()\ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1EngineClass}{Engine::EngineClass}}\ \&engine\ =\ \mbox{\hyperlink{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}{Engine::EngineClass::getEngine}}();}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ engine.\mbox{\hyperlink{classEngine_1_1EngineClass_a115f93d15b0d5e25393b68cc8ba3cde2}{switchWorld}}(\textcolor{stringliteral}{"{}createRoom"{}});}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 320),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Start\ Room"{}},\ font,\ 40,\ \{400,\ 300\},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}././assets/menu/button\_long/long\_off.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Join\ Room"{}},}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ []()\ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1EngineClass}{Engine::EngineClass}}\ \&engine\ =\ \mbox{\hyperlink{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}{Engine::EngineClass::getEngine}}();}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ engine.\mbox{\hyperlink{classEngine_1_1EngineClass_a115f93d15b0d5e25393b68cc8ba3cde2}{switchWorld}}(\textcolor{stringliteral}{"{}joinRoom"{}});}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 420),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Join\ Room"{}},\ font,\ 40,\ \{400,\ 400\},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}././assets/menu/button\_long/long\_off.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(400,\ 520),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(\textcolor{stringliteral}{"{}Quit"{}},\ font,\ 40,\ \{400,\ 500\},\ \textcolor{keyword}{true}),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Quit"{}},}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}\ uiSystem\ =\ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}(*world);}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uiSystem.handleQuitGame();}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_long/long\_off.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(40,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Pause\ Game"{}},}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1OptionsSystem}{Engine::System::OptionsSystem}}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}\ =}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1OptionsSystem}{Engine::System::OptionsSystem}}(*world);}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}.openOptions();}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_tabs/button\_main\_disabled.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(30,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/icons/settings\_icon.png"{}},\ 0,\ 0,\ 2,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00357\ \ \ \ \ \}}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createBackground(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world,\ \textcolor{keyword}{const}\ std::string\ \&texturePath,\ ParallaxLayer\ layer,\ \textcolor{keywordtype}{float}\ speed,}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ first,\ \textcolor{keywordtype}{int}\ priority)}
+\DoxyCodeLine{00361\ \ \ \ \ \{}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ sf::Vector2f\ windowSize\ =\ \{0,\ 0\};}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_ab3475e7d638a4c0305dd9778ebadf280}{each}}<\mbox{\hyperlink{structEngine_1_1Components_1_1ViewComponent}{ViewComponent}}>(}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ [\&windowSize]([[maybe\_unused]]\ \mbox{\hyperlink{classECS_1_1Entity}{ECS::Entity}}\ *entity,\ \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS::ComponentHandle<ViewComponent>}}\ viewComp)\ \{}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ windowSize\ =\ viewComp-\/>view.getSize();}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \ renderable\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(texturePath,\ \{0,\ 0\},\ priority);}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scaleRatio\ =\ windowSize.y\ /\ renderable-\/>texture.getSize().y;}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ renderable-\/>scale\ \ \ \ \ \ \ \ \ \ \ =\ \{scaleRatio,\ scaleRatio\};}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ sf::Vector2<float>\ trueSize\ =\ \{\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(renderable-\/>size.x\ *\ scaleRatio),}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(renderable-\/>size.y\ *\ scaleRatio)\};}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (first)\ \{}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ renderable-\/>position\ =\ \{0,\ 0\};}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::id\_t\ ship\_id\ =}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(0,\ 0),\ renderable,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ParallaxComponent}{ParallaxComponent}}(layer,\ speed));}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&entity\ =\ world-\/>\mbox{\hyperlink{classECS_1_1World_abd76c31bd5837f7c6c5023d42810bac4}{getMutEntity}}(ship\_id);}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&it\ :\ entity.getComponents())}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it.second-\/>setHasChanged(false);}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ renderable-\/>position\ =\ \{trueSize.x,\ 0\};}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ ECS::id\_t\ ship\_id\ \ \ \ =\ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(trueSize.x,\ 0),\ renderable,}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ParallaxComponent}{ParallaxComponent}}(layer,\ speed));}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \ \ \ \ \&entity\ \ \ \ \ =\ world-\/>\mbox{\hyperlink{classECS_1_1World_abd76c31bd5837f7c6c5023d42810bac4}{getMutEntity}}(ship\_id);}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&it\ :\ entity.getComponents())}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it.second-\/>setHasChanged(false);}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00392\ \ \ \ \ \}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createChangeSceneButton(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world,\ [[maybe\_unused]]\ \textcolor{keyword}{const}\ std::string\ \&texturePath,}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ std::string\ \ \&sceneName,}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ sf::Vector2f\ \&position,}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [[maybe\_unused]]\ \textcolor{keyword}{const}\ sf::Vector2f\ \&scale,\ [[maybe\_unused]]\ \textcolor{keywordtype}{int}\ priority)}
+\DoxyCodeLine{00398\ \ \ \ \ \{}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!font.loadFromFile(\textcolor{stringliteral}{"{}./assets/fonts/font\_big.ttf"{}}))\ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(40,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(\textcolor{stringliteral}{"{}Pause\ Game"{}},}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1OptionsSystem}{Engine::System::OptionsSystem}}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}\ =}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1OptionsSystem}{Engine::System::OptionsSystem}}(*world);}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}.openOptions();}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/button\_tabs/button\_main\_disabled.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(30,\ 100),\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MenuComponent}{MenuComponent}}(),}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(\textcolor{stringliteral}{"{}./assets/menu/icons/settings\_icon.png"{}},\ 0,\ 0,\ 2,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true}));}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{PositionComponent}}(position.x,\ position.y),}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent}{TextComponent}}(sceneName,\ font,\ 40,\ \{position.x,\ position.y\ -\/\ 20\},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false}),}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1OptionsComponent}{OptionsComponent}}(),}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1ButtonComponent}{ButtonComponent}}(sceneName,}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [world]()\ \{}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}\ uiSystem\ =\ \mbox{\hyperlink{classEngine_1_1System_1_1UI}{Engine::System::UI}}(*world);}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uiSystem.handleGoMenu();}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NETWORK.resetServer();}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{RenderableComponent}}(texturePath,\ 0,\ 0,\ 3,\ 0,\ \{2,\ 2\},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{00425\ \ \ \ \ \}}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createParallax(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00428\ \ \ \ \ \{}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ createBackground(world,\ \textcolor{stringliteral}{"{}./assets/Environnement/Starrybackground-\/Layer01-\/Void.png"{}},}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ParallaxLayer::FarBackground,\ 1,\ \textcolor{keyword}{true},\ -\/5);}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ createBackground(world,\ \textcolor{stringliteral}{"{}./assets/Environnement/Starrybackground-\/Layer01-\/Void.png"{}},}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ParallaxLayer::FarBackground,\ 1,\ \textcolor{keyword}{false},\ -\/5);}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ createBackground(world,\ \textcolor{stringliteral}{"{}./assets/Environnement/Starrybackground-\/Layer02-\/Stars.png"{}},}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ParallaxLayer::MidBackground,\ 2,\ \textcolor{keyword}{true},\ -\/4);}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ createBackground(world,\ \textcolor{stringliteral}{"{}./assets/Environnement/Starrybackground-\/Layer02-\/Stars.png"{}},}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ParallaxLayer::MidBackground,\ 2,\ \textcolor{keyword}{false},\ -\/4);}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ createBackground(world,\ \textcolor{stringliteral}{"{}./assets/Environnement/Starrybackground-\/LayerX-\/BigStar2.png"{}},}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ParallaxLayer::NearBackground,\ 4,\ \textcolor{keyword}{true},\ -\/3);}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ createBackground(world,\ \textcolor{stringliteral}{"{}./assets/Environnement/Starrybackground-\/LayerX-\/BigStar2.png"{}},}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ParallaxLayer::NearBackground,\ 4,\ \textcolor{keyword}{false},\ -\/3);}
+\DoxyCodeLine{00441\ \ \ \ \ \}}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createEnemyQueue(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00444\ \ \ \ \ \{}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ WeakUpAndDown\ \ \ \ =\ enemyPatternMovements.find(\textcolor{stringliteral}{"{}WeakUpAndDown"{}});}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ WeakLeft\ \ \ \ \ \ \ \ \ =\ enemyPatternMovements.find(\textcolor{stringliteral}{"{}WeakLeft"{}});}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ WeakDiagBotToTop\ =\ enemyPatternMovements.find(\textcolor{stringliteral}{"{}WeakDiagBotToTop"{}});}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ WeakDiagTopToBot\ =\ enemyPatternMovements.find(\textcolor{stringliteral}{"{}WeakDiagTopToBot"{}});}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ MediumUpAndDown\ =\ enemyPatternMovements.find(\textcolor{stringliteral}{"{}MediumUpAndDown"{}});}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ StrongUpAndDown\ =\ enemyPatternMovements.find(\textcolor{stringliteral}{"{}StrongUpAndDown"{}});}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1EnemyQueueComponent}{EnemyQueueComponent}}(\{}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ twin\ snake\ 1}}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(160,\ 200,\ \textcolor{keyword}{true},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(170,\ 210,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(180,\ 220,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(190,\ 230,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(200,\ 240,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(210,\ 250,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(220,\ 260,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(230,\ 270,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(240,\ 280,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ twin\ snake\ 2}}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(160,\ 350,\ \textcolor{keyword}{true},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(170,\ 360,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(180,\ 370,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(190,\ 380,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(200,\ 390,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(210,\ 400,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(220,\ 410,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(230,\ 420,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(240,\ 430,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(350,\ 300,\ \textcolor{keyword}{true},\ MediumUpAndDown-\/>second),\ 1)),}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ random\ movements}}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(500,\ 450,\ \textcolor{keyword}{true},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(540,\ 480,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(580,\ 450,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(600,\ 480,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(620,\ 450,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(640,\ 480,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00488\ }
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(720,\ 420,\ \textcolor{keyword}{true},\ MediumUpAndDown-\/>second),\ 1)),}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ wall}}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(800,\ 140,\ \textcolor{keyword}{true},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(800,\ 160,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(800,\ 180,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(800,\ 200,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(800,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(800,\ 240,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(800,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(800,\ 280,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ snake}}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(960,\ 400,\ \textcolor{keyword}{true},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(970,\ 410,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(980,\ 420,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(990,\ 430,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1000,\ 440,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1010,\ 450,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1020,\ 460,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1030,\ 470,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1040,\ 480,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1050,\ 490,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1060,\ 500,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1070,\ 510,\ \textcolor{keyword}{false},\ WeakUpAndDown-\/>second),\ 0)),}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cross}}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ vertical}}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1200,\ 140,\ \textcolor{keyword}{true},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1200,\ 160,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1200,\ 180,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1200,\ 200,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1200,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1200,\ 240,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1200,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1200,\ 280,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1200,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ horizontal}}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1160,\ 220,\ \textcolor{keyword}{true},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1170,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1180,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1190,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1210,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1220,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1230,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1240,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1100,\ 420,\ \textcolor{keyword}{true},\ MediumUpAndDown-\/>second),\ 1)),}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ obstacles\ walls}}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ top\ wall}}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 40,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 80,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 120,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 160,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 200,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 240,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 280,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ bottom\ wall}}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 400,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 440,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 480,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 520,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 560,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 600,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1300,\ 640,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ diagonal\ pass\ through\ (top\ -\/\ bottom)}}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(500,\ 40,\ \textcolor{keyword}{true},\ WeakDiagBotToTop-\/>second),\ 0)),}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(520,\ 50,\ \textcolor{keyword}{false},\ WeakDiagBotToTop-\/>second),\ 0)),}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(540,\ 60,\ \textcolor{keyword}{false},\ WeakDiagBotToTop-\/>second),\ 0)),}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(560,\ 70,\ \textcolor{keyword}{false},\ WeakDiagBotToTop-\/>second),\ 0)),}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(580,\ 80,\ \textcolor{keyword}{false},\ WeakDiagBotToTop-\/>second),\ 0)),}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ diagonal\ pass\ through\ (bottom\ -\/\ top)}}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1600,\ 600,\ \textcolor{keyword}{true},\ WeakDiagTopToBot-\/>second),\ 0)),}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1620,\ 590,\ \textcolor{keyword}{false},\ WeakDiagTopToBot-\/>second),\ 0)),}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1640,\ 580,\ \textcolor{keyword}{false},\ WeakDiagTopToBot-\/>second),\ 0)),}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1660,\ 570,\ \textcolor{keyword}{false},\ WeakDiagTopToBot-\/>second),\ 0)),}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1680,\ 560,\ \textcolor{keyword}{false},\ WeakDiagTopToBot-\/>second),\ 0)),}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ diagonal\ pass\ through\ (top\ -\/\ bottom)}}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1700,\ 40,\ \textcolor{keyword}{true},\ WeakDiagBotToTop-\/>second),\ 0)),}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1720,\ 50,\ \textcolor{keyword}{false},\ WeakDiagBotToTop-\/>second),\ 0)),}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1740,\ 60,\ \textcolor{keyword}{false},\ WeakDiagBotToTop-\/>second),\ 0)),}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1760,\ 70,\ \textcolor{keyword}{false},\ WeakDiagBotToTop-\/>second),\ 0)),}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1780,\ 80,\ \textcolor{keyword}{false},\ WeakDiagBotToTop-\/>second),\ 0)),}
+\DoxyCodeLine{00576\ }
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ diagonal\ pass\ through\ (bottom\ -\/\ top)}}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1800,\ 600,\ \textcolor{keyword}{true},\ WeakDiagTopToBot-\/>second),\ 0)),}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1820,\ 590,\ \textcolor{keyword}{false},\ WeakDiagTopToBot-\/>second),\ 0)),}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1840,\ 580,\ \textcolor{keyword}{false},\ WeakDiagTopToBot-\/>second),\ 0)),}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1860,\ 570,\ \textcolor{keyword}{false},\ WeakDiagTopToBot-\/>second),\ 0)),}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1880,\ 560,\ \textcolor{keyword}{false},\ WeakDiagTopToBot-\/>second),\ 0)),}
+\DoxyCodeLine{00583\ }
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1st\ wall}}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1980,\ 40,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1980,\ 80,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1980,\ 120,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1980,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1980,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1980,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1980,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1980,\ 420,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1980,\ 560,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1980,\ 600,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(1980,\ 640,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2nd\ wall}}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2005,\ 40,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2005,\ 80,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2005,\ 120,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2005,\ 160,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2005,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2005,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2005,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2005,\ 520,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2005,\ 560,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2005,\ 600,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2005,\ 640,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3rd\ wall}}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2030,\ 40,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2030,\ 80,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2030,\ 120,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2030,\ 160,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2030,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2030,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2030,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2030,\ 520,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2030,\ 560,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2030,\ 600,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2030,\ 640,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 4th\ wall}}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2050,\ 40,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2050,\ 80,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2050,\ 120,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2050,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2050,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2050,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2050,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2050,\ 420,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2050,\ 560,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2050,\ 600,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2050,\ 640,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 5th\ wall}}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2075,\ 40,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2075,\ 80,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2075,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2075,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2075,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2075,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2075,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2075,\ 420,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2075,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2075,\ 600,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2075,\ 640,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00648\ }
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 6th\ wall}}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2100,\ 40,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2100,\ 80,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2100,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2100,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2100,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2100,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2100,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2100,\ 420,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2100,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2100,\ 600,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2100,\ 640,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 7th\ wall}}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2125,\ 40,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2125,\ 80,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2125,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2125,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2125,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2125,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2125,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2125,\ 420,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2125,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2125,\ 600,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2125,\ 640,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 3)),}
+\DoxyCodeLine{00674\ }
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ R\ letter}}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(2200,\ 140,\ true,\ WeakLeft-\/>second),\ 0)),}}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2420,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2440,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2460,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2480,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00681\ }
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2400,\ 180,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2400,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2400,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00685\ }
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2400,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2420,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2440,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2460,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2480,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00691\ }
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2500,\ 180,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2500,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2500,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00695\ }
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2400,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2400,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2400,\ 420,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2400,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00700\ }
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2440,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2460,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2480,\ 420,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2500,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ '-\/'\ letter}}
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2550,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2570,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2590,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00710\ }
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ T\ letter}}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2620,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2640,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2660,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2680,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2700,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2720,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2740,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00719\ }
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2680,\ 180,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2680,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2680,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2680,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2680,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2680,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2680,\ 420,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2680,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00728\ }
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Y\ letter}}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2780,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2780,\ 180,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2800,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2800,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00734\ }
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2860,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2860,\ 180,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00737\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2840,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2840,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00739\ }
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2820,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2820,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2820,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2820,\ 420,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2820,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ P\ letter}}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2900,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2920,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2940,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2960,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2980,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00752\ }
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2900,\ 180,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2900,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2900,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00756\ }
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2900,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2920,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2940,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2960,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2980,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00762\ }
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3000,\ 180,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3000,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3000,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00766\ }
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2900,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2900,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2900,\ 420,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(2900,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00771\ }
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ E\ letter}}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3040,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3060,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3080,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3100,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3120,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3140,\ 140,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00779\ }
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3040,\ 180,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3040,\ 220,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3040,\ 260,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3040,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3040,\ 340,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3040,\ 380,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3040,\ 420,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3040,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00788\ }
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3060,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3080,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3100,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3120,\ 300,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00793\ }
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3060,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3080,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3100,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3120,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3140,\ 460,\ \textcolor{keyword}{false},\ WeakLeft-\/>second),\ 0)),}
+\DoxyCodeLine{00799\ }
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ std::make\_pair(\textcolor{keyword}{false},\ std::make\_pair(std::make\_tuple(3250,\ 100,\ \textcolor{keyword}{true},\ StrongUpAndDown-\/>second),\ 2)),}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{00802\ \ \ \ \ \}}
+\DoxyCodeLine{00803\ }
+\DoxyCodeLine{00804\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ createWorldMoveProgress(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ *world)}
+\DoxyCodeLine{00805\ \ \ \ \ \{}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }Engine::Components;}
+\DoxyCodeLine{00807\ }
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \ \ now\ \ \ \ \ \ \ \ \ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \ \ epoch\ \ \ \ \ \ \ =\ now.time\_since\_epoch();}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ currentTime\ =\ std::chrono::duration\_cast<std::chrono::milliseconds>(epoch).count();}
+\DoxyCodeLine{00811\ }
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ world-\/>\mbox{\hyperlink{classECS_1_1World_a9e5bbb0df3108e41a1a4dc596f5e6abd}{createEntity}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1WorldMoveProgressComponent}{WorldMoveProgressComponent}}(currentTime,\ 0,\ 50));}
+\DoxyCodeLine{00813\ \ \ \ \ \}}
+\DoxyCodeLine{00814\ \}\ \textcolor{comment}{//\ namespace\ Entities}}
+
+\end{DoxyCode}

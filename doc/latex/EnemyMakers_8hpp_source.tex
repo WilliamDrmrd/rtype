@@ -1,0 +1,30 @@
+\doxysection{Enemy\+Makers.\+hpp}
+\hypertarget{EnemyMakers_8hpp_source}{}\label{EnemyMakers_8hpp_source}\index{include/R-\/Type/GameWorld/EnemyMakers.hpp@{include/R-\/Type/GameWorld/EnemyMakers.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ RenderEngine.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <SFML/System.hpp>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }EnemyMakers}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ std::size\_t\ basicEnemyMaker(\textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{bool}\ isAttacking,\ std::vector<std::pair<std::size\_t,\ sf::Vector2f>>);}
+\DoxyCodeLine{00018\ \ \ \ \ std::size\_t\ mediumEnemyMaker(\textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{bool}\ isAttacking,\ std::vector<std::pair<std::size\_t,\ sf::Vector2f>>);}
+\DoxyCodeLine{00019\ \ \ \ \ std::size\_t\ strongEnemyMaker(\textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{bool}\ isAttacking,\ std::vector<std::pair<std::size\_t,\ sf::Vector2f>>);}
+\DoxyCodeLine{00020\ \ \ \ \ std::size\_t\ ObstacleMaker(\textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{bool}\ isAttacking,\ std::vector<std::pair<std::size\_t,\ sf::Vector2f>>);}
+\DoxyCodeLine{00021\ \}\ \textcolor{comment}{//\ namespace\ EnemyMakers}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{extern}\ std::map<std::size\_t,\ std::function<size\_t(\textcolor{keywordtype}{float},\ \textcolor{keywordtype}{bool},\ std::vector<std::pair<size\_t,\ sf::Vector2f>>)>>}
+\DoxyCodeLine{00024\ \ \ \ \ functionMap;}
+
+\end{DoxyCode}

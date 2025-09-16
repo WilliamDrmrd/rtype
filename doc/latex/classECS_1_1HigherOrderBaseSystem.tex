@@ -1,0 +1,45 @@
+\doxysection{ECS\+::Higher\+Order\+Base\+System Class Reference}
+\hypertarget{classECS_1_1HigherOrderBaseSystem}{}\label{classECS_1_1HigherOrderBaseSystem}\index{ECS::HigherOrderBaseSystem@{ECS::HigherOrderBaseSystem}}
+
+
+Inheritance diagram for ECS\+::Higher\+Order\+Base\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classECS_1_1HigherOrderBaseSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ECS\+::Higher\+Order\+Base\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{classECS_1_1HigherOrderBaseSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS\+::\+Base\+System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classECS_1_1BaseSystem_abca06a7d8622c2404ce44f5fe2dfb8ba}{Base\+System}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1BaseSystem_ad996c1bb749405c509b43ff0725c71cb}{Base\+System}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world, id\+\_\+t ids...)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object and initialize it with a list of entity IDs. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+System} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classECS_1_1BaseSystem}{Base\+System}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_afd15a4965d7e0a76db754ff6ac0af1fb}{configure}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world)=0
+\begin{DoxyCompactList}\small\item\em Configure the system with the world. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_abac94ba96a919642b866c906462316bc}{unconfigure}} ()=0
+\begin{DoxyCompactList}\small\item\em Unconfigure the system, releasing any resources or state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_ae60465d4eba925f7ae728aa3decb900e}{tick}} ()=0
+\begin{DoxyCompactList}\small\item\em Update method for the system to process its entities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1World}{World}} \& \mbox{\hyperlink{classECS_1_1BaseSystem_a22cddc444a0241c98ef969f1aa13113d}{get\+World}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classECS_1_1World}{World} object that this system is part of. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+ECS/System.\+hpp\end{DoxyCompactItemize}

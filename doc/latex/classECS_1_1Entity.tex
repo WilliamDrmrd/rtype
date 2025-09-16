@@ -1,0 +1,362 @@
+\doxysection{ECS\+::Entity Class Reference}
+\hypertarget{classECS_1_1Entity}{}\label{classECS_1_1Entity}\index{ECS::Entity@{ECS::Entity}}
+
+
+Represents an entity in an Entity-\/\+Component-\/\+System (ECS) architecture.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+hpp$>$}
+
+
+
+Inheritance diagram for ECS\+::Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classECS_1_1Entity__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classECS_1_1Entity_a20f7b0c1d5c972ffa5e5c5ad09a9acde}{Entity}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1Entity}{Entity} object. \end{DoxyCompactList}\item 
+\Hypertarget{classECS_1_1Entity_ac1ba95b97da59b59d93a4beb6f20e45b}\label{classECS_1_1Entity_ac1ba95b97da59b59d93a4beb6f20e45b} 
+{\bfseries Entity} (ECS\+::id\+\_\+t id)
+\item 
+\mbox{\hyperlink{classECS_1_1Entity_a4af0f00fc01ae3fb100e251d51b2297d}{\texorpdfstring{$\sim$}{\string~}\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classECS_1_1Entity}{Entity} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_1_1Entity_aec60b9153ad3bfe6982d73ecaf498c3b}{set\+Id}} (ECS\+::id\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em set the id of the entity \end{DoxyCompactList}\item 
+ECS\+::id\+\_\+t \mbox{\hyperlink{classECS_1_1Entity_a15665fcf6daab2a8d6947252613f5495}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em get the id of the entity \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classECS_1_1Entity_ad76a1c085f81c85280b6769c2f455be5}{add\+Component}} (T \texorpdfstring{$\ast$}{*}component)
+\begin{DoxyCompactList}\small\item\em Add a component to the \doxylink{classECS_1_1Entity}{Entity}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classECS_1_1Entity_a07358a75193c7c4dbc253df3a4750146}{remove\+Component}} (bool need\+To\+Delete=false)
+\begin{DoxyCompactList}\small\item\em Remove a component and destroy it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classECS_1_1Entity_a3a11eefcca38c1b2730a99275f282260}{remove\+All\+Components}} ()
+\begin{DoxyCompactList}\small\item\em Remove all components. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$ \mbox{\hyperlink{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}{get\+Component}} (bool modified\+Component=false)
+\begin{DoxyCompactList}\small\item\em Get a component. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ id\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1BaseComponent}{Base\+Component}} $>$ $>$ \& \mbox{\hyperlink{classECS_1_1Entity_a7de515e80ca5bb1eadd986b66d424262}{get\+Components}} (bool modified\+Component=false)
+\begin{DoxyCompactList}\small\item\em Get a list of components. \end{DoxyCompactList}\item 
+std\+::vector$<$ Component\+Type $>$ \& \mbox{\hyperlink{classECS_1_1Entity_a1d93fa04706bbe05d11cada3f8c89876}{get\+Components\+To\+Delete}} ()
+\begin{DoxyCompactList}\small\item\em Get components to delete. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}} () const
+\begin{DoxyCompactList}\small\item\em Check if the \doxylink{classECS_1_1Entity}{Entity} has a component of a specific type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename V , typename... Types$>$ }\\bool \mbox{\hyperlink{classECS_1_1Entity_ac2b919b03ebdf0c6873ee09f578e6a35}{has}} () const
+\begin{DoxyCompactList}\small\item\em Check if the \doxylink{classECS_1_1Entity}{Entity} has a list of components. \end{DoxyCompactList}\item 
+std\+::clock\+\_\+t \mbox{\hyperlink{classECS_1_1Entity_a1da80de72aa4d20f2683bd6348b80fef}{get\+Elapsed\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Get the time elapsed since the last call to this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classECS_1_1Entity_a7b4bcdf992c21ae83363f25df05b1d25}\label{classECS_1_1Entity_a7b4bcdf992c21ae83363f25df05b1d25} 
+class {\bfseries World}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an entity in an Entity-\/\+Component-\/\+System (ECS) architecture. 
+
+\begin{DoxyNote}{Note}
+you should create a child class that create instance of the needed components (just overload the constructor) 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classECS_1_1Entity_a20f7b0c1d5c972ffa5e5c5ad09a9acde}\label{classECS_1_1Entity_a20f7b0c1d5c972ffa5e5c5ad09a9acde} 
+\index{ECS::Entity@{ECS::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily ECS\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct a new \doxylink{classECS_1_1Entity}{Entity} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Reference to the \doxylink{classECS_1_1World}{World} to which this \doxylink{classECS_1_1Entity}{Entity} belongs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The \doxylink{classECS_1_1Entity}{Entity} will be added to the \doxylink{classECS_1_1World}{World}. 
+
+The \doxylink{classECS_1_1Entity}{Entity} will be destroyed when the \doxylink{classECS_1_1World}{World} is destroyed. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Only create an \doxylink{classECS_1_1Entity}{Entity} with a \doxylink{classECS_1_1World}{World}. 
+\end{DoxyWarning}
+\Hypertarget{classECS_1_1Entity_a4af0f00fc01ae3fb100e251d51b2297d}\label{classECS_1_1Entity_a4af0f00fc01ae3fb100e251d51b2297d} 
+\index{ECS::Entity@{ECS::Entity}!````~Entity@{\texorpdfstring{$\sim$}{\string~}Entity}}
+\index{````~Entity@{\texorpdfstring{$\sim$}{\string~}Entity}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Entity()}{\string~Entity()}}
+{\footnotesize\ttfamily ECS\+::\+Entity\+::\texorpdfstring{$\sim$}{\string~}\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \doxylink{classECS_1_1Entity}{Entity} object. 
+
+\begin{DoxyNote}{Note}
+All components will be destroyed. 
+
+The \doxylink{classECS_1_1Entity}{Entity} will be removed from the \doxylink{classECS_1_1World}{World}. 
+
+The \doxylink{classECS_1_1Entity}{Entity} will be destroyed when the \doxylink{classECS_1_1World}{World} is destroyed. 
+
+The \doxylink{classECS_1_1Entity}{Entity} will be removed from all the systems. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Only destroy an \doxylink{classECS_1_1Entity}{Entity} with a \doxylink{classECS_1_1World}{World}. 
+\end{DoxyWarning}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classECS_1_1Entity_a4af0f00fc01ae3fb100e251d51b2297d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classECS_1_1Entity_ad76a1c085f81c85280b6769c2f455be5}\label{classECS_1_1Entity_ad76a1c085f81c85280b6769c2f455be5} 
+\index{ECS::Entity@{ECS::Entity}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void ECS\+::\+Entity\+::add\+Component (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a component to the \doxylink{classECS_1_1Entity}{Entity}. 
+
+and deletes the sent references 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of the component. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Component to add, passed as an rvalue. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the component already exists. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyWarning}{Warning}
+Meant to be called by the user and the \doxylink{classECS_1_1World}{World}. 
+\end{DoxyWarning}
+\Hypertarget{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}\label{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a} 
+\index{ECS::Entity@{ECS::Entity}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$ ECS\+::\+Entity\+::get\+Component (\begin{DoxyParamCaption}\item[{bool}]{modified\+Component = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a component. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of the component. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Component\+Handle$<$\+T$>$ Handle to the component. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if the component does not exist. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+You should not destroy the component. 
+\end{DoxyNote}
+\Hypertarget{classECS_1_1Entity_a7de515e80ca5bb1eadd986b66d424262}\label{classECS_1_1Entity_a7de515e80ca5bb1eadd986b66d424262} 
+\index{ECS::Entity@{ECS::Entity}!getComponents@{getComponents}}
+\index{getComponents@{getComponents}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{getComponents()}{getComponents()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ id\+\_\+t, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1BaseComponent}{Base\+Component}} $>$ $>$ \& ECS\+::\+Entity\+::get\+Components (\begin{DoxyParamCaption}\item[{bool}]{modified\+Component = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a list of components. 
+
+\begin{DoxyReturn}{Returns}
+std\+::unordered\+\_\+map$<$id\+\_\+t, std\+::shared\+\_\+ptr$<$\+Base\+Component$>$$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if a component does not exist. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+You should not destroy the components. 
+\end{DoxyNote}
+\Hypertarget{classECS_1_1Entity_a1d93fa04706bbe05d11cada3f8c89876}\label{classECS_1_1Entity_a1d93fa04706bbe05d11cada3f8c89876} 
+\index{ECS::Entity@{ECS::Entity}!getComponentsToDelete@{getComponentsToDelete}}
+\index{getComponentsToDelete@{getComponentsToDelete}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{getComponentsToDelete()}{getComponentsToDelete()}}
+{\footnotesize\ttfamily std\+::vector$<$ Component\+Type $>$ \& ECS\+::\+Entity\+::get\+Components\+To\+Delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get components to delete. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em } & \\
+\hline
+\end{DoxyExceptions}
+note \Hypertarget{classECS_1_1Entity_a1da80de72aa4d20f2683bd6348b80fef}\label{classECS_1_1Entity_a1da80de72aa4d20f2683bd6348b80fef} 
+\index{ECS::Entity@{ECS::Entity}!getElapsedTime@{getElapsedTime}}
+\index{getElapsedTime@{getElapsedTime}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{getElapsedTime()}{getElapsedTime()}}
+{\footnotesize\ttfamily std\+::clock\+\_\+t ECS\+::\+Entity\+::get\+Elapsed\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the time elapsed since the last call to this function. 
+
+\begin{DoxyReturn}{Returns}
+std\+::clock\+\_\+t The time elapsed since the last call to this function. 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1Entity_a15665fcf6daab2a8d6947252613f5495}\label{classECS_1_1Entity_a15665fcf6daab2a8d6947252613f5495} 
+\index{ECS::Entity@{ECS::Entity}!getId@{getId}}
+\index{getId@{getId}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily ECS\+::id\+\_\+t ECS\+::\+Entity\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the id of the entity 
+
+\begin{DoxyReturn}{Returns}
+the id of the entity 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}\label{classECS_1_1Entity_ac59ca658abb333047122236593fdf863} 
+\index{ECS::Entity@{ECS::Entity}!has@{has}}
+\index{has@{has}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{has()}{has()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool ECS\+::\+Entity\+::has (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the \doxylink{classECS_1_1Entity}{Entity} has a component of a specific type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of the component. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+bool True if the component exists, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1Entity_ac2b919b03ebdf0c6873ee09f578e6a35}\label{classECS_1_1Entity_ac2b919b03ebdf0c6873ee09f578e6a35} 
+\index{ECS::Entity@{ECS::Entity}!has@{has}}
+\index{has@{has}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{has()}{has()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename V , typename... Types$>$ \\
+bool ECS\+::\+Entity\+::has (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the \doxylink{classECS_1_1Entity}{Entity} has a list of components. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & First component type to check. \\
+\hline
+{\em Types} & Other component types to check. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+bool True if all specified components exist, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if a component does not exist. \\
+\hline
+\end{DoxyExceptions}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{classECS_1_1Entity_ac2b919b03ebdf0c6873ee09f578e6a35_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classECS_1_1Entity_a3a11eefcca38c1b2730a99275f282260}\label{classECS_1_1Entity_a3a11eefcca38c1b2730a99275f282260} 
+\index{ECS::Entity@{ECS::Entity}!removeAllComponents@{removeAllComponents}}
+\index{removeAllComponents@{removeAllComponents}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{removeAllComponents()}{removeAllComponents()}}
+{\footnotesize\ttfamily void ECS\+::\+Entity\+::remove\+All\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove all components. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if a component does not exist. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+This function will destroy the components. 
+\end{DoxyNote}
+\Hypertarget{classECS_1_1Entity_a07358a75193c7c4dbc253df3a4750146}\label{classECS_1_1Entity_a07358a75193c7c4dbc253df3a4750146} 
+\index{ECS::Entity@{ECS::Entity}!removeComponent@{removeComponent}}
+\index{removeComponent@{removeComponent}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{removeComponent()}{removeComponent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void ECS\+::\+Entity\+::remove\+Component (\begin{DoxyParamCaption}\item[{bool}]{need\+To\+Delete = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove a component and destroy it. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of the component. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if the component does not exist. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+This function will destroy the component. 
+\end{DoxyNote}
+\Hypertarget{classECS_1_1Entity_aec60b9153ad3bfe6982d73ecaf498c3b}\label{classECS_1_1Entity_aec60b9153ad3bfe6982d73ecaf498c3b} 
+\index{ECS::Entity@{ECS::Entity}!setId@{setId}}
+\index{setId@{setId}!ECS::Entity@{ECS::Entity}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void ECS\+::\+Entity\+::set\+Id (\begin{DoxyParamCaption}\item[{ECS\+::id\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the id of the entity 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the id to set \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+ECS/Entity.\+hpp\end{DoxyCompactItemize}

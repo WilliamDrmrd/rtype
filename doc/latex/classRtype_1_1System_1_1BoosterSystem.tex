@@ -1,0 +1,153 @@
+\doxysection{Rtype\+::System\+::Booster\+System Class Reference}
+\hypertarget{classRtype_1_1System_1_1BoosterSystem}{}\label{classRtype_1_1System_1_1BoosterSystem}\index{Rtype::System::BoosterSystem@{Rtype::System::BoosterSystem}}
+
+
+Inheritance diagram for Rtype\+::System\+::Booster\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classRtype_1_1System_1_1BoosterSystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rtype\+::System\+::Booster\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classRtype_1_1System_1_1BoosterSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRtype_1_1System_1_1BoosterSystem_af25c7d30032a8606f3016ecb7c511170}\label{classRtype_1_1System_1_1BoosterSystem_af25c7d30032a8606f3016ecb7c511170} 
+{\bfseries Booster\+System} (\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&world)
+\item 
+\Hypertarget{classRtype_1_1System_1_1BoosterSystem_a4bf6db1e3ecd4b7fd6c89a008d268fec}\label{classRtype_1_1System_1_1BoosterSystem_a4bf6db1e3ecd4b7fd6c89a008d268fec} 
+{\bfseries Booster\+System} (\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&world, ECS\+::id\+\_\+t ids...)
+\item 
+void \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_a1f7d05e3ef65036de6f6dcd19de69a34}{configure}} (\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&world) override
+\begin{DoxyCompactList}\small\item\em configure the system \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_a40a4edcdffe02c27e3f323618a36ae02}{unconfigure}} () override
+\begin{DoxyCompactList}\small\item\em unconfigure the system \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_a527f3c6de82b509456fa9f43999d55c9}{tick}} () override
+\begin{DoxyCompactList}\small\item\em tick function called each frame \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS\+::\+Base\+System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classECS_1_1BaseSystem_abca06a7d8622c2404ce44f5fe2dfb8ba}{Base\+System}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1BaseSystem_ad996c1bb749405c509b43ff0725c71cb}{Base\+System}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world, id\+\_\+t ids...)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object and initialize it with a list of entity IDs. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+System} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classECS_1_1BaseSystem}{Base\+System}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_afd15a4965d7e0a76db754ff6ac0af1fb}{configure}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world)=0
+\begin{DoxyCompactList}\small\item\em Configure the system with the world. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_abac94ba96a919642b866c906462316bc}{unconfigure}} ()=0
+\begin{DoxyCompactList}\small\item\em Unconfigure the system, releasing any resources or state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_ae60465d4eba925f7ae728aa3decb900e}{tick}} ()=0
+\begin{DoxyCompactList}\small\item\em Update method for the system to process its entities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1World}{World}} \& \mbox{\hyperlink{classECS_1_1BaseSystem_a22cddc444a0241c98ef969f1aa13113d}{get\+World}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classECS_1_1World}{World} object that this system is part of. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_aef3c224a4ea2f49ce331c74a314760d7}{take\+Booster}} (\mbox{\hyperlink{classECS_1_1Entity}{ECS\+::\+Entity}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{classECS_1_1Entity}{ECS\+::\+Entity}} \texorpdfstring{$\ast$}{*}booster)
+\begin{DoxyCompactList}\small\item\em take the booster \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRtype_1_1System_1_1BoosterSystem_a1f7d05e3ef65036de6f6dcd19de69a34}\label{classRtype_1_1System_1_1BoosterSystem_a1f7d05e3ef65036de6f6dcd19de69a34} 
+\index{Rtype::System::BoosterSystem@{Rtype::System::BoosterSystem}!configure@{configure}}
+\index{configure@{configure}!Rtype::System::BoosterSystem@{Rtype::System::BoosterSystem}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily void Rtype\+::\+System\+::\+Booster\+System\+::configure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&}]{world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+configure the system 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & the world to configure \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseSystem_afd15a4965d7e0a76db754ff6ac0af1fb}{ECS\+::\+Base\+System}}.
+
+\Hypertarget{classRtype_1_1System_1_1BoosterSystem_aef3c224a4ea2f49ce331c74a314760d7}\label{classRtype_1_1System_1_1BoosterSystem_aef3c224a4ea2f49ce331c74a314760d7} 
+\index{Rtype::System::BoosterSystem@{Rtype::System::BoosterSystem}!takeBooster@{takeBooster}}
+\index{takeBooster@{takeBooster}!Rtype::System::BoosterSystem@{Rtype::System::BoosterSystem}}
+\doxysubsubsection{\texorpdfstring{takeBooster()}{takeBooster()}}
+{\footnotesize\ttfamily void Booster\+System\+::take\+Booster (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1Entity}{ECS\+::\+Entity}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{classECS_1_1Entity}{ECS\+::\+Entity}} \texorpdfstring{$\ast$}{*}}]{booster }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+take the booster 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & the player \\
+\hline
+{\em booster} & the booster \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRtype_1_1System_1_1BoosterSystem_aef3c224a4ea2f49ce331c74a314760d7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRtype_1_1System_1_1BoosterSystem_a527f3c6de82b509456fa9f43999d55c9}\label{classRtype_1_1System_1_1BoosterSystem_a527f3c6de82b509456fa9f43999d55c9} 
+\index{Rtype::System::BoosterSystem@{Rtype::System::BoosterSystem}!tick@{tick}}
+\index{tick@{tick}!Rtype::System::BoosterSystem@{Rtype::System::BoosterSystem}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void Booster\+System\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+tick function called each frame 
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseSystem_ae60465d4eba925f7ae728aa3decb900e}{ECS\+::\+Base\+System}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRtype_1_1System_1_1BoosterSystem_a527f3c6de82b509456fa9f43999d55c9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRtype_1_1System_1_1BoosterSystem_a40a4edcdffe02c27e3f323618a36ae02}\label{classRtype_1_1System_1_1BoosterSystem_a40a4edcdffe02c27e3f323618a36ae02} 
+\index{Rtype::System::BoosterSystem@{Rtype::System::BoosterSystem}!unconfigure@{unconfigure}}
+\index{unconfigure@{unconfigure}!Rtype::System::BoosterSystem@{Rtype::System::BoosterSystem}}
+\doxysubsubsection{\texorpdfstring{unconfigure()}{unconfigure()}}
+{\footnotesize\ttfamily void Rtype\+::\+System\+::\+Booster\+System\+::unconfigure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+unconfigure the system 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & the world to unconfigure \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseSystem_abac94ba96a919642b866c906462316bc}{ECS\+::\+Base\+System}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+R-\/\+Type/\+Systems/Booster.\+system.\+hpp\item 
+src/\+R-\/\+Type/\+Systems/Booster.\+system.\+cpp\end{DoxyCompactItemize}

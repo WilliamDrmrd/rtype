@@ -1,0 +1,238 @@
+\doxysection{ECS\+::Component\+Handle\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classECS_1_1ComponentHandle}{}\label{classECS_1_1ComponentHandle}\index{ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}}
+
+
+Template class to handle components.(when getting a component from an entity, you get a component handle)  
+
+
+
+
+{\ttfamily \#include $<$Components.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classECS_1_1ComponentHandle_aa18f6d56cba6bde66cecf94ab5368771}\label{classECS_1_1ComponentHandle_aa18f6d56cba6bde66cecf94ab5368771} 
+{\bfseries Component\+Handle} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializing the component handle to nullptr. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1ComponentHandle_ab7bfa9a9ecda6f04d7e3709257a6e1f9}{Component\+Handle}} (std\+::shared\+\_\+ptr$<$ T $>$ component)
+\begin{DoxyCompactList}\small\item\em Constructor initializing the component handle with a given component. \end{DoxyCompactList}\item 
+\Hypertarget{classECS_1_1ComponentHandle_aaaf49db596e827b268078c132214a46a}\label{classECS_1_1ComponentHandle_aaaf49db596e827b268078c132214a46a} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Component\+Handle} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classECS_1_1ComponentHandle_a19c9f1257b846b57598bb99bcb5e9cd0}{operator()}} () const
+\begin{DoxyCompactList}\small\item\em Return the underlying component pointer. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{classECS_1_1ComponentHandle_a1f1c8058bd194c182ef8041cc4abc046}{operator\texorpdfstring{$\ast$}{*}}} ()
+\begin{DoxyCompactList}\small\item\em Overloading dereference operator to get the underlying component. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{classECS_1_1ComponentHandle_acb3110d07ec865d30aa6ccbd2361b7e3}{operator-\/$>$}} ()
+\begin{DoxyCompactList}\small\item\em Overloading arrow operator to access the underlying component\textquotesingle{}s members. \end{DoxyCompactList}\item 
+\Hypertarget{classECS_1_1ComponentHandle_aec456a3e0e3f404ae84539072756fb9a}\label{classECS_1_1ComponentHandle_aec456a3e0e3f404ae84539072756fb9a} 
+T \texorpdfstring{$\ast$}{*} {\bfseries operator=} (T \texorpdfstring{$\ast$}{*}component)=delete
+\begin{DoxyCompactList}\small\item\em Deleted assignment operator to prevent copying of the component handle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classECS_1_1ComponentHandle_aa517a52900dd7d9ca983425b5e8dc428}{operator==}} (const \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Compare this handle with another for equality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classECS_1_1ComponentHandle_acea07f085a5593e6ee4c57bcf353e092}{operator==}} (bool other)
+\begin{DoxyCompactList}\small\item\em Compare this handle\textquotesingle{}s validity with a boolean. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classECS_1_1ComponentHandle_aeada92c771bf55ee25785b2706d020b4}{operator!=}} (const \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Compare this handle with another for inequality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classECS_1_1ComponentHandle_af08eca550902906c9c09dba54e21abf4}{operator!=}} (bool other)
+\begin{DoxyCompactList}\small\item\em Compare this handle\textquotesingle{}s validity with a boolean for inequality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classECS_1_1ComponentHandle_adf2aac49a290458a0350addfed9d8f65}{is\+Valid}} ()
+\begin{DoxyCompactList}\small\item\em Check if the handle is valid (i.\+e., it points to a component). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class ECS\+::\+Component\+Handle$<$ T $>$}
+Template class to handle components.(when getting a component from an entity, you get a component handle) 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the component this handle is for. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classECS_1_1ComponentHandle_ab7bfa9a9ecda6f04d7e3709257a6e1f9}\label{classECS_1_1ComponentHandle_ab7bfa9a9ecda6f04d7e3709257a6e1f9} 
+\index{ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}!ComponentHandle@{ComponentHandle}}
+\index{ComponentHandle@{ComponentHandle}!ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ComponentHandle()}{ComponentHandle()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$\+::\+Component\+Handle (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ T $>$}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Constructor initializing the component handle with a given component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Pointer to the component. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classECS_1_1ComponentHandle_adf2aac49a290458a0350addfed9d8f65}\label{classECS_1_1ComponentHandle_adf2aac49a290458a0350addfed9d8f65} 
+\index{ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}!isValid@{isValid}}
+\index{isValid@{isValid}!ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the handle is valid (i.\+e., it points to a component). 
+
+\begin{DoxyReturn}{Returns}
+true If the handle is valid. 
+
+false Otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1ComponentHandle_af08eca550902906c9c09dba54e21abf4}\label{classECS_1_1ComponentHandle_af08eca550902906c9c09dba54e21abf4} 
+\index{ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{bool}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare this handle\textquotesingle{}s validity with a boolean for inequality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The boolean to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If the handle\textquotesingle{}s validity does not match the boolean. 
+
+false Otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classECS_1_1ComponentHandle_af08eca550902906c9c09dba54e21abf4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classECS_1_1ComponentHandle_aeada92c771bf55ee25785b2706d020b4}\label{classECS_1_1ComponentHandle_aeada92c771bf55ee25785b2706d020b4} 
+\index{ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare this handle with another for inequality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{classECS_1_1ComponentHandle}{Component\+Handle} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If both handles do not point to the same component. 
+
+false Otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1ComponentHandle_a19c9f1257b846b57598bb99bcb5e9cd0}\label{classECS_1_1ComponentHandle_a19c9f1257b846b57598bb99bcb5e9cd0} 
+\index{ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the underlying component pointer. 
+
+\begin{DoxyReturn}{Returns}
+T\texorpdfstring{$\ast$}{*} Pointer to the component. 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1ComponentHandle_a1f1c8058bd194c182ef8041cc4abc046}\label{classECS_1_1ComponentHandle_a1f1c8058bd194c182ef8041cc4abc046} 
+\index{ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloading dereference operator to get the underlying component. 
+
+\begin{DoxyReturn}{Returns}
+T\texorpdfstring{$\ast$}{*} Pointer to the component. 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1ComponentHandle_acb3110d07ec865d30aa6ccbd2361b7e3}\label{classECS_1_1ComponentHandle_acb3110d07ec865d30aa6ccbd2361b7e3} 
+\index{ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloading arrow operator to access the underlying component\textquotesingle{}s members. 
+
+\begin{DoxyReturn}{Returns}
+T\texorpdfstring{$\ast$}{*} Pointer to the component. 
+\end{DoxyReturn}
+\Hypertarget{classECS_1_1ComponentHandle_acea07f085a5593e6ee4c57bcf353e092}\label{classECS_1_1ComponentHandle_acea07f085a5593e6ee4c57bcf353e092} 
+\index{ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{bool}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare this handle\textquotesingle{}s validity with a boolean. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The boolean to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If the handle\textquotesingle{}s validity matches the boolean. 
+
+false Otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classECS_1_1ComponentHandle_acea07f085a5593e6ee4c57bcf353e092_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classECS_1_1ComponentHandle_aa517a52900dd7d9ca983425b5e8dc428}\label{classECS_1_1ComponentHandle_aa517a52900dd7d9ca983425b5e8dc428} 
+\index{ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!ECS::ComponentHandle$<$ T $>$@{ECS::ComponentHandle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classECS_1_1ComponentHandle}{Component\+Handle}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare this handle with another for equality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \doxylink{classECS_1_1ComponentHandle}{Component\+Handle} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If both handles point to the same component. 
+
+false Otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+ECS/Components.\+hpp\end{DoxyCompactItemize}

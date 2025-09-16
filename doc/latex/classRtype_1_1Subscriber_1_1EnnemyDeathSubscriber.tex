@@ -1,0 +1,79 @@
+\doxysection{Rtype\+::Subscriber\+::Ennemy\+Death\+Subscriber Class Reference}
+\hypertarget{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber}{}\label{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber}\index{Rtype::Subscriber::EnnemyDeathSubscriber@{Rtype::Subscriber::EnnemyDeathSubscriber}}
+
+
+Inheritance diagram for Rtype\+::Subscriber\+::Ennemy\+Death\+Subscriber\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rtype\+::Subscriber\+::Ennemy\+Death\+Subscriber\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber_a84572067c0b662022a6b8aee47841c88}{receive\+Event}} (const std\+::string \&name, const \mbox{\hyperlink{structRtype_1_1Events_1_1EnnemyDeath}{Rtype\+::\+Events\+::\+Ennemy\+Death}} \&data) override
+\begin{DoxyCompactList}\small\item\em Receive and process an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1EventSubscriber}{ECS\+::\+Event\+Subscriber$<$ Rtype\+::\+Events\+::\+Ennemy\+Death $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Event\+Subscriber} () override=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1EventSubscriber}{Event\+Subscriber}, defined as pure virtual (0). \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1EventSubscriber_a8dfb2feb269e6137537c3bfd3bee7846}{receive\+Event}} (const std\+::string \&name, const \mbox{\hyperlink{structRtype_1_1Events_1_1EnnemyDeath}{Rtype\+::\+Events\+::\+Ennemy\+Death}} \&data)=0
+\begin{DoxyCompactList}\small\item\em Receive and process an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseEventSubscriber}{ECS\+::\+Base\+Event\+Subscriber}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Event\+Subscriber} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseEventSubscriber}{Base\+Event\+Subscriber}, defined as pure virtual (0). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber_a84572067c0b662022a6b8aee47841c88}\label{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber_a84572067c0b662022a6b8aee47841c88} 
+\index{Rtype::Subscriber::EnnemyDeathSubscriber@{Rtype::Subscriber::EnnemyDeathSubscriber}!receiveEvent@{receiveEvent}}
+\index{receiveEvent@{receiveEvent}!Rtype::Subscriber::EnnemyDeathSubscriber@{Rtype::Subscriber::EnnemyDeathSubscriber}}
+\doxysubsubsection{\texorpdfstring{receiveEvent()}{receiveEvent()}}
+{\footnotesize\ttfamily void Rtype\+::\+Subscriber\+::\+Ennemy\+Death\+Subscriber\+::receive\+Event (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{structRtype_1_1Events_1_1EnnemyDeath}{Rtype\+::\+Events\+::\+Ennemy\+Death}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Receive and process an event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the event. \\
+\hline
+{\em data} & A ref to the event data, expected to be of type T.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+This method can cause infinite recursion if its broadcasting an event of type T or it broadcast an event of type T and another subscriber is also subscribed to that event. 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classECS_1_1EventSubscriber_a8dfb2feb269e6137537c3bfd3bee7846}{ECS\+::\+Event\+Subscriber$<$ Rtype\+::\+Events\+::\+Ennemy\+Death $>$}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber_a84572067c0b662022a6b8aee47841c88_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+R-\/\+Type/\+Subscribers/Ennemy\+Death.\+subscriber.\+hpp\end{DoxyCompactItemize}

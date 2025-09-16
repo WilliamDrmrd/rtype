@@ -1,0 +1,122 @@
+\doxysection{Engine\+::Components\+::Layered\+Animation\+Component Class Reference}
+\hypertarget{classEngine_1_1Components_1_1LayeredAnimationComponent}{}\label{classEngine_1_1Components_1_1LayeredAnimationComponent}\index{Engine::Components::LayeredAnimationComponent@{Engine::Components::LayeredAnimationComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Layered\+Animation\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classEngine_1_1Components_1_1LayeredAnimationComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Layered\+Animation\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classEngine_1_1Components_1_1LayeredAnimationComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Animations$>$ }\\\mbox{\hyperlink{classEngine_1_1Components_1_1LayeredAnimationComponent_a8de5846701764791cf7640deb84d12a0}{Layered\+Animation\+Component}} (\mbox{\hyperlink{structEngine_1_1Components_1_1AnimationComponent}{Animation\+Component}} \texorpdfstring{$\ast$}{*}first, Animations... rest)
+\begin{DoxyCompactList}\small\item\em Construct a new Layered Animation Component object. \end{DoxyCompactList}\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{classEngine_1_1Components_1_1LayeredAnimationComponent_ac44c172f29be6b2de4c858031fd51d7a}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEngine_1_1Components_1_1LayeredAnimationComponent_a6ac5514a3a3e4dee895302875b76d007}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) override
+\item 
+\Hypertarget{classEngine_1_1Components_1_1LayeredAnimationComponent_aa5272dcd1b40a8cd2a5078284bd52f1f}\label{classEngine_1_1Components_1_1LayeredAnimationComponent_aa5272dcd1b40a8cd2a5078284bd52f1f} 
+\mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ \mbox{\hyperlink{structEngine_1_1Components_1_1AnimationComponent}{Animation\+Component}} $>$ {\bfseries at} (int index)
+\item 
+Component\+Type \mbox{\hyperlink{classEngine_1_1Components_1_1LayeredAnimationComponent_a92d788d12c31b6859b2fa8ba29fbaaa0}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEngine_1_1Components_1_1LayeredAnimationComponent_a7ce661dc555a9f392a8007ce3fedb00b}\label{classEngine_1_1Components_1_1LayeredAnimationComponent_a7ce661dc555a9f392a8007ce3fedb00b} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structEngine_1_1Components_1_1AnimationComponent}{Animation\+Component}} $>$ $>$ {\bfseries animation}
+\item 
+\Hypertarget{classEngine_1_1Components_1_1LayeredAnimationComponent_a3a60585e492d2cd559f8132ada8934ac}\label{classEngine_1_1Components_1_1LayeredAnimationComponent_a3a60585e492d2cd559f8132ada8934ac} 
+int {\bfseries layers} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEngine_1_1Components_1_1LayeredAnimationComponent_a8de5846701764791cf7640deb84d12a0}\label{classEngine_1_1Components_1_1LayeredAnimationComponent_a8de5846701764791cf7640deb84d12a0} 
+\index{Engine::Components::LayeredAnimationComponent@{Engine::Components::LayeredAnimationComponent}!LayeredAnimationComponent@{LayeredAnimationComponent}}
+\index{LayeredAnimationComponent@{LayeredAnimationComponent}!Engine::Components::LayeredAnimationComponent@{Engine::Components::LayeredAnimationComponent}}
+\doxysubsubsection{\texorpdfstring{LayeredAnimationComponent()}{LayeredAnimationComponent()}}
+{\footnotesize\ttfamily template$<$typename... Animations$>$ \\
+Engine\+::\+Components\+::\+Layered\+Animation\+Component\+::\+Layered\+Animation\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEngine_1_1Components_1_1AnimationComponent}{Animation\+Component}} \texorpdfstring{$\ast$}{*}}]{first,  }\item[{Animations...}]{rest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Construct a new Layered Animation Component object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & \\
+\hline
+{\em rest} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+the order of the animations is the order of the parameters and is linked with the layered render component order 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEngine_1_1Components_1_1LayeredAnimationComponent_a6ac5514a3a3e4dee895302875b76d007}\label{classEngine_1_1Components_1_1LayeredAnimationComponent_a6ac5514a3a3e4dee895302875b76d007} 
+\index{Engine::Components::LayeredAnimationComponent@{Engine::Components::LayeredAnimationComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::LayeredAnimationComponent@{Engine::Components::LayeredAnimationComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Layered\+Animation\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{classEngine_1_1Components_1_1LayeredAnimationComponent_a92d788d12c31b6859b2fa8ba29fbaaa0}\label{classEngine_1_1Components_1_1LayeredAnimationComponent_a92d788d12c31b6859b2fa8ba29fbaaa0} 
+\index{Engine::Components::LayeredAnimationComponent@{Engine::Components::LayeredAnimationComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::LayeredAnimationComponent@{Engine::Components::LayeredAnimationComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Layered\+Animation\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{classEngine_1_1Components_1_1LayeredAnimationComponent_ac44c172f29be6b2de4c858031fd51d7a}\label{classEngine_1_1Components_1_1LayeredAnimationComponent_ac44c172f29be6b2de4c858031fd51d7a} 
+\index{Engine::Components::LayeredAnimationComponent@{Engine::Components::LayeredAnimationComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::LayeredAnimationComponent@{Engine::Components::LayeredAnimationComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Layered\+Animation\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Components/Layered\+Animation.\+component.\+hpp\end{DoxyCompactItemize}

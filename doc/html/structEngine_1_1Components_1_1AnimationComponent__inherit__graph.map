@@ -1,0 +1,7 @@
+<map id="Engine::Components::AnimationComponent" name="Engine::Components::AnimationComponent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="24,83,190,132"/>
+<area shape="rect" id="Node000003" href="$classEngine_1_1Components_1_1DeathAnimationComponent.html" title=" " alt="" coords="5,180,209,228"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,146,110,179,104,179,104,146"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1BaseComponent.html" title="Abstract base class for components in the ECS (Entity&#45;Component&#45;System)." alt="" coords="30,5,184,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,50,110,82,104,82,104,50"/>
+</map>

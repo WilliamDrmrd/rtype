@@ -1,0 +1,16 @@
+<map id="Engine::System::Renderer::tick" name="Engine::System::Renderer::tick">
+<area shape="rect" id="Node000001" title="Update method for the system to process its entities." alt="" coords="5,81,189,130"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1World.html#ab3475e7d638a4c0305dd9778ebadf280" title="Iterates over all entities that have a specific component type." alt="" coords="270,5,396,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,78,236,44,257,37,259,42,238,49,153,83"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1World.html#a2f8f75dc1734fa1005510d939e6ccd27" title="get all entities that have a specific component type." alt="" coords="274,59,392,88"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,90,259,81,260,86,190,96"/>
+<area shape="rect" id="Node000006" href="$classECS_1_1World.html#a88a62f9a990a5b7afefc36e2fae43056" title="get all entities that have a set of given components." alt="" coords="238,112,428,161"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="189,115,223,119,223,125,189,120"/>
+<area shape="rect" id="Node000007" href="$classECS_1_1BaseSystem.html#a22cddc444a0241c98ef969f1aa13113d" title="Get the World object that this system is part of." alt="" coords="237,184,429,214"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="146,128,238,170,258,177,256,182,236,175,144,133"/>
+<area shape="rect" id="Node000004" href="$classECS_1_1Entity.html#a443006243e747ad64f38aeccaf48886a" title="Get a component." alt="" coords="477,59,665,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="392,71,462,71,462,76,392,76"/>
+<area shape="rect" id="Node000005" href="$classECS_1_1Entity.html#ac59ca658abb333047122236593fdf863" title="Check if the Entity has a component of a specific type." alt="" coords="514,116,629,146"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="392,85,500,111,498,116,391,90"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="429,131,499,130,499,135,429,137"/>
+</map>

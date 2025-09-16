@@ -1,0 +1,96 @@
+\doxysection{Engine\+::Components\+::Enemy\+Movements\+Component Struct Reference}
+\hypertarget{structEngine_1_1Components_1_1EnemyMovementsComponent}{}\label{structEngine_1_1Components_1_1EnemyMovementsComponent}\index{Engine::Components::EnemyMovementsComponent@{Engine::Components::EnemyMovementsComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Enemy\+Movements\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{structEngine_1_1Components_1_1EnemyMovementsComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Enemy\+Movements\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{structEngine_1_1Components_1_1EnemyMovementsComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1EnemyMovementsComponent_ab3728ea16e814557476460ad826471c9}\label{structEngine_1_1Components_1_1EnemyMovementsComponent_ab3728ea16e814557476460ad826471c9} 
+{\bfseries Enemy\+Movements\+Component} (std\+::vector$<$ std\+::pair$<$ size\+\_\+t, sf\+::\+Vector2f $>$ $>$ movements\+Queue\+Loop)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1EnemyMovementsComponent_a2d76b674c17ffb619804267958a2cbff}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1EnemyMovementsComponent_abe91160039c9afa6296ca2d7db45cf2d}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) final
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1EnemyMovementsComponent_a578bba9ffd27e353ad71a3caedb45d08}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1EnemyMovementsComponent_a8b26be0e3747fd088e5ec68e0fa1a800}\label{structEngine_1_1Components_1_1EnemyMovementsComponent_a8b26be0e3747fd088e5ec68e0fa1a800} 
+std\+::vector$<$ std\+::pair$<$ size\+\_\+t, sf\+::\+Vector2f $>$ $>$ {\bfseries movements\+Queue\+Loop}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1EnemyMovementsComponent_a7a60d2156d46718ffd99ff694dd1c0f4}\label{structEngine_1_1Components_1_1EnemyMovementsComponent_a7a60d2156d46718ffd99ff694dd1c0f4} 
+size\+\_\+t {\bfseries current\+Move}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structEngine_1_1Components_1_1EnemyMovementsComponent_abe91160039c9afa6296ca2d7db45cf2d}\label{structEngine_1_1Components_1_1EnemyMovementsComponent_abe91160039c9afa6296ca2d7db45cf2d} 
+\index{Engine::Components::EnemyMovementsComponent@{Engine::Components::EnemyMovementsComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::EnemyMovementsComponent@{Engine::Components::EnemyMovementsComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Enemy\+Movements\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1EnemyMovementsComponent_a578bba9ffd27e353ad71a3caedb45d08}\label{structEngine_1_1Components_1_1EnemyMovementsComponent_a578bba9ffd27e353ad71a3caedb45d08} 
+\index{Engine::Components::EnemyMovementsComponent@{Engine::Components::EnemyMovementsComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::EnemyMovementsComponent@{Engine::Components::EnemyMovementsComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Enemy\+Movements\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1EnemyMovementsComponent_a2d76b674c17ffb619804267958a2cbff}\label{structEngine_1_1Components_1_1EnemyMovementsComponent_a2d76b674c17ffb619804267958a2cbff} 
+\index{Engine::Components::EnemyMovementsComponent@{Engine::Components::EnemyMovementsComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::EnemyMovementsComponent@{Engine::Components::EnemyMovementsComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Enemy\+Movements\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+R-\/\+Type/\+Components/Enemy\+Movements.\+component.\+hpp\end{DoxyCompactItemize}

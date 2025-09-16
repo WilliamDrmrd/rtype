@@ -1,0 +1,36 @@
+\doxysection{Booster.\+system.\+hpp}
+\hypertarget{Booster_8system_8hpp_source}{}\label{Booster_8system_8hpp_source}\index{include/R-\/Type/Systems/Booster.system.hpp@{include/R-\/Type/Systems/Booster.system.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Booster.system.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ECS/Entity.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ECS/System.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }Rtype::System}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem}{BoosterSystem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS::BaseSystem}}}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem}{BoosterSystem}}(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ \&world)\ :\ \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS::BaseSystem}}(world)\ \{\}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem}{BoosterSystem}}(\mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ \&world,\ ECS::id\_t\ ids...)\ :\ \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS::BaseSystem}}(world,\ ids)\ \{\}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem}{\string~BoosterSystem}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_a1f7d05e3ef65036de6f6dcd19de69a34}{configure}}([[maybe\_unused]]\ \mbox{\hyperlink{classECS_1_1World}{ECS::World}}\ \&world)\textcolor{keyword}{\ override\ }\{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_a40a4edcdffe02c27e3f323618a36ae02}{unconfigure}}()\textcolor{keyword}{\ override\ }\{\}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_a527f3c6de82b509456fa9f43999d55c9}{tick}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRtype_1_1System_1_1BoosterSystem_aef3c224a4ea2f49ce331c74a314760d7}{takeBooster}}(\mbox{\hyperlink{classECS_1_1Entity}{ECS::Entity}}\ *player,\ \mbox{\hyperlink{classECS_1_1Entity}{ECS::Entity}}\ *booster);}
+\DoxyCodeLine{00045\ \ \ \ \ \};}
+\DoxyCodeLine{00046\ \}\ \textcolor{comment}{//\ namespace\ Rtype::System}}
+
+\end{DoxyCode}

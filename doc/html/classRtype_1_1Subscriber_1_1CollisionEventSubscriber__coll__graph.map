@@ -1,0 +1,7 @@
+<map id="Rtype::Subscriber::CollisionEventSubscriber" name="Rtype::Subscriber::CollisionEventSubscriber">
+<area shape="rect" id="Node000001" title=" " alt="" coords="10,180,183,228"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1EventSubscriber.html" title=" " alt="" coords="20,83,173,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,146,99,179,94,179,94,146"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1BaseEventSubscriber.html" title="Abstract base class for event subscribers in an ECS framework." alt="" coords="5,5,188,35"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,50,99,82,94,82,94,50"/>
+</map>

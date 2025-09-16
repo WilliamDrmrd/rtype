@@ -1,0 +1,59 @@
+\doxysection{Waves.\+hpp}
+\hypertarget{Waves_8hpp_source}{}\label{Waves_8hpp_source}\index{include/R-\/Type/GameWorld/Waves.hpp@{include/R-\/Type/GameWorld/Waves.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Waves.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::map<std::string,\ std::vector<std::pair<size\_t,\ sf::Vector2f>>>\ enemyPatternMovements\ =\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//\ Weak}}
+\DoxyCodeLine{00016\ \ \ \ \ \{\textcolor{stringliteral}{"{}WeakUpAndDown"{}},\ \{std::make\_pair(800,\ sf::Vector2f(-\/100,\ 100)),\ std::make\_pair(800,\ sf::Vector2f(-\/100,\ -\/100))\}\},}
+\DoxyCodeLine{00017\ \ \ \ \ \{\textcolor{stringliteral}{"{}WeakLeft"{}},\ \{std::make\_pair(800,\ sf::Vector2f(-\/100,\ 1))\}\},}
+\DoxyCodeLine{00018\ \ \ \ \ \{\textcolor{stringliteral}{"{}WeakDiagBotToTop"{}},\ \{std::make\_pair(800,\ sf::Vector2f(-\/80,\ 60))\}\},}
+\DoxyCodeLine{00019\ \ \ \ \ \{\textcolor{stringliteral}{"{}WeakDiagTopToBot"{}},\ \{std::make\_pair(800,\ sf::Vector2f(-\/80,\ -\/60))\}\},}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ Medium}}
+\DoxyCodeLine{00022\ \ \ \ \ \{\textcolor{stringliteral}{"{}MediumUpAndDown"{}},\ \{std::make\_pair(800,\ sf::Vector2f(-\/50,\ 50)),\ std::make\_pair(800,\ sf::Vector2f(-\/50,\ -\/50))\}\},}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Strong}}
+\DoxyCodeLine{00025\ \ \ \ \ \{\textcolor{stringliteral}{"{}StrongUpAndDown"{}},\ \{std::make\_pair(800,\ sf::Vector2f(-\/30,\ 500)),\ std::make\_pair(800,\ sf::Vector2f(-\/30,\ -\/500))\}\},}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ pos\_x\ and\ pos\_y\ are\ the\ position\ of\ the\ first\ enemy\ of\ the\ wave\ (top\ left\ corner\ or\ 1st\ enemy\ of\ the\ wave)}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ std::vector<std::pair<bool,\ std::pair<std::tuple<size\_t,\ float,\ bool>,\ std::function<size\_t\ (float,\ bool)>>>>}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ TwinSnake(int\ pos\_x,\ int\ pos\_y)\ \{}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ \ \ \ \ return\ \{}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ \ \ \ \ //\ twin\ snake\ 1}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(160,\ 200,\ false),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(170,\ 210,\ true),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(180,\ 220,\ false),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(190,\ 230,\ false),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(200,\ 240,\ true),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(210,\ 250,\ true),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(220,\ 260,\ false),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ \ \ \ \ //\ twin\ snake\ 2}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(160,\ 350,\ false),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(170,\ 360,\ true),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(180,\ 370,\ false),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(190,\ 380,\ true),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(200,\ 390,\ true),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(210,\ 400,\ false),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ \ \ \ \ std::make\_pair(false,\ std::make\_pair(std::make\_tuple(220,\ 410,\ false),\ Entities::basicEnemyMaker)),}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ \ \ \ \ \};}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ \};}}
+
+\end{DoxyCode}

@@ -1,0 +1,102 @@
+\doxysection{Engine\+::Components\+::Parallax\+Component Struct Reference}
+\hypertarget{structEngine_1_1Components_1_1ParallaxComponent}{}\label{structEngine_1_1Components_1_1ParallaxComponent}\index{Engine::Components::ParallaxComponent@{Engine::Components::ParallaxComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Parallax\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1ParallaxComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Parallax\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1ParallaxComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ParallaxComponent_ac5c33a449acbf28d5f3d8125216c5f49}\label{structEngine_1_1Components_1_1ParallaxComponent_ac5c33a449acbf28d5f3d8125216c5f49} 
+{\bfseries Parallax\+Component} (Parallax\+Layer layer, float speed)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1ParallaxComponent_a72b6d74633172fbbf8eadf73bd3615c3}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1ParallaxComponent_a698c7f8775584dac7f2ed2f673bf266f}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) final
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1ParallaxComponent_ad5aa8261a1a687fec19a81c1272af98d}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ParallaxComponent_ab790271fc5b1995cc5737759cee6bc10}\label{structEngine_1_1Components_1_1ParallaxComponent_ab790271fc5b1995cc5737759cee6bc10} 
+Parallax\+Layer {\bfseries layer}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ParallaxComponent_aea873423addae2ec452525dfd5889c31}\label{structEngine_1_1Components_1_1ParallaxComponent_aea873423addae2ec452525dfd5889c31} 
+float {\bfseries speed}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ParallaxComponent_a70e5e1d85e0a00f735b2dab8e94272a4}\label{structEngine_1_1Components_1_1ParallaxComponent_a70e5e1d85e0a00f735b2dab8e94272a4} 
+sf\+::\+Vector2f {\bfseries offset}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1ParallaxComponent_a1845c0c1026ad69da88dde4d158dc902}\label{structEngine_1_1Components_1_1ParallaxComponent_a1845c0c1026ad69da88dde4d158dc902} 
+bool {\bfseries first} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structEngine_1_1Components_1_1ParallaxComponent_a698c7f8775584dac7f2ed2f673bf266f}\label{structEngine_1_1Components_1_1ParallaxComponent_a698c7f8775584dac7f2ed2f673bf266f} 
+\index{Engine::Components::ParallaxComponent@{Engine::Components::ParallaxComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::ParallaxComponent@{Engine::Components::ParallaxComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Parallax\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1ParallaxComponent_ad5aa8261a1a687fec19a81c1272af98d}\label{structEngine_1_1Components_1_1ParallaxComponent_ad5aa8261a1a687fec19a81c1272af98d} 
+\index{Engine::Components::ParallaxComponent@{Engine::Components::ParallaxComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::ParallaxComponent@{Engine::Components::ParallaxComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Parallax\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1ParallaxComponent_a72b6d74633172fbbf8eadf73bd3615c3}\label{structEngine_1_1Components_1_1ParallaxComponent_a72b6d74633172fbbf8eadf73bd3615c3} 
+\index{Engine::Components::ParallaxComponent@{Engine::Components::ParallaxComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::ParallaxComponent@{Engine::Components::ParallaxComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Parallax\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Components/Parallax.\+component.\+hpp\end{DoxyCompactItemize}

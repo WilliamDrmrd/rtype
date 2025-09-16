@@ -1,0 +1,368 @@
+\doxysection{sprites.\+hpp}
+\hypertarget{sprites_8hpp_source}{}\label{sprites_8hpp_source}\index{include/R-\/Type/sprites.hpp@{include/R-\/Type/sprites.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Clock.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ SPRITE\_DATA\_HPP}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ SPRITE\_DATA\_HPP}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSpriteInfo}{SpriteInfo}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::string\ filePath;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ offsetX;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ offsetY;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ width;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ height;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ oneframeX;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ oneframeY;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ nbFrames;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ animationSpeed;}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::map<std::string,\ SpriteInfo>\ spriteInfoMap\ =\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \{\textcolor{stringliteral}{"{}Asteroid-\/Flame"{}},\ \{\textcolor{stringliteral}{"{}./assets/Environnement/Asteroid-\/Flame.png"{}},\ 36,\ 32,\ 28508,\ 32,\ 96,\ 96,\ 3,\ 100\}\},}
+\DoxyCodeLine{00031\ \ \ \ \ \{\textcolor{stringliteral}{"{}Asteroid01-\/Base"{}},\ \{\textcolor{stringliteral}{"{}./assets/Environnement/Asteroid01-\/Base.png"{}},\ 29,\ 32,\ 38,\ 33,\ 96,\ 96,\ 1,\ 0\}\},}
+\DoxyCodeLine{00032\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Battlecruiser-\/Base"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Battlecruiser-\/Base.png"{}},\ 12,\ 12,\ 72,\ 89,\ 128,\ 128,\ 1,\ 0\}\},}
+\DoxyCodeLine{00033\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Battlecruiser-\/Destruction"{}},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Battlecruiser-\/Destruction.png"{}},\ 0,\ 0,\ 1792,\ 128,\ 128,\ 128,\ 14,\ 100\}\},}
+\DoxyCodeLine{00035\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Bullet"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Bullet.png"{}},\ 1,\ 4,\ 2,\ 12,\ 4,\ 16,\ 4,\ 100\}\},}
+\DoxyCodeLine{00036\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Bomber-\/Base"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Bomber-\/Base.png"{}},\ 17,\ 20,\ 30,\ 27,\ 64,\ 64,\ 1,\ 0\}\},}
+\DoxyCodeLine{00037\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Bomber-\/Destruction"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Bomber-\/Destruction.png"{}},\ 0,\ 0,\ 512,\ 64,\ 64,\ 64,\ 8,\ 100\}\},}
+\DoxyCodeLine{00038\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Dreadnought-\/Base"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Dreadnought-\/Base.png"{}},\ 0,\ 13,\ 74,\ 100,\ 128,\ 128,\ 1,\ 0\}\},}
+\DoxyCodeLine{00039\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Dreadnought-\/Destruction"{}},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Dreadnought-\/Destruction.png"{}},\ 0,\ 0,\ 1536,\ 128,\ 128,\ 128,\ 12,\ 100\}\},}
+\DoxyCodeLine{00041\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Fighter-\/Base"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Fighter-\/Base.png"{}},\ 20,\ 21,\ 24,\ 22,\ 64,\ 64,\ 1,\ 0\}\},}
+\DoxyCodeLine{00042\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Fighter-\/Destruction"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Fighter-\/Destruction.png"{}},\ 0,\ 0,\ 576,\ 64,\ 64,\ 64,\ 9,\ 100\}\},}
+\DoxyCodeLine{00043\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Frigate-\/Base"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Frigate-\/Base.png"{}},\ 14,\ 11,\ 36,\ 39,\ 64,\ 64,\ 1,\ 0\}\},}
+\DoxyCodeLine{00044\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Frigate-\/Destruction"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Frigate-\/Destruction.png"{}},\ 0,\ 0,\ 576,\ 64,\ 64,\ 64,\ 9,\ 100\}\},}
+\DoxyCodeLine{00045\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Scout-\/Base"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Scout-\/Base.png"{}},\ 21,\ 23,\ 22,\ 22,\ 64,\ 64,\ 1,\ 0\}\},}
+\DoxyCodeLine{00046\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Scout-\/Destruction"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Scout-\/Destruction.png"{}},\ 0,\ 0,\ 640,\ 64,\ 64,\ 64,\ 10,\ 100\}\},}
+\DoxyCodeLine{00047\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Supportship-\/Base"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Supportship-\/Base.png"{}},\ 18,\ 15,\ 28,\ 28,\ 64,\ 64,\ 1,\ 0\}\},}
+\DoxyCodeLine{00048\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/Supportship-\/Destruction"{}},}
+\DoxyCodeLine{00049\ \ \ \ \ \ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/Supportship-\/Destruction.png"{}},\ 0,\ 0,\ 640,\ 64,\ 64,\ 64,\ 10,\ 100\}\},}
+\DoxyCodeLine{00050\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/TorpedoShip-\/Base"{}},\ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/TorpedoShip-\/Base.png"{}},\ 4,\ 21,\ 56,\ 22,\ 64,\ 64,\ 1,\ 0\}\},}
+\DoxyCodeLine{00051\ \ \ \ \ \{\textcolor{stringliteral}{"{}Klaed-\/TorpedoShip-\/Destruction"{}},}
+\DoxyCodeLine{00052\ \ \ \ \ \ \{\textcolor{stringliteral}{"{}./assets/klaed/Klaed-\/TorpedoShip-\/Destruction.png"{}},\ 0,\ 0,\ 640,\ 64,\ 64,\ 64,\ 10,\ 100\}\},}
+\DoxyCodeLine{00053\ \ \ \ \ \{\textcolor{stringliteral}{"{}MainShip-\/Base-\/Fullhealth"{}},\ \{\textcolor{stringliteral}{"{}./assets/MainShip/MainShip-\/Base-\/Fullhealth.png"{}},\ 9,\ 11,\ 30,\ 26,\ 48,\ 48,\ 1,\ 0\}\},}
+\DoxyCodeLine{00054\ \ \ \ \ \{\textcolor{stringliteral}{"{}MainShip-\/Base-\/Destruction"{}},\ \{\textcolor{stringliteral}{"{}./assets/MainShip/MainShip-\/Base-\/Destruction.png"{}},\ 0,\ 0,\ 672,\ 48,\ 48,\ 48,\ 14,\ 100\}\},}
+\DoxyCodeLine{00055\ \ \ \ \ \{\textcolor{stringliteral}{"{}MainshipWeapon-\/Projectile-\/Autocannonbullet"{}},}
+\DoxyCodeLine{00056\ \ \ \ \ \ \{\textcolor{stringliteral}{"{}./assets/MainShipWeapons/MainshipWeapon-\/Projectile-\/Autocannonbullet.png"{}},\ 11,\ 8,\ 10,\ 17,\ 32,\ 32,\ 4,\ 100\}\}\};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ sprites["{}Asteroid-\/Flame"{}]\ =}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Asteroid-\/Flame.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ sprites["{}Asteroid01-\/Base"{}]\ =}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Asteroid01-\/Base.png"{},\ 96,\ 96,\ 96,\ 96);}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ sprites["{}Asteroid01-\/Explode"{}]\ =}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Asteroid01-\/Explode.png"{},\ 768,\ 96,\ 96,\ 96);}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ sprites["{}Earth-\/Likeplanet-\/Withoutbackglow"{}]\ =}}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Earth-\/Likeplanet-\/Withoutbackglow.png"{},}}
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7392,\ 96,\ 96,\ 96);}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ sprites["{}Earth-\/Likeplanet"{}]\ =}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Earth-\/Likeplanet.png"{},\ 7392,\ 96,\ 96,\ 96);}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/Layer01-\/Solidcolour"{}]\ =}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/Layer01-\/Solidcolour.png"{},}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5760,\ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/Layer01-\/Void"{}]\ =}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/Layer01-\/Void.png"{},\ 5760,}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/Layer02-\/Shadows"{}]\ =}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/Layer02-\/Shadows.png"{},}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5760,\ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/Layer02-\/Shadows2"{}]\ =}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/Layer02-\/Shadows2.png"{},}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5760,\ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/Layer02-\/Stars"{}]\ =}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/Layer02-\/Stars.png"{},\ 5760,}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/Layer03-\/Stars"{}]\ =}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/Layer03-\/Stars.png"{},\ 5760,}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/Layer03-\/Stars2"{}]\ =}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/Layer03-\/Stars2.png"{},}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5760,\ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00090\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/LayerX-\/BigStar"{}]\ =}}
+\DoxyCodeLine{00091\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/LayerX-\/BigStar.png"{},}}
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5760,\ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00093\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/LayerX-\/BigStar2"{}]\ =}}
+\DoxyCodeLine{00094\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/LayerX-\/BigStar2.png"{},}}
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5760,\ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/LayerX-\/Blackhole"{}]\ =}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/LayerX-\/Blackhole.png"{},}}
+\DoxyCodeLine{00098\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5760,\ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/LayerX-\/RotaryStar"{}]\ =}}
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/LayerX-\/RotaryStar.png"{},}}
+\DoxyCodeLine{00101\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5760,\ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//\ sprites["{}Starrybackground-\/LayerX-\/RotaryStar2"{}]\ =}}
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Environnement/assets/Environnement/Starrybackground-\/LayerX-\/RotaryStar2.png"{},}}
+\DoxyCodeLine{00104\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5760,\ 360,\ 360,\ 360);}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{comment}{//\ //\ klaed}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ sprites["{}Klaed-\/Battlecruiser-\/Base"{}]\ =}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Battlecruiser-\/Base.png"{},\ 128,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00109\ \textcolor{comment}{//\ sprites["{}Klaed-\/Battlecruiser-\/Destruction"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00110\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/klaed/assets/klaed/Klaed-\/Battlecruiser-\/Destruction.png"{},\ 1792,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00111\ \textcolor{comment}{//\ sprites["{}Klaed-\/Battlecruiser-\/Engine"{}]\ =}}
+\DoxyCodeLine{00112\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Battlecruiser-\/Engine.png"{},\ 1536,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00113\ \textcolor{comment}{//\ sprites["{}Klaed-\/Battlecruiser-\/Shield"{}]\ =}}
+\DoxyCodeLine{00114\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Battlecruiser-\/Shield.png"{},\ 2048,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ sprites["{}Klaed-\/Battlecruiser-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Battlecruiser-\/Weapons.png"{},\ 3840,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00117\ \textcolor{comment}{//\ sprites["{}Klaed-\/BigBullet"{}]\ =}}
+\DoxyCodeLine{00118\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/BigBullet.png"{},\ 32,\ 16,\ 8,\ 16);}}
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ sprites["{}Klaed-\/Bomber-\/Base"{}]\ =}}
+\DoxyCodeLine{00120\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Bomber-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00121\ \textcolor{comment}{//\ sprites["{}Klaed-\/Bomber-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Bomber-\/Destruction.png"{},\ 512,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00123\ \textcolor{comment}{//\ sprites["{}Klaed-\/Bomber-\/Engine"{}]\ =}}
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Bomber-\/Engine.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ sprites["{}Klaed-\/Bomber-\/Shield"{}]\ =}}
+\DoxyCodeLine{00126\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Bomber-\/Shield.png"{},\ 384,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00127\ \textcolor{comment}{//\ sprites["{}Klaed-\/Dreadnought-\/Base"{}]\ =}}
+\DoxyCodeLine{00128\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Dreadnought-\/Base.png"{},\ 128,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00129\ \textcolor{comment}{//\ sprites["{}Klaed-\/Dreadnought-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00130\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Dreadnought-\/Destruction.png"{},\ 1536,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00131\ \textcolor{comment}{//\ sprites["{}Klaed-\/Dreadnought-\/Engine"{}]\ =}}
+\DoxyCodeLine{00132\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Dreadnought-\/Engine.png"{},\ 1536,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00133\ \textcolor{comment}{//\ sprites["{}Klaed-\/Dreadnought-\/Shield"{}]\ =}}
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Dreadnought-\/Shield.png"{},\ 1280,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00135\ \textcolor{comment}{//\ sprites["{}Klaed-\/Dreadnought-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Dreadnought-\/Weapons.png"{},\ 7680,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00137\ \textcolor{comment}{//\ sprites["{}Klaed-\/Fighter-\/Base"{}]\ =}}
+\DoxyCodeLine{00138\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Fighter-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00139\ \textcolor{comment}{//\ sprites["{}Klaed-\/Fighter-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00140\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Fighter-\/Destruction.png"{},\ 576,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00141\ \textcolor{comment}{//\ sprites["{}Klaed-\/Fighter-\/Engine"{}]\ =}}
+\DoxyCodeLine{00142\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Fighter-\/Engine.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00143\ \textcolor{comment}{//\ sprites["{}Klaed-\/Fighter-\/Shield"{}]\ =}}
+\DoxyCodeLine{00144\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Fighter-\/Shield.png"{},\ 512,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//\ sprites["{}Klaed-\/Fighter-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00146\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Fighter-\/Weapons.png"{},\ 384,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ sprites["{}Klaed-\/Frigate-\/Base"{}]\ =}}
+\DoxyCodeLine{00148\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Frigate-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00149\ \textcolor{comment}{//\ sprites["{}Klaed-\/Frigate-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00150\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Frigate-\/Destruction.png"{},\ 576,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00151\ \textcolor{comment}{//\ sprites["{}Klaed-\/Frigate-\/Engine"{}]\ =}}
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Frigate-\/Engine.png"{},\ 768,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00153\ \textcolor{comment}{//\ sprites["{}Klaed-\/Frigate-\/Shield"{}]\ =}}
+\DoxyCodeLine{00154\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Frigate-\/Shield.png"{},\ 2560,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00155\ \textcolor{comment}{//\ sprites["{}Klaed-\/Frigate-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Frigate-\/Weapons.png"{},\ 384,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00157\ \textcolor{comment}{//\ sprites["{}Klaed-\/Ray"{}]\ =\ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Ray.png"{},\ 72,\ 38,\ 18,\ 38);}}
+\DoxyCodeLine{00158\ \textcolor{comment}{//\ sprites["{}Klaed-\/Scout-\/Base"{}]\ =}}
+\DoxyCodeLine{00159\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Scout-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00160\ \textcolor{comment}{//\ sprites["{}Klaed-\/Scout-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00161\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Scout-\/Destruction.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00162\ \textcolor{comment}{//\ sprites["{}Klaed-\/Scout-\/Engine"{}]\ =}}
+\DoxyCodeLine{00163\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Scout-\/Engine.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00164\ \textcolor{comment}{//\ sprites["{}Klaed-\/Scout-\/Shield"{}]\ =}}
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Scout-\/Shield.png"{},\ 896,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ sprites["{}Klaed-\/Scout-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Scout-\/Weapons.png"{},\ 384,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ sprites["{}Klaed-\/Supportship-\/Base"{}]\ =}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Supportship-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00170\ \textcolor{comment}{//\ sprites["{}Klaed-\/Supportship-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00171\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Supportship-\/Destruction.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00172\ \textcolor{comment}{//\ sprites["{}Klaed-\/Supportship-\/Engine"{}]\ =}}
+\DoxyCodeLine{00173\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Supportship-\/Engine.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ sprites["{}Klaed-\/Torpedo"{}]\ =}}
+\DoxyCodeLine{00175\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Torpedo.png"{},\ 33,\ 32,\ 11,\ 32);}}
+\DoxyCodeLine{00176\ \textcolor{comment}{//\ sprites["{}Klaed-\/TorpedoShip-\/Base"{}]\ =}}
+\DoxyCodeLine{00177\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/TorpedoShip-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00178\ \textcolor{comment}{//\ sprites["{}Klaed-\/TorpedoShip-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00179\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/TorpedoShip-\/Destruction.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00180\ \textcolor{comment}{//\ sprites["{}Klaed-\/TorpedoShip-\/Engine"{}]\ =}}
+\DoxyCodeLine{00181\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/TorpedoShip-\/Engine.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00182\ \textcolor{comment}{//\ sprites["{}Klaed-\/TorpedoShip-\/Shield"{}]\ =}}
+\DoxyCodeLine{00183\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/TorpedoShip-\/Shield.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00184\ \textcolor{comment}{//\ sprites["{}Klaed-\/TorpedoShip-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00185\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/TorpedoShip-\/Weapons.png"{},\ 1024,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00186\ \textcolor{comment}{//\ sprites["{}Klaed-\/Wave"{}]\ =\ createSprite("{}../../assets/klaed/assets/klaed/Klaed-\/Wave.png"{},\ 384,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{comment}{//\ //\ MainShip}}
+\DoxyCodeLine{00189\ \textcolor{comment}{//\ sprites["{}MainShip-\/Base-\/Damaged"{}]\ =}}
+\DoxyCodeLine{00190\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Base-\/Damaged.png"{},\ 48,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00191\ \textcolor{comment}{//\ sprites["{}MainShip-\/Base-\/Fullhealth"{}]\ =}}
+\DoxyCodeLine{00192\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Base-\/Fullhealth.png"{},\ 48,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00193\ \textcolor{comment}{//\ sprites["{}MainShip-\/Base-\/Slightdamage"{}]\ =}}
+\DoxyCodeLine{00194\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Base-\/Slightdamage.png"{},\ 48,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00195\ \textcolor{comment}{//\ sprites["{}MainShip-\/Base-\/Verydamaged"{}]\ =}}
+\DoxyCodeLine{00196\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Base-\/Verydamaged.png"{},\ 48,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00197\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/BaseEngine-\/Idle"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00198\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/BaseEngine-\/Idle.png"{},\ 144,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00199\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/BaseEngine-\/Powering"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00200\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/BaseEngine-\/Powering.png"{},\ 192,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00201\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/BaseEngine"{}]\ =}}
+\DoxyCodeLine{00202\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/BaseEngine.png"{},\ 48,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00203\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/BigPulseEngine-\/Idle"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00204\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/BigPulseEngine-\/Idle.png"{},\ 192,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00205\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/BigPulseEngine-\/Powering"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00206\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/BigPulseEngine-\/Powering.png"{},\ 192,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00207\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/BigPulseEngine"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00208\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/BigPulseEngine.png"{},\ 48,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00209\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/BurstEngine-\/Idle"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00210\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/BurstEngine-\/Idle.png"{},\ 336,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00211\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/BurstEngine-\/Powering"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00212\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/BurstEngine-\/Powering.png"{},\ 288,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00213\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/BurstEngine"{}]\ =}}
+\DoxyCodeLine{00214\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/BurstEngine.png"{},\ 48,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00215\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/SuperchargedEngine-\/Idle"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00216\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/SuperchargedEngine-\/Idle.png"{},\ 192,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00217\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/SuperchargedEngine-\/Powering"{}]\ =}}
+\DoxyCodeLine{00218\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/SuperchargedEngine-\/Powering.png"{},}}
+\DoxyCodeLine{00219\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 192,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00220\ \textcolor{comment}{//\ sprites["{}MainShip-\/Engines-\/SuperchargedEngine"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00221\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShip/assets/MainShip/MainShip-\/Engines-\/SuperchargedEngine.png"{},\ 48,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00222\ \textcolor{comment}{//\ sprites["{}MainShip-\/Shields-\/FrontandSideShield"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00223\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShip/assets/MainShip/MainShip-\/Shields-\/FrontandSideShield.png"{},\ 384,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00224\ \textcolor{comment}{//\ sprites["{}MainShip-\/Shields-\/FrontShield"{}]\ =}}
+\DoxyCodeLine{00225\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Shields-\/FrontShield.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00226\ \textcolor{comment}{//\ sprites["{}MainShip-\/Shields-\/InvincibilityShield"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00227\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShip/assets/MainShip/MainShip-\/Shields-\/InvincibilityShield.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00228\ \textcolor{comment}{//\ sprites["{}MainShip-\/Shields-\/RoundShield"{}]\ =}}
+\DoxyCodeLine{00229\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Shields-\/RoundShield.png"{},\ 768,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00230\ \textcolor{comment}{//\ sprites["{}MainShip-\/Weapons-\/AutoCannon"{}]\ =}}
+\DoxyCodeLine{00231\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Weapons-\/AutoCannon.png"{},\ 336,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00232\ \textcolor{comment}{//\ sprites["{}MainShip-\/Weapons-\/BigSpaceGun"{}]\ =}}
+\DoxyCodeLine{00233\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Weapons-\/BigSpaceGun.png"{},\ 576,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00234\ \textcolor{comment}{//\ sprites["{}MainShip-\/Weapons-\/Rockets"{}]\ =}}
+\DoxyCodeLine{00235\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Weapons-\/Rockets.png"{},\ 816,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00236\ \textcolor{comment}{//\ sprites["{}MainShip-\/Weapons-\/Zapper"{}]\ =}}
+\DoxyCodeLine{00237\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShip/assets/MainShip/MainShip-\/Weapons-\/Zapper.png"{},\ 672,\ 48,\ 48,\ 48);}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{comment}{//\ //\ MainShipWeapons}}
+\DoxyCodeLine{00240\ \textcolor{comment}{//\ sprites["{}MainshipWeapon-\/Projectile-\/Autocannonbullet"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00241\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShipWeapons/assets/MainShipWeapons/MainshipWeapon-\/Projectile-\/Autocannonbullet.png"{},}}
+\DoxyCodeLine{00242\ \textcolor{comment}{//\ \ \ \ \ 128,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00243\ \textcolor{comment}{//\ sprites["{}MainshipWeapon-\/Projectile-\/BigSpaceGun"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00244\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/MainShipWeapons/assets/MainShipWeapons/MainshipWeapon-\/Projectile-\/BigSpaceGun.png"{},\ 320,}}
+\DoxyCodeLine{00245\ \textcolor{comment}{//\ \ \ \ \ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00246\ \textcolor{comment}{//\ sprites["{}MainshipWeapon-\/Projectile-\/Rocket"{}]\ =}}
+\DoxyCodeLine{00247\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShipWeapons/assets/MainShipWeapons/MainshipWeapon-\/Projectile-\/Rocket.png"{},}}
+\DoxyCodeLine{00248\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 96,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00249\ \textcolor{comment}{//\ sprites["{}MainshipWeapon-\/Projectile-\/Zapper"{}]\ =}}
+\DoxyCodeLine{00250\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/MainShipWeapons/assets/MainShipWeapons/MainshipWeapon-\/Projectile-\/Zapper.png"{},}}
+\DoxyCodeLine{00251\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 256,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{comment}{//\ //\ Nairan}}
+\DoxyCodeLine{00254\ \textcolor{comment}{//\ sprites["{}Nairan-\/Battlecruiser-\/Base"{}]\ =}}
+\DoxyCodeLine{00255\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Battlecruiser-\/Base.png"{},\ 128,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00256\ \textcolor{comment}{//\ sprites["{}Nairan-\/Battlecruiser-\/Destruction"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00257\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/Nairan/assets/Nairan/Nairan-\/Battlecruiser-\/Destruction.png"{},\ 2304,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00258\ \textcolor{comment}{//\ sprites["{}Nairan-\/Battlecruiser-\/Engine"{}]\ =}}
+\DoxyCodeLine{00259\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Battlecruiser-\/Engine.png"{},\ 1024,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00260\ \textcolor{comment}{//\ sprites["{}Nairan-\/Battlecruiser-\/Shield"{}]\ =}}
+\DoxyCodeLine{00261\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Battlecruiser-\/Shield.png"{},\ 1024,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00262\ \textcolor{comment}{//\ sprites["{}Nairan-\/Battlecruiser-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00263\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Battlecruiser-\/Weapons.png"{},\ 1152,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00264\ \textcolor{comment}{//\ sprites["{}Nairan-\/Bolt"{}]\ =\ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Bolt.png"{},\ 45,\ 9,\ 9,\ 9);}}
+\DoxyCodeLine{00265\ \textcolor{comment}{//\ sprites["{}Nairan-\/Bomber-\/Base"{}]\ =}}
+\DoxyCodeLine{00266\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Bomber-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00267\ \textcolor{comment}{//\ sprites["{}Nairan-\/Bomber-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00268\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Bomber-\/Destruction.png"{},\ 1024,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00269\ \textcolor{comment}{//\ sprites["{}Nairan-\/Bomber-\/Engine"{}]\ =}}
+\DoxyCodeLine{00270\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Bomber-\/Engine.png"{},\ 512,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00271\ \textcolor{comment}{//\ sprites["{}Nairan-\/Bomber-\/Shield"{}]\ =}}
+\DoxyCodeLine{00272\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Bomber-\/Shield.png"{},\ 640,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00273\ \textcolor{comment}{//\ sprites["{}Nairan-\/Dreadnought-\/Base"{}]\ =}}
+\DoxyCodeLine{00274\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Dreadnought-\/Base.png"{},\ 128,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00275\ \textcolor{comment}{//\ sprites["{}Nairan-\/Dreadnought-\/Destruction"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00276\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/Nairan/assets/Nairan/Nairan-\/Dreadnought-\/Destruction.png"{},\ 2304,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00277\ \textcolor{comment}{//\ sprites["{}Nairan-\/Dreadnought-\/Engine"{}]\ =}}
+\DoxyCodeLine{00278\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Dreadnought-\/Engine.png"{},\ 1024,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00279\ \textcolor{comment}{//\ sprites["{}Nairan-\/Dreadnought-\/Shield"{}]\ =}}
+\DoxyCodeLine{00280\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Dreadnought-\/Shield.png"{},\ 640,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00281\ \textcolor{comment}{//\ sprites["{}Nairan-\/Dreadnought-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00282\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Dreadnought-\/Weapons.png"{},\ 4352,\ 128,\ 128,\ 128);}}
+\DoxyCodeLine{00283\ \textcolor{comment}{//\ sprites["{}Nairan-\/Fighter-\/Base"{}]\ =}}
+\DoxyCodeLine{00284\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Fighter-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00285\ \textcolor{comment}{//\ sprites["{}Nairan-\/Fighter-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00286\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Fighter-\/Destruction.png"{},\ 1152,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00287\ \textcolor{comment}{//\ sprites["{}Nairan-\/Fighter-\/Engine"{}]\ =}}
+\DoxyCodeLine{00288\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Fighter-\/Engine.png"{},\ 512,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00289\ \textcolor{comment}{//\ sprites["{}Nairan-\/Fighter-\/Shield"{}]\ =}}
+\DoxyCodeLine{00290\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Fighter-\/Shield.png"{},\ 1280,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00291\ \textcolor{comment}{//\ sprites["{}Nairan-\/Fighter-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00292\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Fighter-\/Weapons.png"{},\ 1792,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00293\ \textcolor{comment}{//\ sprites["{}Nairan-\/Frigate-\/Base"{}]\ =}}
+\DoxyCodeLine{00294\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Frigate-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00295\ \textcolor{comment}{//\ sprites["{}Nairan-\/Frigate-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00296\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Frigate-\/Destruction.png"{},\ 1024,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00297\ \textcolor{comment}{//\ sprites["{}Nairan-\/Frigate-\/Engine"{}]\ =}}
+\DoxyCodeLine{00298\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Frigate-\/Engine.png"{},\ 512,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00299\ \textcolor{comment}{//\ sprites["{}Nairan-\/Frigate-\/Shield"{}]\ =}}
+\DoxyCodeLine{00300\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Frigate-\/Shield.png"{},\ 512,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00301\ \textcolor{comment}{//\ sprites["{}Nairan-\/Frigate-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00302\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Frigate-\/Weapons.png"{},\ 320,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00303\ \textcolor{comment}{//\ sprites["{}Nairan-\/Ray"{}]\ =\ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Ray.png"{},\ 72,\ 38,\ 18,\ 38);}}
+\DoxyCodeLine{00304\ \textcolor{comment}{//\ sprites["{}Nairan-\/Rocket"{}]\ =}}
+\DoxyCodeLine{00305\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Rocket.png"{},\ 36,\ 16,\ 9,\ 16);}}
+\DoxyCodeLine{00306\ \textcolor{comment}{//\ sprites["{}Nairan-\/Scout-\/Base"{}]\ =}}
+\DoxyCodeLine{00307\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Scout-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00308\ \textcolor{comment}{//\ sprites["{}Nairan-\/Scout-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00309\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Scout-\/Destruction.png"{},\ 1024,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00310\ \textcolor{comment}{//\ sprites["{}Nairan-\/Scout-\/Engine"{}]\ =}}
+\DoxyCodeLine{00311\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Scout-\/Engine.png"{},\ 512,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00312\ \textcolor{comment}{//\ sprites["{}Nairan-\/Scout-\/Shield"{}]\ =}}
+\DoxyCodeLine{00313\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Scout-\/Shield.png"{},\ 1152,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00314\ \textcolor{comment}{//\ sprites["{}Nairan-\/Scout-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00315\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Scout-\/Weapons.png"{},\ 384,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00316\ \textcolor{comment}{//\ sprites["{}Nairan-\/SupportShip-\/Base"{}]\ =}}
+\DoxyCodeLine{00317\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/SupportShip-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00318\ \textcolor{comment}{//\ sprites["{}Nairan-\/SupportShip-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00319\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/SupportShip-\/Destruction.png"{},\ 1024,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00320\ \textcolor{comment}{//\ sprites["{}Nairan-\/SupportShip-\/Engine"{}]\ =}}
+\DoxyCodeLine{00321\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/SupportShip-\/Engine.png"{},\ 512,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00322\ \textcolor{comment}{//\ sprites["{}Nairan-\/Torpedo"{}]\ =}}
+\DoxyCodeLine{00323\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/Torpedo.png"{},\ 27,\ 24,\ 9,\ 24);}}
+\DoxyCodeLine{00324\ \textcolor{comment}{//\ sprites["{}Nairan-\/TorpedoShip-\/Base"{}]\ =}}
+\DoxyCodeLine{00325\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/TorpedoShip-\/Base.png"{},\ 64,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00326\ \textcolor{comment}{//\ sprites["{}Nairan-\/TorpedoShip-\/Destruction"{}]\ =}}
+\DoxyCodeLine{00327\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/TorpedoShip-\/Destruction.png"{},\ 1024,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00328\ \textcolor{comment}{//\ sprites["{}Nairan-\/TorpedoShip-\/Engine"{}]\ =}}
+\DoxyCodeLine{00329\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/TorpedoShip-\/Engine.png"{},\ 512,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00330\ \textcolor{comment}{//\ sprites["{}Nairan-\/TorpedoShip-\/Shield"{}]\ =}}
+\DoxyCodeLine{00331\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/TorpedoShip-\/Shield.png"{},\ 512,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00332\ \textcolor{comment}{//\ sprites["{}Nairan-\/TorpedoShip-\/Weapons"{}]\ =}}
+\DoxyCodeLine{00333\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Nairan/assets/Nairan/Nairan-\/TorpedoShip-\/Weapons.png"{},\ 768,\ 64,\ 64,\ 64);}}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \textcolor{comment}{//\ //\ Pickup}}
+\DoxyCodeLine{00336\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/Engines-\/BaseEngine"{}]\ =}}
+\DoxyCodeLine{00337\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Pickup/assets/Pickup/PickupIcon-\/Engines-\/BaseEngine.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00338\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/Engines-\/BigPulseEngine"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00339\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/Pickup/assets/Pickup/PickupIcon-\/Engines-\/BigPulseEngine.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00340\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/Engines-\/BurstEngine"{}]\ =}}
+\DoxyCodeLine{00341\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Pickup/assets/Pickup/PickupIcon-\/Engines-\/BurstEngine.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00342\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/Engines-\/SuperchargedEngine"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00343\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/Pickup/assets/Pickup/PickupIcon-\/Engines-\/SuperchargedEngine.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00344\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/ShieldGenerator-\/Allaroundshield"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00345\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/Pickup/assets/Pickup/PickupIcon-\/ShieldGenerator-\/Allaroundshield.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00346\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/ShieldGenerator-\/FrontandSideShield"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00347\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/Pickup/assets/Pickup/PickupIcon-\/ShieldGenerator-\/FrontandSideShield.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00348\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/ShieldGenerator-\/FrontShield"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00349\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/Pickup/assets/Pickup/PickupIcon-\/ShieldGenerator-\/FrontShield.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00350\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/ShieldGenerator-\/InvincibilityShield"{}]\ =}}
+\DoxyCodeLine{00351\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Pickup/assets/Pickup/PickupIcon-\/ShieldGenerator-\/InvincibilityShield.png"{},}}
+\DoxyCodeLine{00352\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00353\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/Weapons-\/AutoCannons"{}]\ =}}
+\DoxyCodeLine{00354\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Pickup/assets/Pickup/PickupIcon-\/Weapons-\/AutoCannons.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00355\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/Weapons-\/BigSpaceGun2000"{}]\ =\ createSprite(}}
+\DoxyCodeLine{00356\ \textcolor{comment}{//\ \ \ \ \ "{}../../assets/Pickup/assets/Pickup/PickupIcon-\/Weapons-\/BigSpaceGun2000.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00357\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/Weapons-\/Rockets"{}]\ =}}
+\DoxyCodeLine{00358\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Pickup/assets/Pickup/PickupIcon-\/Weapons-\/Rockets.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00359\ \textcolor{comment}{//\ sprites["{}PickupIcon-\/Weapons-\/Zapper"{}]\ =}}
+\DoxyCodeLine{00360\ \textcolor{comment}{//\ \ \ \ \ createSprite("{}../../assets/Pickup/assets/Pickup/PickupIcon-\/Weapons-\/Zapper.png"{},\ 480,\ 32,\ 32,\ 32);}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SPRITE\_DATA\_HPP}}
+
+\end{DoxyCode}

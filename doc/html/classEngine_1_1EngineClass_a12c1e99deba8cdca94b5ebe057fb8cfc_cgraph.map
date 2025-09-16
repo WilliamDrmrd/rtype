@@ -1,0 +1,9 @@
+<map id="Engine::EngineClass::toggleFullscreen" name="Engine::EngineClass::toggleFullscreen">
+<area shape="rect" id="Node000001" title="Toggle the fullscreen mode of the window." alt="" coords="5,37,149,86"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1World.html#a39a977e4a9b69098cf6800cb6286b81b" title="Broadcast an event to all subscribers of a specific event type." alt="" coords="197,15,388,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,48,182,43,183,49,150,54"/>
+<area shape="rect" id="Node000004" href="$classEngine_1_1EngineClass.html#a0b9aae25109727eb9a14c8b89229943b" title="Get the current world." alt="" coords="221,68,364,117"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="150,69,206,77,206,83,149,75"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1EventSubscriber.html#a8dfb2feb269e6137537c3bfd3bee7846" title="Receive and process an event." alt="" coords="436,5,588,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="388,27,421,27,421,32,388,32"/>
+</map>

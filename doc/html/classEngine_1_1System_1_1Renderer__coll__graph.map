@@ -1,0 +1,5 @@
+<map id="Engine::System::Renderer" name="Engine::System::Renderer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,83,189,113"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1BaseSystem.html" title="Abstract base class for systems in an ECS framework." alt="" coords="34,5,160,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,50,100,82,94,82,94,50"/>
+</map>

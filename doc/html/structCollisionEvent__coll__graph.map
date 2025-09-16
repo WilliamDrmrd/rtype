@@ -1,0 +1,5 @@
+<map id="CollisionEvent" name="CollisionEvent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,121,112,151"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1Entity.html" title="Represents an entity in an Entity&#45;Component&#45;System (ECS) architecture." alt="" coords="15,5,102,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,49,61,121,56,121,56,49"/>
+</map>

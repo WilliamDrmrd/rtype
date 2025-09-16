@@ -1,0 +1,128 @@
+\doxysection{Engine\+::System\+::Bullets Class Reference}
+\hypertarget{classEngine_1_1System_1_1Bullets}{}\label{classEngine_1_1System_1_1Bullets}\index{Engine::System::Bullets@{Engine::System::Bullets}}
+
+
+Inheritance diagram for Engine\+::System\+::Bullets\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classEngine_1_1System_1_1Bullets__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::System\+::Bullets\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classEngine_1_1System_1_1Bullets__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEngine_1_1System_1_1Bullets_ae240d2d7c2060abb960243cf1d8b68a4}\label{classEngine_1_1System_1_1Bullets_ae240d2d7c2060abb960243cf1d8b68a4} 
+{\bfseries Bullets} (\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&world)
+\item 
+\Hypertarget{classEngine_1_1System_1_1Bullets_ac419801b04a3c91eeb81587d82bfcb12}\label{classEngine_1_1System_1_1Bullets_ac419801b04a3c91eeb81587d82bfcb12} 
+{\bfseries Bullets} (\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&world, ECS\+::id\+\_\+t ids...)
+\item 
+void \mbox{\hyperlink{classEngine_1_1System_1_1Bullets_a23279ebfb32e6fb54a3c7a78de3c7fbc}{configure}} (\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&world) override
+\begin{DoxyCompactList}\small\item\em Configure the system with the world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_1_1System_1_1Bullets_a1fdd7c41f64b02499aa6b25537b06b76}{unconfigure}} () override
+\begin{DoxyCompactList}\small\item\em Unconfigure the system, releasing any resources or state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_1_1System_1_1Bullets_a67f719cab760abe0cfafa9e7907324ef}{tick}} () override
+\begin{DoxyCompactList}\small\item\em Update method for the system to process its entities. \end{DoxyCompactList}\item 
+\Hypertarget{classEngine_1_1System_1_1Bullets_af5a40800abb0a7eb36f4cc5cf7cc1817}\label{classEngine_1_1System_1_1Bullets_af5a40800abb0a7eb36f4cc5cf7cc1817} 
+void {\bfseries spawn\+Bullet} (bool from\+Enemy, float posx, float posy, sf\+::\+Vector2f destination, size\+\_\+t time, int dmg=50)
+\item 
+\Hypertarget{classEngine_1_1System_1_1Bullets_a25059c6de252a6b0d8c74916b65151c9}\label{classEngine_1_1System_1_1Bullets_a25059c6de252a6b0d8c74916b65151c9} 
+void {\bfseries spawn\+Bullet} (bool from\+Enemy, float posx, float posy, sf\+::\+Vector2f destination, size\+\_\+t time, float rotation, int dmg=50)
+\item 
+\Hypertarget{classEngine_1_1System_1_1Bullets_ae7e8b7859427e56429f6fd5052fd3650}\label{classEngine_1_1System_1_1Bullets_ae7e8b7859427e56429f6fd5052fd3650} 
+void {\bfseries spawn\+Big\+Bullet} (bool from\+Enemy, float posx, float posy, sf\+::\+Vector2f destination, size\+\_\+t time, float rotation, int dmg=50)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseSystem}{ECS\+::\+Base\+System}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classECS_1_1BaseSystem_abca06a7d8622c2404ce44f5fe2dfb8ba}{Base\+System}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1BaseSystem_ad996c1bb749405c509b43ff0725c71cb}{Base\+System}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world, id\+\_\+t ids...)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classECS_1_1BaseSystem}{Base\+System} object and initialize it with a list of entity IDs. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+System} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classECS_1_1BaseSystem}{Base\+System}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_afd15a4965d7e0a76db754ff6ac0af1fb}{configure}} (\mbox{\hyperlink{classECS_1_1World}{World}} \&world)=0
+\begin{DoxyCompactList}\small\item\em Configure the system with the world. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_abac94ba96a919642b866c906462316bc}{unconfigure}} ()=0
+\begin{DoxyCompactList}\small\item\em Unconfigure the system, releasing any resources or state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classECS_1_1BaseSystem_ae60465d4eba925f7ae728aa3decb900e}{tick}} ()=0
+\begin{DoxyCompactList}\small\item\em Update method for the system to process its entities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1World}{World}} \& \mbox{\hyperlink{classECS_1_1BaseSystem_a22cddc444a0241c98ef969f1aa13113d}{get\+World}} () const
+\begin{DoxyCompactList}\small\item\em Get the \doxylink{classECS_1_1World}{World} object that this system is part of. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEngine_1_1System_1_1Bullets_a23279ebfb32e6fb54a3c7a78de3c7fbc}\label{classEngine_1_1System_1_1Bullets_a23279ebfb32e6fb54a3c7a78de3c7fbc} 
+\index{Engine::System::Bullets@{Engine::System::Bullets}!configure@{configure}}
+\index{configure@{configure}!Engine::System::Bullets@{Engine::System::Bullets}}
+\doxysubsubsection{\texorpdfstring{configure()}{configure()}}
+{\footnotesize\ttfamily void Bullets\+::configure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \&}]{world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Configure the system with the world. 
+
+\begin{DoxyNote}{Note}
+This method is intended to be implemented by derived classes to set up any necessary state or resources related to the world.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Reference to the World object. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseSystem_afd15a4965d7e0a76db754ff6ac0af1fb}{ECS\+::\+Base\+System}}.
+
+\Hypertarget{classEngine_1_1System_1_1Bullets_a67f719cab760abe0cfafa9e7907324ef}\label{classEngine_1_1System_1_1Bullets_a67f719cab760abe0cfafa9e7907324ef} 
+\index{Engine::System::Bullets@{Engine::System::Bullets}!tick@{tick}}
+\index{tick@{tick}!Engine::System::Bullets@{Engine::System::Bullets}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void Bullets\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update method for the system to process its entities. 
+
+\begin{DoxyNote}{Note}
+This method should be implemented by derived classes to define the system\textquotesingle{}s behavior each tick. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseSystem_ae60465d4eba925f7ae728aa3decb900e}{ECS\+::\+Base\+System}}.
+
+\Hypertarget{classEngine_1_1System_1_1Bullets_a1fdd7c41f64b02499aa6b25537b06b76}\label{classEngine_1_1System_1_1Bullets_a1fdd7c41f64b02499aa6b25537b06b76} 
+\index{Engine::System::Bullets@{Engine::System::Bullets}!unconfigure@{unconfigure}}
+\index{unconfigure@{unconfigure}!Engine::System::Bullets@{Engine::System::Bullets}}
+\doxysubsubsection{\texorpdfstring{unconfigure()}{unconfigure()}}
+{\footnotesize\ttfamily void Bullets\+::unconfigure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Unconfigure the system, releasing any resources or state. 
+
+\begin{DoxyNote}{Note}
+This method is intended to be implemented by derived classes to clean up when the system is no longer needed. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseSystem_abac94ba96a919642b866c906462316bc}{ECS\+::\+Base\+System}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+R-\/\+Type/\+Systems/Bullets.\+system.\+hpp\item 
+src/\+R-\/\+Type/\+Systems/Bullets.\+system.\+cpp\end{DoxyCompactItemize}

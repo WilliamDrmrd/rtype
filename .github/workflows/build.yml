@@ -1,0 +1,128 @@
+name: C++ CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: Release_${{ github.run_number }}
+          release_name: Release ${{ github.run_number }}
+          draft: false
+          prerelease: false
+          body: "New version of the Rtype"
+
+  build-linux:
+    needs: create-release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt update -y
+          sudo apt upgrade -y
+          sudo apt install zip \
+            cmake \
+            build-essential \
+            libtool \
+            autoconf \
+            unzip wget \
+            software-properties-common \
+            lsb-release \
+            libudev-dev \
+            libopenal-dev \
+            libvorbis-dev \
+            libflac-dev \
+            libxcursor-dev \
+            libxrandr-dev \
+            libxinerama-dev \
+            libxi-dev \
+            libgl1-mesa-dev \
+            libfreetype-dev -y
+      - name: Get Cmake 3.28
+        run: |
+          sudo apt clean all
+          sudo apt remove --purge --auto-remove cmake -y
+          wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - | sudo tee /etc/apt/trusted.gpg.d/kitware.gpg >/dev/null
+          sudo apt-add-repository "deb https://apt.kitware.com/ubuntu/ $(lsb_release -cs) main" -y
+          sudo apt update -y
+          sudo apt install kitware-archive-keyring -y
+          sudo rm /etc/apt/trusted.gpg.d/kitware.gpg
+          sudo apt update -y
+          sudo apt install cmake -y
+      - name: Build with CMake and Clang
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --config Release -- -j
+      - name: Create Cpack
+        run: |
+          cd build
+          sudo cpack
+      - name: Create project archive
+        run: |
+          cd build
+          tar -zcvf Linux.tar.gz R-TYPE-1.0.0-Linux.*
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: r-type
+          path: ${{ github.workspace }}/build/Linux.tar.gz
+
+      - name: Upload Artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: ${{ github.workspace }}/build/Linux.tar.gz
+          asset_name: Linux.zip
+          asset_content_type: application/zip
+
+  build-windows:
+    needs: create-release
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build with CMake and MSVC
+        run: |
+          mkdir build && cd build
+          cmake -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 17" -A x64 ..
+          cmake --build . --config Release
+      - name: Create project archive
+        run: |
+          cd build
+          cpack
+          Compress-Archive -Path R-TYPE-1.0.0-win64.exe -DestinationPath Windows.zip
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: r-type
+          path: ${{ github.workspace }}/build/Windows.zip
+
+      - name: Upload Artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.create-release.outputs.upload_url }}
+          asset_path: ${{ github.workspace }}/build/Windows.zip
+          asset_name: Windows.zip
+          asset_content_type: application/zip

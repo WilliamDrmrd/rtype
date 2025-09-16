@@ -1,0 +1,13 @@
+<map id="Engine::System::WorldMoveSystem::tick" name="Engine::System::WorldMoveSystem::tick">
+<area shape="rect" id="Node000001" title="Update method for the system to process its entities." alt="" coords="5,59,202,107"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1Entity.html#a443006243e747ad64f38aeccaf48886a" title="Get a component." alt="" coords="252,5,440,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,55,271,37,272,42,201,60"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1World.html#a5e4ee91f427d1eb7169d098cc8faba4f" title="get the first entity that have a set of given components." alt="" coords="256,59,436,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,80,241,80,241,86,202,86"/>
+<area shape="rect" id="Node000006" href="$classECS_1_1BaseSystem.html#a22cddc444a0241c98ef969f1aa13113d" title="Get the World object that this system is part of." alt="" coords="250,131,442,160"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="201,105,272,124,271,129,200,110"/>
+<area shape="rect" id="Node000004" href="$classECS_1_1World.html#a88a62f9a990a5b7afefc36e2fae43056" title="get all entities that have a set of given components." alt="" coords="490,59,680,107"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="437,80,475,80,475,86,437,86"/>
+<area shape="rect" id="Node000005" href="$classECS_1_1Entity.html#ac59ca658abb333047122236593fdf863" title="Check if the Entity has a component of a specific type." alt="" coords="728,68,844,98"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="681,80,714,80,714,86,681,86"/>
+</map>

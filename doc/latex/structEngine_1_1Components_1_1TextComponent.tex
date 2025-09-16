@@ -1,0 +1,123 @@
+\doxysection{Engine\+::Components\+::Text\+Component Struct Reference}
+\hypertarget{structEngine_1_1Components_1_1TextComponent}{}\label{structEngine_1_1Components_1_1TextComponent}\index{Engine::Components::TextComponent@{Engine::Components::TextComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Text\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1TextComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Text\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{structEngine_1_1Components_1_1TextComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a730fc090aac78a2dd2722ea4ca4f6f32}\label{structEngine_1_1Components_1_1TextComponent_a730fc090aac78a2dd2722ea4ca4f6f32} 
+{\bfseries Text\+Component} (const std\+::string \&str, const sf\+::\+Font new\+Font, unsigned int character\+Size, sf\+::\+Vector2f pos, bool centered=false, bool is\+Display=true, std\+::string name=\"{}\"{})
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a04200b8c11ca43103474afc21ea69b62}\label{structEngine_1_1Components_1_1TextComponent_a04200b8c11ca43103474afc21ea69b62} 
+{\bfseries Text\+Component} (const std\+::string \&str, const sf\+::\+Font new\+Font, unsigned int character\+Size, sf\+::\+Vector2f pos, const sf\+::\+Color \&fill\+Color, bool centered=false, bool is\+Display=true, std\+::string name=\"{}\"{})
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a9a3560964d56c35874732cca506fc1bb}\label{structEngine_1_1Components_1_1TextComponent_a9a3560964d56c35874732cca506fc1bb} 
+void {\bfseries change\+Text} (const std\+::string \&str)
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a3ecccf6e1772ca37ee529459848e513a}\label{structEngine_1_1Components_1_1TextComponent_a3ecccf6e1772ca37ee529459848e513a} 
+void {\bfseries add\+Text} (const std\+::string \&str)
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a461b34f5008e4c430a94887900cedca9}\label{structEngine_1_1Components_1_1TextComponent_a461b34f5008e4c430a94887900cedca9} 
+void {\bfseries remove\+Text} ()
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent_ac63166e55aa9c078300f31631c97c4aa}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent_a37e254e7dd07af52f747c74f6a4f0ac6}{deserialize}} (const std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) final
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1TextComponent_a08bf5aa22a6bd9dececb4f25b4e31e0a}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a049843b33a538dd8345fc8ebf60d1723}\label{structEngine_1_1Components_1_1TextComponent_a049843b33a538dd8345fc8ebf60d1723} 
+sf\+::\+Text {\bfseries text}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a4350ac0cf1cb3279367762c0adccf425}\label{structEngine_1_1Components_1_1TextComponent_a4350ac0cf1cb3279367762c0adccf425} 
+std\+::string {\bfseries content}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a8db814bc51608d7eaa93a1bf7aeefea5}\label{structEngine_1_1Components_1_1TextComponent_a8db814bc51608d7eaa93a1bf7aeefea5} 
+sf\+::\+Font {\bfseries font}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a28dbb4e4b88ec0461af65d788d477384}\label{structEngine_1_1Components_1_1TextComponent_a28dbb4e4b88ec0461af65d788d477384} 
+sf\+::\+Color {\bfseries fill\+Color}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a1069439a27f991d0b54e91fcdd882be9}\label{structEngine_1_1Components_1_1TextComponent_a1069439a27f991d0b54e91fcdd882be9} 
+bool {\bfseries is\+Display}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a6ca98e4871bcbdcb20ebf0c653e95a04}\label{structEngine_1_1Components_1_1TextComponent_a6ca98e4871bcbdcb20ebf0c653e95a04} 
+bool {\bfseries centered}
+\item 
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a68acee27abe10754f727dbddb939d933}\label{structEngine_1_1Components_1_1TextComponent_a68acee27abe10754f727dbddb939d933} 
+std\+::string {\bfseries name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a37e254e7dd07af52f747c74f6a4f0ac6}\label{structEngine_1_1Components_1_1TextComponent_a37e254e7dd07af52f747c74f6a4f0ac6} 
+\index{Engine::Components::TextComponent@{Engine::Components::TextComponent}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Engine::Components::TextComponent@{Engine::Components::TextComponent}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} Engine\+::\+Components\+::\+Text\+Component\+::deserialize (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ char $>$}]{vec,  }\item[{\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_a08bf5aa22a6bd9dececb4f25b4e31e0a}\label{structEngine_1_1Components_1_1TextComponent_a08bf5aa22a6bd9dececb4f25b4e31e0a} 
+\index{Engine::Components::TextComponent@{Engine::Components::TextComponent}!getType@{getType}}
+\index{getType@{getType}!Engine::Components::TextComponent@{Engine::Components::TextComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Component\+Type Engine\+::\+Components\+::\+Text\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+\Hypertarget{structEngine_1_1Components_1_1TextComponent_ac63166e55aa9c078300f31631c97c4aa}\label{structEngine_1_1Components_1_1TextComponent_ac63166e55aa9c078300f31631c97c4aa} 
+\index{Engine::Components::TextComponent@{Engine::Components::TextComponent}!serialize@{serialize}}
+\index{serialize@{serialize}!Engine::Components::TextComponent@{Engine::Components::TextComponent}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ char $>$ Engine\+::\+Components\+::\+Text\+Component\+::serialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Components/Text.\+component.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="Engine::System::UI::tick" name="Engine::System::UI::tick">
+<area shape="rect" id="Node000001" title="Update method for the system to process its entities." alt="" coords="5,5,145,54"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1BaseSystem.html#a22cddc444a0241c98ef969f1aa13113d" title="Get the World object that this system is part of." alt="" coords="193,15,385,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,27,177,27,177,32,145,32"/>
+</map>

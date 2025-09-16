@@ -1,0 +1,533 @@
+\doxysection{Engine\+::Engine\+Class Class Reference}
+\hypertarget{classEngine_1_1EngineClass}{}\label{classEngine_1_1EngineClass}\index{Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEngine_1_1EngineClass_a93abdcd317bf6594ea019adcda6ecaf2}\label{classEngine_1_1EngineClass_a93abdcd317bf6594ea019adcda6ecaf2} 
+\mbox{\hyperlink{classEngine_1_1EngineClass}{Engine\+Class}} \& {\bfseries operator=} (const \mbox{\hyperlink{classEngine_1_1EngineClass}{Engine\+Class}} \&engine)=delete
+\item 
+\Hypertarget{classEngine_1_1EngineClass_a0740da547043fcd0b87a5899740c8a1a}\label{classEngine_1_1EngineClass_a0740da547043fcd0b87a5899740c8a1a} 
+{\bfseries Engine\+Class} (const \mbox{\hyperlink{classEngine_1_1EngineClass}{Engine\+Class}} \&engine)=delete
+\item 
+\Hypertarget{classEngine_1_1EngineClass_a299a9616caaa737ee2443a3e4d434232}\label{classEngine_1_1EngineClass_a299a9616caaa737ee2443a3e4d434232} 
+void {\bfseries set\+Start\+World} (const std\+::string \&name)
+\item 
+\Hypertarget{classEngine_1_1EngineClass_a8323043152c103d255fe1e34f47ef907}\label{classEngine_1_1EngineClass_a8323043152c103d255fe1e34f47ef907} 
+int {\bfseries get\+Network} ()
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classEngine_1_1EngineClass_a5db6b8578c8c89c7b80fd028862f2c76}{get\+Window\+SizeX}} () const
+\begin{DoxyCompactList}\small\item\em Get the Window Size X object. \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classEngine_1_1EngineClass_ac3389a6591958a19a10d2d98c9b79450}{get\+Window\+SizeY}} () const
+\begin{DoxyCompactList}\small\item\em Get the Window Size Y object. \end{DoxyCompactList}\item 
+\Hypertarget{classEngine_1_1EngineClass_a5213790d21a144845cc1512993dcd0cd}\label{classEngine_1_1EngineClass_a5213790d21a144845cc1512993dcd0cd} 
+void {\bfseries set\+Current\+Player} (int)
+\item 
+\Hypertarget{classEngine_1_1EngineClass_aa683b420a2599709ee97aac4b702e22e}\label{classEngine_1_1EngineClass_aa683b420a2599709ee97aac4b702e22e} 
+void {\bfseries set\+Players\+Amount} (int)
+\item 
+\Hypertarget{classEngine_1_1EngineClass_af03ee821de78fcc74c907a0320f511f0}\label{classEngine_1_1EngineClass_af03ee821de78fcc74c907a0320f511f0} 
+void {\bfseries set\+Own\+Player} (int)
+\item 
+\Hypertarget{classEngine_1_1EngineClass_a2aa2a326b17320ba6af3f2f5c4bee6d9}\label{classEngine_1_1EngineClass_a2aa2a326b17320ba6af3f2f5c4bee6d9} 
+int {\bfseries get\+Current\+Player} () const
+\item 
+\Hypertarget{classEngine_1_1EngineClass_a87715a177a9b9d94873050c592d25148}\label{classEngine_1_1EngineClass_a87715a177a9b9d94873050c592d25148} 
+int {\bfseries get\+Players\+Amount} () const
+\item 
+\Hypertarget{classEngine_1_1EngineClass_a3190b1edb82a2a2538c91aaa2fc9a722}\label{classEngine_1_1EngineClass_a3190b1edb82a2a2538c91aaa2fc9a722} 
+int {\bfseries get\+Own\+Player} () const
+\item 
+void \mbox{\hyperlink{classEngine_1_1EngineClass_aea05d26008d42f942fc8ce2961126649}{create\+Empty\+World}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Creates an empty world with the given name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_1_1EngineClass_ac0d13c72efa17ce0072e0a012408de37}{add\+World\+Factory}} (const std\+::string \&name, std\+::function$<$ \mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \texorpdfstring{$\ast$}{*}()$>$)
+\begin{DoxyCompactList}\small\item\em Adds a world factory to the engine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_1_1EngineClass_a115f93d15b0d5e25393b68cc8ba3cde2}{switch\+World}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Switches the current world to the one with the given name. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classEngine_1_1EngineClass_a6d24b1037711987769fe40c36ebdc16d}{get\+Worlds\+Names}} ()
+\begin{DoxyCompactList}\small\item\em Get the current world name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \& \mbox{\hyperlink{classEngine_1_1EngineClass_a0b9aae25109727eb9a14c8b89229943b}{world}} () const
+\begin{DoxyCompactList}\small\item\em Get the current world. \end{DoxyCompactList}\item 
+\Hypertarget{classEngine_1_1EngineClass_ae3e75d40e7039e18edf2e5b104348a91}\label{classEngine_1_1EngineClass_ae3e75d40e7039e18edf2e5b104348a91} 
+\mbox{\hyperlink{classECS_1_1Network}{ECS\+::\+Network}} \& {\bfseries network} ()
+\item 
+void \mbox{\hyperlink{classEngine_1_1EngineClass_a0800a2490d53fce20d561b91938fd7e5}{run}} ()
+\begin{DoxyCompactList}\small\item\em Run the engine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_1_1EngineClass_a12c1e99deba8cdca94b5ebe057fb8cfc}{toggle\+Fullscreen}} ()
+\begin{DoxyCompactList}\small\item\em Toggle the fullscreen mode of the window. \end{DoxyCompactList}\item 
+\Hypertarget{classEngine_1_1EngineClass_abf8c5d0bf9bea33d1111f77ed92292ce}\label{classEngine_1_1EngineClass_abf8c5d0bf9bea33d1111f77ed92292ce} 
+void {\bfseries process\+Switch\+Event} (sf\+::\+Event event)
+\item 
+\Hypertarget{classEngine_1_1EngineClass_a633174e6ad51badc50bab2b0417eb0d2}\label{classEngine_1_1EngineClass_a633174e6ad51badc50bab2b0417eb0d2} 
+void {\bfseries handle\+Events} ()
+\item 
+\Hypertarget{classEngine_1_1EngineClass_a2cc384063e43354e8cde4af0d993fb43}\label{classEngine_1_1EngineClass_a2cc384063e43354e8cde4af0d993fb43} 
+void {\bfseries process\+Clients\+Events} ()
+\item 
+\Hypertarget{classEngine_1_1EngineClass_ac4616baddaeddf3ed495dfcc7b7a3ec2}\label{classEngine_1_1EngineClass_ac4616baddaeddf3ed495dfcc7b7a3ec2} 
+void {\bfseries components\+Updater} (std\+::tuple$<$ ECS\+::id\+\_\+t, std\+::vector$<$ Component\+Type $>$, std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}, Component\+Type $>$ $>$ $>$ \&tuple)
+\item 
+ECS\+::id\+\_\+t \mbox{\hyperlink{classEngine_1_1EngineClass_a00fd8892e59bd660704b9e92cba160ab}{add\+Global\+Entity}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} $>$ entity)
+\begin{DoxyCompactList}\small\item\em Add a global entity to the world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_1_1EngineClass_a8a70b4cb592acb71036172d96e0ad12d}{remove\+Global\+Entity}} (ECS\+::id\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Remove a global entity from the world. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \& \mbox{\hyperlink{classEngine_1_1EngineClass_a51e99b681bd9caddf41fe286b4785018}{get\+Global\+Entity}} (ECS\+::id\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Get an immutable reference to a global entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \& \mbox{\hyperlink{classEngine_1_1EngineClass_af6ac597f87ee80c0668aa434c6ff60e4}{get\+Mut\+Global\+Entity}} (ECS\+::id\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Get a mutable reference to a global entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$ $>$ \mbox{\hyperlink{classEngine_1_1EngineClass_a64bc81f4c40d4cb57270b07cfdedc140}{get\+Global}} ()
+\begin{DoxyCompactList}\small\item\em Get all global entities that have a specific component type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classEngine_1_1EngineClass_aa3fa0fb3a55f99720876c9f8e41648d2}{each}} (std\+::function$<$ void(\mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$)$>$ func)
+\begin{DoxyCompactList}\small\item\em Iterates over all entities that have a specific component type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Types$>$ }\\void \mbox{\hyperlink{classEngine_1_1EngineClass_a497c5cbc9b584574aab069264a6dd5fc}{each}} (std\+::function$<$ void(\mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ Types... $>$)$>$ func)
+\begin{DoxyCompactList}\small\item\em Iterates over all entities that have a specific set of component types. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Types$>$ }\\std\+::vector$<$ \mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classEngine_1_1EngineClass_acf4ed5dd4f401f206b3981385d393da6}{get\+Global\+Entities\+With\+Components}} ()
+\begin{DoxyCompactList}\small\item\em get all entities that have a set of given components. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Types$>$ }\\\mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEngine_1_1EngineClass_aca960cb4282f6e6b552d1bb4b87bc6d5}{get\+Global\+Entity\+With\+Components}} ()
+\begin{DoxyCompactList}\small\item\em get the first entity that have a set of given components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classEngine_1_1EngineClass}{Engine\+Class}} \& \mbox{\hyperlink{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}{get\+Engine}} ()
+\begin{DoxyCompactList}\small\item\em Get the Engine object. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classEngine_1_1EngineClass}{Engine\+Class}} \& \mbox{\hyperlink{classEngine_1_1EngineClass_a52d8b8317cea4c58ea96dbfdbcf14a35}{get\+Engine}} (std\+::size\+\_\+t x, std\+::size\+\_\+t y, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Get the Engine object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEngine_1_1EngineClass_a0d6db1d5468645f61514580dd591fa0f}\label{classEngine_1_1EngineClass_a0d6db1d5468645f61514580dd591fa0f} 
+sf\+::\+Render\+Window {\bfseries window}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEngine_1_1EngineClass_a00fd8892e59bd660704b9e92cba160ab}\label{classEngine_1_1EngineClass_a00fd8892e59bd660704b9e92cba160ab} 
+\index{Engine::EngineClass@{Engine::EngineClass}!addGlobalEntity@{addGlobalEntity}}
+\index{addGlobalEntity@{addGlobalEntity}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{addGlobalEntity()}{addGlobalEntity()}}
+{\footnotesize\ttfamily ECS\+::id\+\_\+t Engine\+Class\+::add\+Global\+Entity (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} $>$}]{entity }\end{DoxyParamCaption})}
+
+
+
+Add a global entity to the world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & A unique pointer to the Global\+Entity to be added. Ownership of the global entity is transferred to the World. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id\+\_\+t The unique identifier for the added global entity. 
+\end{DoxyReturn}
+\Hypertarget{classEngine_1_1EngineClass_ac0d13c72efa17ce0072e0a012408de37}\label{classEngine_1_1EngineClass_ac0d13c72efa17ce0072e0a012408de37} 
+\index{Engine::EngineClass@{Engine::EngineClass}!addWorldFactory@{addWorldFactory}}
+\index{addWorldFactory@{addWorldFactory}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{addWorldFactory()}{addWorldFactory()}}
+{\footnotesize\ttfamily void Engine\+Class\+::add\+World\+Factory (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::function$<$ \mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \texorpdfstring{$\ast$}{*}()$>$}]{factory }\end{DoxyParamCaption})}
+
+
+
+Adds a world factory to the engine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the world \\
+\hline
+{\em factory} & The factory function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The factory function must return a shared\+\_\+ptr to a world 
+
+If the world already exists, it will be overwritten 
+\end{DoxyNote}
+\Hypertarget{classEngine_1_1EngineClass_aea05d26008d42f942fc8ce2961126649}\label{classEngine_1_1EngineClass_aea05d26008d42f942fc8ce2961126649} 
+\index{Engine::EngineClass@{Engine::EngineClass}!createEmptyWorld@{createEmptyWorld}}
+\index{createEmptyWorld@{createEmptyWorld}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{createEmptyWorld()}{createEmptyWorld()}}
+{\footnotesize\ttfamily void Engine\+Class\+::create\+Empty\+World (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Creates an empty world with the given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the world \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the world already exists, it will be overwritten 
+
+This function will throw an error if the world doesn\textquotesingle{}t exist 
+\end{DoxyNote}
+\Hypertarget{classEngine_1_1EngineClass_aa3fa0fb3a55f99720876c9f8e41648d2}\label{classEngine_1_1EngineClass_aa3fa0fb3a55f99720876c9f8e41648d2} 
+\index{Engine::EngineClass@{Engine::EngineClass}!each@{each}}
+\index{each@{each}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{each()}{each()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Engine\+Class\+::each (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$)$>$}]{func }\end{DoxyParamCaption})}
+
+
+
+Iterates over all entities that have a specific component type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type to filter entities. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The callable function that will be applied to each global entity and its component. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEngine_1_1EngineClass_aa3fa0fb3a55f99720876c9f8e41648d2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEngine_1_1EngineClass_a497c5cbc9b584574aab069264a6dd5fc}\label{classEngine_1_1EngineClass_a497c5cbc9b584574aab069264a6dd5fc} 
+\index{Engine::EngineClass@{Engine::EngineClass}!each@{each}}
+\index{each@{each}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{each()}{each()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Types$>$ \\
+void Engine\+Class\+::each (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ Types... $>$)$>$}]{func }\end{DoxyParamCaption})}
+
+
+
+Iterates over all entities that have a specific set of component types. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Types} & Component types to filter entities. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & The callable function that will be applied to each global entity and its components. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function utilizes a helper function to handle the iteration and application of the function. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classEngine_1_1EngineClass_a497c5cbc9b584574aab069264a6dd5fc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce}\label{classEngine_1_1EngineClass_a763022987a2b8bf5dea4cb30c0b8bbce} 
+\index{Engine::EngineClass@{Engine::EngineClass}!getEngine@{getEngine}}
+\index{getEngine@{getEngine}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{getEngine()}{getEngine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEngine_1_1EngineClass}{Engine\+Class}} \& Engine\+Class\+::get\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the Engine object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classEngine_1_1EngineClass}{Engine\+Class}\& the engine unique instance 
+\end{DoxyReturn}
+\Hypertarget{classEngine_1_1EngineClass_a52d8b8317cea4c58ea96dbfdbcf14a35}\label{classEngine_1_1EngineClass_a52d8b8317cea4c58ea96dbfdbcf14a35} 
+\index{Engine::EngineClass@{Engine::EngineClass}!getEngine@{getEngine}}
+\index{getEngine@{getEngine}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{getEngine()}{getEngine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEngine_1_1EngineClass}{Engine\+Class}} \& Engine\+Class\+::get\+Engine (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{x,  }\item[{std\+::size\+\_\+t}]{y,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the Engine object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The width of the window \\
+\hline
+{\em y} & The height of the window \\
+\hline
+{\em name} & The name of the window \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classEngine_1_1EngineClass}{Engine\+Class}\& the engine unique instance 
+\end{DoxyReturn}
+\Hypertarget{classEngine_1_1EngineClass_a64bc81f4c40d4cb57270b07cfdedc140}\label{classEngine_1_1EngineClass_a64bc81f4c40d4cb57270b07cfdedc140} 
+\index{Engine::EngineClass@{Engine::EngineClass}!getGlobal@{getGlobal}}
+\index{getGlobal@{getGlobal}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{getGlobal()}{getGlobal()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS\+::\+Component\+Handle}}$<$ T $>$ $>$ Engine\+Class\+::get\+Global}
+
+
+
+Get all global entities that have a specific component type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type to filter global entities. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Global\+Entity \texorpdfstring{$\ast$}{*}$>$ A vector of pointers to the global entities. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEngine_1_1EngineClass_a64bc81f4c40d4cb57270b07cfdedc140_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEngine_1_1EngineClass_acf4ed5dd4f401f206b3981385d393da6}\label{classEngine_1_1EngineClass_acf4ed5dd4f401f206b3981385d393da6} 
+\index{Engine::EngineClass@{Engine::EngineClass}!getGlobalEntitiesWithComponents@{getGlobalEntitiesWithComponents}}
+\index{getGlobalEntitiesWithComponents@{getGlobalEntitiesWithComponents}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{getGlobalEntitiesWithComponents()}{getGlobalEntitiesWithComponents()}}
+{\footnotesize\ttfamily template$<$typename... Types$>$ \\
+std\+::vector$<$ \mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \texorpdfstring{$\ast$}{*} $>$ Engine\+Class\+::get\+Global\+Entities\+With\+Components}
+
+
+
+get all entities that have a set of given components. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Types} & The component types to filter entities. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Entity \texorpdfstring{$\ast$}{*}$>$ A vector of pointers to the entities. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEngine_1_1EngineClass_acf4ed5dd4f401f206b3981385d393da6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEngine_1_1EngineClass_a51e99b681bd9caddf41fe286b4785018}\label{classEngine_1_1EngineClass_a51e99b681bd9caddf41fe286b4785018} 
+\index{Engine::EngineClass@{Engine::EngineClass}!getGlobalEntity@{getGlobalEntity}}
+\index{getGlobalEntity@{getGlobalEntity}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{getGlobalEntity()}{getGlobalEntity()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \& Engine\+Class\+::get\+Global\+Entity (\begin{DoxyParamCaption}\item[{ECS\+::id\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Get an immutable reference to a global entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the global entity to get. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Global\+Entity\& An immutable reference to the global entity. 
+\end{DoxyReturn}
+\Hypertarget{classEngine_1_1EngineClass_aca960cb4282f6e6b552d1bb4b87bc6d5}\label{classEngine_1_1EngineClass_aca960cb4282f6e6b552d1bb4b87bc6d5} 
+\index{Engine::EngineClass@{Engine::EngineClass}!getGlobalEntityWithComponents@{getGlobalEntityWithComponents}}
+\index{getGlobalEntityWithComponents@{getGlobalEntityWithComponents}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{getGlobalEntityWithComponents()}{getGlobalEntityWithComponents()}}
+{\footnotesize\ttfamily template$<$typename... Types$>$ \\
+\mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \texorpdfstring{$\ast$}{*} Engine\+Class\+::get\+Global\+Entity\+With\+Components}
+
+
+
+get the first entity that have a set of given components. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Types} & The component types to filter entities. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Entity \texorpdfstring{$\ast$}{*} A pointer to the entity. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEngine_1_1EngineClass_aca960cb4282f6e6b552d1bb4b87bc6d5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEngine_1_1EngineClass_af6ac597f87ee80c0668aa434c6ff60e4}\label{classEngine_1_1EngineClass_af6ac597f87ee80c0668aa434c6ff60e4} 
+\index{Engine::EngineClass@{Engine::EngineClass}!getMutGlobalEntity@{getMutGlobalEntity}}
+\index{getMutGlobalEntity@{getMutGlobalEntity}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{getMutGlobalEntity()}{getMutGlobalEntity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1GlobalEntity}{ECS\+::\+Global\+Entity}} \& Engine\+Class\+::get\+Mut\+Global\+Entity (\begin{DoxyParamCaption}\item[{ECS\+::id\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Get a mutable reference to a global entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the global entity to get. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Global\+Entity\& A mutable reference to the global entity. 
+\end{DoxyReturn}
+\Hypertarget{classEngine_1_1EngineClass_a5db6b8578c8c89c7b80fd028862f2c76}\label{classEngine_1_1EngineClass_a5db6b8578c8c89c7b80fd028862f2c76} 
+\index{Engine::EngineClass@{Engine::EngineClass}!getWindowSizeX@{getWindowSizeX}}
+\index{getWindowSizeX@{getWindowSizeX}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{getWindowSizeX()}{getWindowSizeX()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Engine\+Class\+::get\+Window\+SizeX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Window Size X object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::size\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{classEngine_1_1EngineClass_ac3389a6591958a19a10d2d98c9b79450}\label{classEngine_1_1EngineClass_ac3389a6591958a19a10d2d98c9b79450} 
+\index{Engine::EngineClass@{Engine::EngineClass}!getWindowSizeY@{getWindowSizeY}}
+\index{getWindowSizeY@{getWindowSizeY}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{getWindowSizeY()}{getWindowSizeY()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t Engine\+Class\+::get\+Window\+SizeY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Window Size Y object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::size\+\_\+t 
+\end{DoxyReturn}
+\Hypertarget{classEngine_1_1EngineClass_a6d24b1037711987769fe40c36ebdc16d}\label{classEngine_1_1EngineClass_a6d24b1037711987769fe40c36ebdc16d} 
+\index{Engine::EngineClass@{Engine::EngineClass}!getWorldsNames@{getWorldsNames}}
+\index{getWorldsNames@{getWorldsNames}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{getWorldsNames()}{getWorldsNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Engine\+Class\+::get\+Worlds\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current world name. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\Hypertarget{classEngine_1_1EngineClass_a8a70b4cb592acb71036172d96e0ad12d}\label{classEngine_1_1EngineClass_a8a70b4cb592acb71036172d96e0ad12d} 
+\index{Engine::EngineClass@{Engine::EngineClass}!removeGlobalEntity@{removeGlobalEntity}}
+\index{removeGlobalEntity@{removeGlobalEntity}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{removeGlobalEntity()}{removeGlobalEntity()}}
+{\footnotesize\ttfamily void Engine\+Class\+::remove\+Global\+Entity (\begin{DoxyParamCaption}\item[{ECS\+::id\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Remove a global entity from the world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the global entity to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The global entity will be properly destroyed when removed from all the worlds. 
+\end{DoxyNote}
+\Hypertarget{classEngine_1_1EngineClass_a0800a2490d53fce20d561b91938fd7e5}\label{classEngine_1_1EngineClass_a0800a2490d53fce20d561b91938fd7e5} 
+\index{Engine::EngineClass@{Engine::EngineClass}!run@{run}}
+\index{run@{run}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Engine\+Class\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the engine. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function will call the tick function of the world and the render function of the renderer system 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEngine_1_1EngineClass_a0800a2490d53fce20d561b91938fd7e5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEngine_1_1EngineClass_a115f93d15b0d5e25393b68cc8ba3cde2}\label{classEngine_1_1EngineClass_a115f93d15b0d5e25393b68cc8ba3cde2} 
+\index{Engine::EngineClass@{Engine::EngineClass}!switchWorld@{switchWorld}}
+\index{switchWorld@{switchWorld}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{switchWorld()}{switchWorld()}}
+{\footnotesize\ttfamily void Engine\+Class\+::switch\+World (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Switches the current world to the one with the given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the world to switch to \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the world doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function will throw an error if the world doesn\textquotesingle{}t exist 
+
+You can define DONT\+\_\+\+ADD\+\_\+\+RENDERER\+\_\+\+SYSTEM to not add the renderer system to the world automatically 
+\end{DoxyNote}
+\Hypertarget{classEngine_1_1EngineClass_a12c1e99deba8cdca94b5ebe057fb8cfc}\label{classEngine_1_1EngineClass_a12c1e99deba8cdca94b5ebe057fb8cfc} 
+\index{Engine::EngineClass@{Engine::EngineClass}!toggleFullscreen@{toggleFullscreen}}
+\index{toggleFullscreen@{toggleFullscreen}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{toggleFullscreen()}{toggleFullscreen()}}
+{\footnotesize\ttfamily void Engine\+Class\+::toggle\+Fullscreen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Toggle the fullscreen mode of the window. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function will call the broadcast\+Event function of the world 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEngine_1_1EngineClass_a12c1e99deba8cdca94b5ebe057fb8cfc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEngine_1_1EngineClass_a0b9aae25109727eb9a14c8b89229943b}\label{classEngine_1_1EngineClass_a0b9aae25109727eb9a14c8b89229943b} 
+\index{Engine::EngineClass@{Engine::EngineClass}!world@{world}}
+\index{world@{world}!Engine::EngineClass@{Engine::EngineClass}}
+\doxysubsubsection{\texorpdfstring{world()}{world()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classECS_1_1World}{ECS\+::\+World}} \& Engine\+Class\+::world (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current world. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classECS_1_1World}{ECS\+::\+World}\& 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/Engine.\+hpp\item 
+src/\+Engine/Engine.\+cpp\end{DoxyCompactItemize}

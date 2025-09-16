@@ -1,0 +1,40 @@
+\doxysection{Waiting\+Room Struct Reference}
+\hypertarget{structWaitingRoom}{}\label{structWaitingRoom}\index{WaitingRoom@{WaitingRoom}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structWaitingRoom_a93d3e03a85b00cbde390332d1ac83e51}\label{structWaitingRoom_a93d3e03a85b00cbde390332d1ac83e51} 
+void {\bfseries add\+Player} (const sf\+::\+Ip\+Address \&player, unsigned short port, bool is\+Server=false)
+\item 
+\Hypertarget{structWaitingRoom_a8d8f8e81a020cf69212d4c741582d161}\label{structWaitingRoom_a8d8f8e81a020cf69212d4c741582d161} 
+void {\bfseries clear} ()
+\item 
+\Hypertarget{structWaitingRoom_a78111fd898945d337741ee27c243b2c6}\label{structWaitingRoom_a78111fd898945d337741ee27c243b2c6} 
+std\+::vector$<$ \mbox{\hyperlink{structClientInfo}{Client\+Info}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries get\+Players} () const
+\item 
+\Hypertarget{structWaitingRoom_abe37731a558ff5f6d2487802d84d6dfe}\label{structWaitingRoom_abe37731a558ff5f6d2487802d84d6dfe} 
+bool {\bfseries is\+Game\+Started} () const
+\item 
+\Hypertarget{structWaitingRoom_a7c69f77ec7a9432a724e53ce7ae17f30}\label{structWaitingRoom_a7c69f77ec7a9432a724e53ce7ae17f30} 
+bool {\bfseries is\+Ready\+To\+Start} () const
+\item 
+\Hypertarget{structWaitingRoom_ad8e436eaac2c47ee770105cf6f02ae28}\label{structWaitingRoom_ad8e436eaac2c47ee770105cf6f02ae28} 
+bool {\bfseries all\+Players\+Switched\+World} () const
+\item 
+\Hypertarget{structWaitingRoom_ae59da8641210687ff228655af47def41}\label{structWaitingRoom_ae59da8641210687ff228655af47def41} 
+bool {\bfseries all\+Players\+Are\+Dead} () const
+\item 
+\Hypertarget{structWaitingRoom_a8d44a1b4db313cb4b18f4073e415e220}\label{structWaitingRoom_a8d44a1b4db313cb4b18f4073e415e220} 
+bool {\bfseries all\+Players\+Initialized\+Game} ()
+\item 
+\Hypertarget{structWaitingRoom_aff4f779580d4fc51e717f2b5925bf303}\label{structWaitingRoom_aff4f779580d4fc51e717f2b5925bf303} 
+void {\bfseries remove\+Player} (const sf\+::\+Ip\+Address \&player)
+\item 
+\Hypertarget{structWaitingRoom_a22eba411ee8064062344079a81019ae3}\label{structWaitingRoom_a22eba411ee8064062344079a81019ae3} 
+std\+::vector$<$ \mbox{\hyperlink{structClientInfo}{Client\+Info}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries get\+Players} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Server/Waiting\+Room.\+hpp\end{DoxyCompactItemize}

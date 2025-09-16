@@ -1,0 +1,84 @@
+\doxysection{Engine\+::Components\+::Death\+Animation\+Component Class Reference}
+\hypertarget{classEngine_1_1Components_1_1DeathAnimationComponent}{}\label{classEngine_1_1Components_1_1DeathAnimationComponent}\index{Engine::Components::DeathAnimationComponent@{Engine::Components::DeathAnimationComponent}}
+
+
+Inheritance diagram for Engine\+::Components\+::Death\+Animation\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classEngine_1_1Components_1_1DeathAnimationComponent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+::Components\+::Death\+Animation\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classEngine_1_1Components_1_1DeathAnimationComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEngine_1_1Components_1_1DeathAnimationComponent_a0428c534f6a7fcd962eb5afa93741bbf}\label{classEngine_1_1Components_1_1DeathAnimationComponent_a0428c534f6a7fcd962eb5afa93741bbf} 
+{\bfseries Death\+Animation\+Component} (std\+::string animation\+Path, int x, int y, int width, int height, int tx, int ty, int animation\+Speed, int frame\+Count)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structEngine_1_1Components_1_1AnimationComponent}{Engine\+::\+Components\+::\+Animation\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Animation\+Component} (int x, int y, int width, int height, int tx, int ty, int animation\+Speed, int frame\+Count, bool do\+Animation=true)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{structEngine_1_1Components_1_1AnimationComponent_a8a436c1c688f52f1b86335f9220ccdd1}{serialize}} () override
+\item 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structEngine_1_1Components_1_1AnimationComponent_a0a15a54c4c6b437e5ffa4c59fdac239b}{deserialize}} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component) final
+\item 
+Component\+Type \mbox{\hyperlink{structEngine_1_1Components_1_1AnimationComponent_a86dbbcf74cb3d0d63924a23876ef9394}{get\+Type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Base\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classECS_1_1BaseComponent}{Base\+Component}. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ char $>$ {\bfseries serialize} ()=0
+\item 
+virtual \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries deserialize} (std\+::vector$<$ char $>$ vec, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp=nullptr)=0
+\item 
+virtual Component\+Type {\bfseries get\+Type} ()=0
+\item 
+void {\bfseries set\+Has\+Changed} (bool has\+Changed)
+\item 
+bool {\bfseries has\+Changed} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEngine_1_1Components_1_1DeathAnimationComponent_a754ab2aae04d89e1969779ad450a55dd}\label{classEngine_1_1Components_1_1DeathAnimationComponent_a754ab2aae04d89e1969779ad450a55dd} 
+std\+::string {\bfseries animation\+Path}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structEngine_1_1Components_1_1AnimationComponent}{Engine\+::\+Components\+::\+Animation\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Rect$<$ int $>$ {\bfseries texture\+Rect} = \{0, 0, 0, 0\}
+\item 
+sf\+::\+Vector2i {\bfseries tile\+Size} = \{0, 0\}
+\item 
+int {\bfseries frame} \{0\}
+\item 
+int {\bfseries animation\+Speed} \{0\}
+\item 
+int {\bfseries frame\+Count} \{0\}
+\item 
+std\+::string {\bfseries name}
+\item 
+sf\+::\+Clock {\bfseries clock} \{\}
+\item 
+bool {\bfseries do\+Animation} = true
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+R-\/\+Type/\+Components/Death\+Animation.\+component.\+hpp\end{DoxyCompactItemize}

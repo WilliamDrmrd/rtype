@@ -1,0 +1,28 @@
+\doxysection{Components\+Convertor Class Reference}
+\hypertarget{classComponentsConvertor}{}\label{classComponentsConvertor}\index{ComponentsConvertor@{ComponentsConvertor}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classComponentsConvertor_aa43c0786961af439463c74b3fbaa99c7}\label{classComponentsConvertor_aa43c0786961af439463c74b3fbaa99c7} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries register\+Component} (Component\+Type type)
+\item 
+\Hypertarget{classComponentsConvertor_a96e32325111b0bd99a508794bf71ec3a}\label{classComponentsConvertor_a96e32325111b0bd99a508794bf71ec3a} 
+\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries create\+Component} (Component\+Type type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classComponentsConvertor_a8caa97503ea43d257c9d405f6f4526cf}\label{classComponentsConvertor_a8caa97503ea43d257c9d405f6f4526cf} 
+std\+::map$<$ Component\+Type, std\+::function$<$ \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}()$>$ $>$ {\bfseries components}
+\item 
+\Hypertarget{classComponentsConvertor_a0b6df048d6fc2fe23d796f870e35d021}\label{classComponentsConvertor_a0b6df048d6fc2fe23d796f870e35d021} 
+std\+::map$<$ Component\+Type, std\+::function$<$ bool(\mbox{\hyperlink{classECS_1_1Entity}{ECS\+::\+Entity}} \&)$>$ $>$ {\bfseries destroyers}
+\item 
+\Hypertarget{classComponentsConvertor_aecf52ab8d67cfc4b35f9f8e975aa1e2b}\label{classComponentsConvertor_aecf52ab8d67cfc4b35f9f8e975aa1e2b} 
+std\+::map$<$ Component\+Type, std\+::function$<$ bool(\mbox{\hyperlink{classECS_1_1Entity}{ECS\+::\+Entity}} \&entity, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}comp)$>$ $>$ {\bfseries adders}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/public/Available\+Components.\+hpp\end{DoxyCompactItemize}

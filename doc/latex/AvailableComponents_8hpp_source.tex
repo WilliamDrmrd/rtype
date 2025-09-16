@@ -1,0 +1,110 @@
+\doxysection{Available\+Components.\+hpp}
+\hypertarget{AvailableComponents_8hpp_source}{}\label{AvailableComponents_8hpp_source}\index{include/public/AvailableComponents.hpp@{include/public/AvailableComponents.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ RenderEngine.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ECS/Entity.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Animation.component.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Collision.component.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/ExcludeCollision.component.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/LayeredAnimation.component.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/LayeredRenderable.component.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Link.component.hpp"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Moving.component.hpp"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Position.component.hpp"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Renderable.component.hpp"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Score.component.hpp"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Speed.component.hpp"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/View.component.hpp"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/WorldMoveProgress.component.hpp"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/BaseBullet.component.hpp"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/Booster.component.hpp"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/BoosterActive.component.hpp"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/Enemy.component.hpp"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/EnemyAttack.component.hpp"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/EnemyMovements.component.hpp"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/EnemyQueue.component.hpp"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/Health.component.hpp"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/Missile.component.hpp"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/Player.component.hpp"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/WeaponType.component.hpp"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}public/ComponentsType.hpp"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classComponentsConvertor}{ComponentsConvertor}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classComponentsConvertor}{ComponentsConvertor}}()}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ here\ your\ components.}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::AnimationComponent>(ComponentType::AnimationComponent);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::CollisionComponent>(ComponentType::CollisionComponent);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::ExcludeCollisionComponent>(ComponentType::ExcludeCollisionComponent);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::MovingComponent>(ComponentType::MovingComponent);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::PositionComponent>(ComponentType::PositionComponent);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::RenderableComponent>(ComponentType::RenderableComponent);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::SpeedComponent>(ComponentType::SpeedComponent);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::ViewComponent>(ComponentType::ViewComponent);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::WorldMoveProgressComponent>(}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ComponentType::WorldMoveProgressComponent);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::BaseBulletComponent>(ComponentType::BaseBulletComponent);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::EnemyComponent>(ComponentType::EnemyComponent);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::EnemyAttackComponent>(ComponentType::EnemyAttackComponent);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::EnemyMovementsComponent>(ComponentType::EnemyMovementsComponent);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::EnemyQueueComponent>(ComponentType::EnemyQueueComponent);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::MissileComponent>(ComponentType::MissileComponent);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::PlayerComponent>(ComponentType::PlayerComponent);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::LinkComponent>(ComponentType::LinkComponent);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Rtype::Components::HealthComponent>(ComponentType::HealthComponent);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::LayeredRenderableComponent>(}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ComponentType::LayeredRenderableComponent);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::LayeredAnimationComponent>(ComponentType::LayeredAnimationComponent);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Rtype::Components::WeaponTypeComponent>(ComponentType::WeaponTypeComponent);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Engine::Components::ScoreComponent>(ComponentType::ScoreComponent);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Rtype::Components::BoosterComponent>(ComponentType::BoosterComponent);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Rtype::Components::isBoosterComponent>(ComponentType::isBoosterComponent);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ registerComponent<Rtype::Components::BoosterActiveComponent>(ComponentType::BoosterActiveComponent);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ registerComponent(ComponentType\ type)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ components[type]\ =\ []()\ -\/>\ \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS::BaseComponent}}\ *\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ T();\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ destroyers[type]\ =\ [](\mbox{\hyperlink{classECS_1_1Entity}{ECS::Entity}}\ \&entity)\ -\/>\ \textcolor{keywordtype}{bool}\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entity.has<T>())\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entity.removeComponent<T>();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ adders[type]\ =\ [](\mbox{\hyperlink{classECS_1_1Entity}{ECS::Entity}}\ \&entity,\ \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS::BaseComponent}}\ *comp)\ -\/>\ \textcolor{keywordtype}{bool}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (entity.\mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}}<T>())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}T\ *\textcolor{keyword}{>}(comp)\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entity.\mbox{\hyperlink{classECS_1_1Entity_ad76a1c085f81c85280b6769c2f455be5}{addComponent}}<T>(\textcolor{keyword}{dynamic\_cast<}T\ *\textcolor{keyword}{>}(comp));}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS::BaseComponent}}\ *createComponent(ComponentType\ type)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ components.find(type);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ components.end())\ \textcolor{keywordflow}{return}\ it-\/>second();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ std::map<ComponentType,\ std::function<\mbox{\hyperlink{classECS_1_1BaseComponent}{ECS::BaseComponent}}\ *()>>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ components;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ std::map<ComponentType,\ std::function<bool(\mbox{\hyperlink{classECS_1_1Entity}{ECS::Entity}}\ \&)>>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ destroyers;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ std::map<ComponentType,\ std::function<bool(\mbox{\hyperlink{classECS_1_1Entity}{ECS::Entity}}\ \&entity,\ \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS::BaseComponent}}\ *comp)>>\ adders;}
+\DoxyCodeLine{00104\ \};}
+
+\end{DoxyCode}

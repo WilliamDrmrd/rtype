@@ -1,0 +1,7 @@
+<map id="ECS::World::getEntityWithComponents" name="ECS::World::getEntityWithComponents">
+<area shape="rect" id="Node000001" title="get the first entity that have a set of given components." alt="" coords="5,5,186,54"/>
+<area shape="rect" id="Node000002" href="$classECS_1_1World.html#a88a62f9a990a5b7afefc36e2fae43056" title="get all entities that have a set of given components." alt="" coords="234,5,424,54"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,27,219,27,219,32,186,32"/>
+<area shape="rect" id="Node000003" href="$classECS_1_1Entity.html#ac59ca658abb333047122236593fdf863" title="Check if the Entity has a component of a specific type." alt="" coords="472,15,587,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="425,27,457,27,457,32,425,32"/>
+</map>

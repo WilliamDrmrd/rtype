@@ -1,0 +1,54 @@
+\doxysection{Ennemy\+Death.\+subscriber.\+hpp}
+\hypertarget{EnnemyDeath_8subscriber_8hpp_source}{}\label{EnnemyDeath_8subscriber_8hpp_source}\index{include/R-\/Type/Subscribers/EnnemyDeath.subscriber.hpp@{include/R-\/Type/Subscribers/EnnemyDeath.subscriber.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/LIL-\/5-\/2-\/rtype-\/ewen.sellitto}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ EnemyDeath.subscriber.hpp}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ECS/Components.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ECS/EventSubscriber.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ECS/World.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Engine/Components/Position.component.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Components/Enemy.component.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}R-\/Type/Events/EnnemyDeath.event.hpp"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }Rtype::Subscriber}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber}{EnnemyDeathSubscriber}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classECS_1_1EventSubscriber}{ECS::EventSubscriber}}<Rtype::Events::EnnemyDeath>}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber}{EnnemyDeathSubscriber}}()\ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber}{\string~EnnemyDeathSubscriber}}()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRtype_1_1Subscriber_1_1EnnemyDeathSubscriber_a84572067c0b662022a6b8aee47841c88}{receiveEvent}}([[maybe\_unused]]\ \textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structRtype_1_1Events_1_1EnnemyDeath}{Rtype::Events::EnnemyDeath}}\ \&data)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS::ComponentHandle<Engine::Components::PositionComponent>}}\ position;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classECS_1_1ComponentHandle}{ECS::ComponentHandle<Engine::Components::EnemyComponent>}}\ \ \ \ enemy;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(data.Enemy-\/>\mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}}<\mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{Engine::Components::PositionComponent}}>()\ \&\&}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data.Enemy-\/>\mbox{\hyperlink{classECS_1_1Entity_ac59ca658abb333047122236593fdf863}{has}}<\mbox{\hyperlink{structEngine_1_1Components_1_1EnemyComponent}{Engine::Components::EnemyComponent}}>()))}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ =\ data.Enemy-\/>\mbox{\hyperlink{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}{getComponent}}<\mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{Engine::Components::PositionComponent}}>();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy\ \ \ \ =\ data.Enemy-\/>\mbox{\hyperlink{classECS_1_1Entity_a443006243e747ad64f38aeccaf48886a}{getComponent}}<\mbox{\hyperlink{structEngine_1_1Components_1_1EnemyComponent}{Engine::Components::EnemyComponent}}>();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (enemy-\/>enemyType\ ==\ EnemyData::EnemyType::Medium)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WORLD.createEntity(}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1PositionComponent}{Engine::Components::PositionComponent}}(position-\/>x,\ position-\/>y),}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structRtype_1_1Components_1_1BoosterComponent}{Rtype::Components::BoosterComponent}}(10),}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1RenderableComponent}{Engine::Components::RenderableComponent}}(}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}./assets/Pickup/PickupIcon-\/ShieldGenerator-\/Allaroundshield.png"{}},\ 0,\ 0,\ 1,\ 0,\ \{2,\ 2\}),}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1AnimationComponent}{Engine::Components::AnimationComponent}}(0,\ 0,\ 32,\ 32,\ 32,\ 32,\ 75,\ 15),}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1CollisionComponent}{Engine::Components::CollisionComponent}}(8,\ 8,\ 48,\ 48),}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{structEngine_1_1Components_1_1MovingComponent}{Engine::Components::MovingComponent}}(}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(position-\/>x),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(position-\/>y)\},\ 20000,\ \{-\/1000,\ 0\}));}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ \}\ \textcolor{comment}{//\ namespace\ Rtype::Subscriber}}
+
+\end{DoxyCode}

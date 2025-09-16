@@ -1,0 +1,149 @@
+\doxysection{ECS\+::Network Class Reference}
+\hypertarget{classECS_1_1Network}{}\label{classECS_1_1Network}\index{ECS::Network@{ECS::Network}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classECS_1_1Network_af032e4886f8b663a6724c8c4527b5429}\label{classECS_1_1Network_af032e4886f8b663a6724c8c4527b5429} 
+void {\bfseries start\+Server} (unsigned short port, bool is\+Solo)
+\item 
+\Hypertarget{classECS_1_1Network_aa544d016a19185fb235318e33402bbdf}\label{classECS_1_1Network_aa544d016a19185fb235318e33402bbdf} 
+void {\bfseries start\+Client} (unsigned short port, bool is\+Solo)
+\item 
+\Hypertarget{classECS_1_1Network_adb488167563c6a4f5a0a16d364569591}\label{classECS_1_1Network_adb488167563c6a4f5a0a16d364569591} 
+void {\bfseries connect\+To\+Server} (const sf\+::\+Ip\+Address \&server\+Address, unsigned short port)
+\item 
+\Hypertarget{classECS_1_1Network_a20207e9b8521d47430b8cd647905bf11}\label{classECS_1_1Network_a20207e9b8521d47430b8cd647905bf11} 
+void {\bfseries send\+Connection\+To\+Server} (const sf\+::\+Ip\+Address \&server\+Address, unsigned short port)
+\item 
+\Hypertarget{classECS_1_1Network_ab93219cfb9c026098cd0c11ca20eb358}\label{classECS_1_1Network_ab93219cfb9c026098cd0c11ca20eb358} 
+void {\bfseries stop} ()
+\item 
+\Hypertarget{classECS_1_1Network_a7772d2b3ae209078016485b6ca3e2439}\label{classECS_1_1Network_a7772d2b3ae209078016485b6ca3e2439} 
+void {\bfseries send\+Updated\+Entities\+To\+Clients} ()
+\item 
+\Hypertarget{classECS_1_1Network_ad6d924d7cfbd69f01e03fb47442df5c8}\label{classECS_1_1Network_ad6d924d7cfbd69f01e03fb47442df5c8} 
+void {\bfseries send\+Removed\+Components\+To\+Clients} ()
+\item 
+\Hypertarget{classECS_1_1Network_ac5dca9a68e9d5dc51412fe1d26083a25}\label{classECS_1_1Network_ac5dca9a68e9d5dc51412fe1d26083a25} 
+void {\bfseries send\+Removed\+Entities\+To\+Clients} (std\+::vector$<$ ECS\+::id\+\_\+t $>$ \&removed\+Entities)
+\item 
+\Hypertarget{classECS_1_1Network_acaa7034d0bcef6c44bf15b1db6a5fce7}\label{classECS_1_1Network_acaa7034d0bcef6c44bf15b1db6a5fce7} 
+void {\bfseries send\+Events\+To\+Server} ()
+\item 
+\Hypertarget{classECS_1_1Network_ac6033afba4cdf94e4dc9f57044aa1b32}\label{classECS_1_1Network_ac6033afba4cdf94e4dc9f57044aa1b32} 
+int {\bfseries get\+Nb\+Entities\+Modified} ()
+\item 
+\Hypertarget{classECS_1_1Network_a87072db434cd45f34cd28cb157dc07bd}\label{classECS_1_1Network_a87072db434cd45f34cd28cb157dc07bd} 
+int {\bfseries get\+Nb\+Entities\+With\+Deleted\+Components} ()
+\item 
+\Hypertarget{classECS_1_1Network_a71b61f8723b19051cb4b91b133fbd01b}\label{classECS_1_1Network_a71b61f8723b19051cb4b91b133fbd01b} 
+void {\bfseries add\+Serialized\+Event\+To\+Packet} (sf\+::\+Packet \&packet, sf\+::\+Event event)
+\item 
+\Hypertarget{classECS_1_1Network_a9187ae92568ce4d159bbc9593f5b19ae}\label{classECS_1_1Network_a9187ae92568ce4d159bbc9593f5b19ae} 
+void {\bfseries add\+Serialized\+Component\+To\+Packet} (sf\+::\+Packet \&packet, \mbox{\hyperlink{classECS_1_1BaseComponent}{ECS\+::\+Base\+Component}} \texorpdfstring{$\ast$}{*}component)
+\item 
+\Hypertarget{classECS_1_1Network_ab37442faaa58422aa3aefba8d0d993d9}\label{classECS_1_1Network_ab37442faaa58422aa3aefba8d0d993d9} 
+void {\bfseries add\+Serialized\+Entity\+To\+Packet} (sf\+::\+Packet \&packet, const std\+::pair$<$ const ECS\+::id\+\_\+t, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1Entity}{ECS\+::\+Entity}} $>$ $>$ \&pair)
+\item 
+\Hypertarget{classECS_1_1Network_a451fd8e6873c3ceafdbf260e9e462e8b}\label{classECS_1_1Network_a451fd8e6873c3ceafdbf260e9e462e8b} 
+void {\bfseries add\+Serialized\+Deleted\+Entity\+To\+Packet} (sf\+::\+Packet \&packet, const std\+::pair$<$ const ECS\+::id\+\_\+t, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classECS_1_1Entity}{ECS\+::\+Entity}} $>$ $>$ \&pair)
+\item 
+\Hypertarget{classECS_1_1Network_a2adf4f52d8fbfdf0a6164d8163073d71}\label{classECS_1_1Network_a2adf4f52d8fbfdf0a6164d8163073d71} 
+void {\bfseries send\+Packet\+Type\+To\+Server} (Packet\+Type packet\+Type, const sf\+::\+Ip\+Address \&recipient, unsigned short port)
+\item 
+\Hypertarget{classECS_1_1Network_a0dccacd25359b7327178ce472e4f471d}\label{classECS_1_1Network_a0dccacd25359b7327178ce472e4f471d} 
+void {\bfseries send\+Packet\+To\+Server} (sf\+::\+Packet \&packet)
+\item 
+\Hypertarget{classECS_1_1Network_a97a33f6fa7bef4b7e66b143f22377dfd}\label{classECS_1_1Network_a97a33f6fa7bef4b7e66b143f22377dfd} 
+void {\bfseries send\+Packet\+To\+All\+Clients} (sf\+::\+Packet \&packet, bool include\+Server=true)
+\item 
+\Hypertarget{classECS_1_1Network_aa8cff7637830b40923cb18240c95f824}\label{classECS_1_1Network_aa8cff7637830b40923cb18240c95f824} 
+void {\bfseries send\+Packet\+To\+Client} (sf\+::\+Packet \&packet, const sf\+::\+Ip\+Address \&address, unsigned short port)
+\item 
+\Hypertarget{classECS_1_1Network_a5bd6e6380e092706b69ef676c42567a0}\label{classECS_1_1Network_a5bd6e6380e092706b69ef676c42567a0} 
+void {\bfseries send\+Game\+Over\+To\+Clients} ()
+\item 
+\Hypertarget{classECS_1_1Network_aa12683d0e338db51b3412b455dd90ae4}\label{classECS_1_1Network_aa12683d0e338db51b3412b455dd90ae4} 
+void {\bfseries receive\+Packets} ()
+\item 
+\Hypertarget{classECS_1_1Network_a9b94db0c800a32ef913c9c2d8be17d44}\label{classECS_1_1Network_a9b94db0c800a32ef913c9c2d8be17d44} 
+void {\bfseries handle\+Received\+Packet} (sf\+::\+Packet \&packet, const sf\+::\+Ip\+Address \&sender, unsigned short sender\+Port)
+\item 
+\Hypertarget{classECS_1_1Network_ae4fc80d8ef38c8bc179062b842af8e17}\label{classECS_1_1Network_ae4fc80d8ef38c8bc179062b842af8e17} 
+void {\bfseries deserialize\+Entity\+And\+Apply} (sf\+::\+Packet \&packet)
+\item 
+\Hypertarget{classECS_1_1Network_a694c5ca31f544429be009a213e15527f}\label{classECS_1_1Network_a694c5ca31f544429be009a213e15527f} 
+void {\bfseries deserialize\+Remove\+Entities\+And\+Remove} (sf\+::\+Packet \&packet)
+\item 
+\Hypertarget{classECS_1_1Network_a9d0a0244deada25f159119c77d25fd55}\label{classECS_1_1Network_a9d0a0244deada25f159119c77d25fd55} 
+void {\bfseries deserialize\+Removed\+Components\+And\+Apply} (sf\+::\+Packet \&packet)
+\item 
+\Hypertarget{classECS_1_1Network_a1c3180f508a71d77d6e12681c0cbf297}\label{classECS_1_1Network_a1c3180f508a71d77d6e12681c0cbf297} 
+sf\+::\+Event {\bfseries deserialize\+Event} (sf\+::\+Packet \&packet)
+\item 
+\Hypertarget{classECS_1_1Network_ada6991d4b16d02ac0c53de2231ffbac8}\label{classECS_1_1Network_ada6991d4b16d02ac0c53de2231ffbac8} 
+sf\+::\+Udp\+Socket \& {\bfseries get\+Socket} ()
+\item 
+\Hypertarget{classECS_1_1Network_ad6f679317b7ddfa09cf058df7358eb94}\label{classECS_1_1Network_ad6f679317b7ddfa09cf058df7358eb94} 
+sf\+::\+Ip\+Address {\bfseries get\+IP} () const
+\item 
+\Hypertarget{classECS_1_1Network_a17a9684fff28de39f21e5e8e5ae1edf6}\label{classECS_1_1Network_a17a9684fff28de39f21e5e8e5ae1edf6} 
+int {\bfseries get\+Port} () const
+\item 
+\Hypertarget{classECS_1_1Network_a1c510215e31018a29f63ce43feca6e36}\label{classECS_1_1Network_a1c510215e31018a29f63ce43feca6e36} 
+std\+::vector$<$ sf\+::\+Event $>$ {\bfseries get\+Events} () const
+\item 
+\Hypertarget{classECS_1_1Network_af9428abaa0b1dbefd8e2174d371539f2}\label{classECS_1_1Network_af9428abaa0b1dbefd8e2174d371539f2} 
+bool {\bfseries get\+Is\+Server} () const
+\item 
+\Hypertarget{classECS_1_1Network_a3fac2baf208f1861990d7c733b355b67}\label{classECS_1_1Network_a3fac2baf208f1861990d7c733b355b67} 
+bool {\bfseries get\+Game\+Has\+Started} () const
+\item 
+\Hypertarget{classECS_1_1Network_a8a3e2a0b6520d8709e606270afeae5bd}\label{classECS_1_1Network_a8a3e2a0b6520d8709e606270afeae5bd} 
+std\+::map$<$ int, std\+::vector$<$ sf\+::\+Event $>$ $>$ \& {\bfseries get\+Server\+Events} ()
+\item 
+\Hypertarget{classECS_1_1Network_accb2c5ff8121a111a073416f2ae3d2cf}\label{classECS_1_1Network_accb2c5ff8121a111a073416f2ae3d2cf} 
+\mbox{\hyperlink{structWaitingRoom}{Waiting\+Room}} \& {\bfseries get\+Waiting\+Room} ()
+\item 
+\Hypertarget{classECS_1_1Network_a7a88adf4f74e235e413bf9416d747e14}\label{classECS_1_1Network_a7a88adf4f74e235e413bf9416d747e14} 
+bool {\bfseries get\+Need\+To\+Reset} () const
+\item 
+\Hypertarget{classECS_1_1Network_a7aa9a057d8cd65e2ce01d6f1a234e7e8}\label{classECS_1_1Network_a7aa9a057d8cd65e2ce01d6f1a234e7e8} 
+std\+::vector$<$ std\+::tuple$<$ ECS\+::id\+\_\+t, std\+::vector$<$ Component\+Type $>$, std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{classECS_1_1BaseComponent}{Base\+Component}} \texorpdfstring{$\ast$}{*}, Component\+Type $>$ $>$ $>$ $>$ \& {\bfseries get\+Components\+To\+Update} ()
+\item 
+\Hypertarget{classECS_1_1Network_a0b0e2106a9923d0f52eb6e395e061d30}\label{classECS_1_1Network_a0b0e2106a9923d0f52eb6e395e061d30} 
+\mbox{\hyperlink{classComponentsConvertor}{Components\+Convertor}} \& {\bfseries get\+Components\+Convertor} ()
+\item 
+\Hypertarget{classECS_1_1Network_ac65df59511e2b247fc6e39f0420c0df5}\label{classECS_1_1Network_ac65df59511e2b247fc6e39f0420c0df5} 
+void {\bfseries set\+IP} (const sf\+::\+Ip\+Address \&ip)
+\item 
+\Hypertarget{classECS_1_1Network_a4c5621b4fc0e508ef28680883d82a9ef}\label{classECS_1_1Network_a4c5621b4fc0e508ef28680883d82a9ef} 
+void {\bfseries set\+Port} (int port)
+\item 
+\Hypertarget{classECS_1_1Network_a5a80a740279b0d1fcbbb29d6c43a4fb1}\label{classECS_1_1Network_a5a80a740279b0d1fcbbb29d6c43a4fb1} 
+void {\bfseries add\+Event} (sf\+::\+Event event)
+\item 
+\Hypertarget{classECS_1_1Network_a9327a0cc44821076131c2e0952886cd3}\label{classECS_1_1Network_a9327a0cc44821076131c2e0952886cd3} 
+void {\bfseries clear\+Events} ()
+\item 
+\Hypertarget{classECS_1_1Network_abfaf17f691332ddfa91609f2dd27dadb}\label{classECS_1_1Network_abfaf17f691332ddfa91609f2dd27dadb} 
+void {\bfseries set\+Is\+Ready\+To\+Start} (bool is\+Ready)
+\item 
+\Hypertarget{classECS_1_1Network_af213ddad5bdeeb2883bb5e82d6485cbe}\label{classECS_1_1Network_af213ddad5bdeeb2883bb5e82d6485cbe} 
+void {\bfseries reset\+Server} ()
+\item 
+\Hypertarget{classECS_1_1Network_a715870c990a540a4cf381aee0074f50c}\label{classECS_1_1Network_a715870c990a540a4cf381aee0074f50c} 
+bool {\bfseries get\+Is\+Ready\+To\+Start} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Engine/\+Server/Network.\+hpp\item 
+src/\+Engine/\+Server/Network.\+cpp\item 
+src/\+Engine/\+Server/\+Packets/Handle\+Packets.\+cpp\item 
+src/\+Engine/\+Server/\+Packets/Receive\+Packets.\+cpp\item 
+src/\+Engine/\+Server/\+Packets/Send\+Packets.\+cpp\item 
+src/\+Engine/\+Server/\+Packets/\+Serialization/Deserialize.\+cpp\item 
+src/\+Engine/\+Server/\+Packets/\+Serialization/Serialize.\+cpp\item 
+src/\+Engine/\+Server/Server\+Handler.\+cpp\end{DoxyCompactItemize}
